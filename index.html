@@ -416,6 +416,14 @@ ref.on('value',snap=>{
       if(D[k]&&!Array.isArray(D[k]))D[k]=Object.values(D[k]);
     });
     // Merge default income if not in Firebase
+    // Convert income month items from Firebase objects to arrays
+    if(D.income){
+      Object.keys(D.income).forEach(m=>{
+        if(D.income[m]&&!Array.isArray(D.income[m]))D.income[m]=Object.values(D.income[m]);
+      });
+    } else {
+      D.income={};
+    }
     Object.keys(DEFAULT_INCOME).forEach(m=>{
       if(!D.income[m])D.income[m]=DEFAULT_INCOME[m];
     });
@@ -523,20 +531,40 @@ function renderIncome(){
   const all=[];
   Object.entries(D.income||{}).forEach(([m,items])=>(items||[]).forEach(it=>all.push({...it,month:m})));
   all.sort((a,b)=>b.date>a.date?1:b.date<a.date?-1:0);
-  const list=document.getElementById('income-list');
-  if(!list)return;
-  list.innerHTML=all.length?all.map(it=>`
-    <div class="item">
-      <div class="item-l">
-        <div class="item-name">${it.who}</div>
-        <div class="item-meta">${[it.date,it.note].filter(Boolean).join(' · ')}</div>
-      </div>
-      <div class="item-r">
-        <div class="item-amt ci">${fmt(it.amount)}</div>
-        <button class="del" onclick="delIncome('${it.month}',${it.id})">${TRASH}</button>
-      </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--text3);padding:4px 0">尚無紀錄</div>';
-  document.getElementById('income-total').textContent=fmt(all.reduce((s,i)=>s+i.amount,0));
+
+  function renderGroup(items,listId){
+    const list=document.getElementById(listId);
+    if(!list)return;
+    list.innerHTML=items.length?items.map(it=>`
+      <div class="item">
+        <div class="item-l">
+          <div class="item-name">${it.who}${it.note?' · '+it.note:''}</div>
+          <div class="item-meta">${it.date||it.month||''}</div>
+        </div>
+        <div class="item-r">
+          <div class="item-amt ci">${fmt(it.amount)}</div>
+          <button class="del" onclick="delIncome('${it.month}',${it.id})">${TRASH}</button>
+        </div>
+      </div>`).join(''):'<div style="font-size:13px;color:var(--text3);padding:4px 0">尚無紀錄</div>';
+  }
+
+  const ollieItems=all.filter(i=>i.who==='Ollie');
+  const codyItems=all.filter(i=>i.who==='Cody');
+  const otherItems=all.filter(i=>i.who!=='Ollie'&&i.who!=='Cody');
+
+  renderGroup(ollieItems,'income-list-ollie');
+  renderGroup(codyItems,'income-list-cody');
+  renderGroup(otherItems,'income-list-other');
+
+  const tOllie=ollieItems.reduce((s,i)=>s+i.amount,0);
+  const tCody=codyItems.reduce((s,i)=>s+i.amount,0);
+  const tOther=otherItems.reduce((s,i)=>s+i.amount,0);
+
+  const e1=document.getElementById('income-total-ollie');if(e1)e1.textContent=fmt(tOllie);
+  const e2=document.getElementById('income-total-cody');if(e2)e2.textContent=fmt(tCody);
+  const e3=document.getElementById('income-total-other');if(e3)e3.textContent=fmt(tOther);
+  const e4=document.getElementById('income-total');if(e4)e4.textContent=fmt(tOllie+tCody+tOther);
+  updateOverview();
 }
 function delIncome(month,id){
   D.income[month]=(D.income[month]||[]).filter(i=>i.id!==id);
@@ -548,27 +576,46 @@ function renderFixedPreset(){
   const list=document.getElementById('fixed-preset-list');if(!list)return;
   const items=D.fixed_preset||DEFAULT_PRESET;
   list.innerHTML=items.map(it=>`
-    <div style="padding:8px 0;border-bottom:1px solid var(--bg3)">
+    <div style="padding:9px 0;border-bottom:1px solid var(--bg3)">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
         <span style="font-size:14px;color:var(--text2);flex:1">${it.name}</span>
-        <input type="number" value="${it.amount}" min="0" inputmode="numeric"
-          style="width:100px;padding:6px 8px;font-size:14px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text);text-align:right;font-family:inherit"
-          onchange="updatePreset('${it.id}',this.value,this)">
+        <input type="number" value="${it.amount}"
+          onchange="updatePreset('${it.id}',this.value)"
+          style="width:100px;padding:5px 8px;font-size:14px;font-weight:500;text-align:right;border:1px solid var(--border);border-radius:6px;background:var(--bg2);color:var(--text)" inputmode="numeric" />
       </div>
-      ${it.updated_by?`<div style="font-size:11px;color:var(--text3);margin-top:3px">由 ${it.updated_by} 於 ${it.updated_at} 修改</div>`:''}
+      <div id="who-row-${it.id}" style="display:none;gap:8px;margin-top:8px;align-items:center">
+        <span style="font-size:12px;color:var(--text3);flex-shrink:0">修改者：</span>
+        <button onclick="confirmPreset('${it.id}','Ollie')"
+          style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--green);background:var(--green-light);color:var(--green-dark);font-size:13px;cursor:pointer;font-family:inherit">Ollie</button>
+        <button onclick="confirmPreset('${it.id}','Cody')"
+          style="flex:1;padding:7px;border-radius:8px;border:1px solid var(--green);background:var(--green-light);color:var(--green-dark);font-size:13px;cursor:pointer;font-family:inherit">Cody</button>
+      </div>
+      ${it.updated_by?`<div style="font-size:11px;color:var(--text3);margin-top:4px">由 ${it.updated_by} 於 ${it.updated_at} 修改</div>`:''}
     </div>`).join('');
-  const total=(D.fixed_preset||DEFAULT_PRESET).reduce((s,i)=>s+Number(i.amount),0);
-  document.getElementById('fixed-preset-total').textContent=fmt(total);
+  const total=items.reduce((s,i)=>s+Number(i.amount),0);
+  const el=document.getElementById('fixed-preset-total');
+  if(el)el.textContent=fmt(total);
 }
-function updatePreset(id,val,inputEl){
-  const who=prompt('請輸入你的名字（Ollie 或 Cody）：');
-  if(!who){inputEl.value=inputEl.defaultValue;return;}
+function updatePreset(id,val){
+  // store pending amount, show who selector
   if(!D.fixed_preset||D.fixed_preset.length===0)D.fixed_preset=[...DEFAULT_PRESET];
   const item=D.fixed_preset.find(i=>i.id===id);
   if(!item)return;
-  item.amount=parseFloat(val)||0;
-  item.updated_by=who.trim();
+  item._pending=parseFloat(val)||0;
+  const row=document.getElementById('who-row-'+id);
+  if(row)row.style.display='flex';
+}
+
+function confirmPreset(id,who){
+  if(!D.fixed_preset)return;
+  const item=D.fixed_preset.find(i=>i.id===id);
+  if(!item)return;
+  item.amount=item._pending!==undefined?item._pending:item.amount;
+  delete item._pending;
+  item.updated_by=who;
   item.updated_at=nowStr();
+  const row=document.getElementById('who-row-'+id);
+  if(row)row.style.display='none';
   save();renderFixedPreset();updateOverview();showToast('已更新');
 }
 
