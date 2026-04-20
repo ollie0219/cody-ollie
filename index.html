@@ -214,10 +214,29 @@ textarea{resize:none;height:54px}
     <button class="btn primary" onclick="addIncome()">新增收入</button>
   </div>
   <div class="card">
-    <div id="income-list"><div style="font-size:13px;color:var(--text3);padding:4px 0">尚無紀錄</div></div>
-    <div class="total-row">
-      <span style="font-size:14px;font-weight:500;color:var(--text2)">所有收入合計</span>
-      <span style="font-size:16px;font-weight:600" class="ci" id="income-total">$0</span>
+    <!-- Cody 薪水 可展開 -->
+    <div onclick="toggleSection('cody-income-body','cody-arrow')"
+      style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0 10px">
+      <span style="font-size:13px;font-weight:500;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase">Cody 薪水</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:15px;font-weight:600;color:var(--green-dark)" id="income-total-cody">$0</span>
+        <span id="cody-arrow" style="color:var(--text3);font-size:12px;transition:transform 0.2s">▼</span>
+      </div>
+    </div>
+    <div id="cody-income-body" style="display:none;border-top:1px solid var(--bg3);padding-top:8px">
+      <div id="income-list-cody"><div style="font-size:13px;color:var(--text3);padding:4px 0">尚無紀錄</div></div>
+    </div>
+    <!-- Ollie 薪水 可展開 -->
+    <div onclick="toggleSection('ollie-income-body','ollie-arrow')"
+      style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:10px 0 4px;border-top:1px solid var(--bg3);margin-top:4px">
+      <span style="font-size:13px;font-weight:500;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase">Ollie 薪水</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:15px;font-weight:600;color:var(--green-dark)" id="income-total-ollie">$0</span>
+        <span id="ollie-arrow" style="color:var(--text3);font-size:12px;transition:transform 0.2s">▼</span>
+      </div>
+    </div>
+    <div id="ollie-income-body" style="display:none;border-top:1px solid var(--bg3);padding-top:8px">
+      <div id="income-list-ollie"><div style="font-size:13px;color:var(--text3);padding:4px 0">尚無紀錄</div></div>
     </div>
   </div>
 </div>
@@ -415,7 +434,6 @@ ref.on('value',snap=>{
     ['appliances','fixed_extra','annual_extra','feedback','fixed_preset'].forEach(k=>{
       if(D[k]&&!Array.isArray(D[k]))D[k]=Object.values(D[k]);
     });
-    // Merge default income if not in Firebase
     // Convert income month items from Firebase objects to arrays
     if(D.income){
       Object.keys(D.income).forEach(m=>{
@@ -424,8 +442,13 @@ ref.on('value',snap=>{
     } else {
       D.income={};
     }
+    // Always ensure DEFAULT_INCOME entries exist with correct data
+    // Overwrite only the default months (historical salary data)
     Object.keys(DEFAULT_INCOME).forEach(m=>{
-      if(!D.income[m])D.income[m]=DEFAULT_INCOME[m];
+      // Check if month has valid entries with correct 'who' field
+      const existing=D.income[m];
+      const hasValid=existing&&Array.isArray(existing)&&existing.length>0&&existing[0].who;
+      if(!hasValid) D.income[m]=DEFAULT_INCOME[m];
     });
     // Merge default appliances if empty
     if(!D.appliances||D.appliances.length===0)D.appliances=[...DEFAULT_APPLIANCES];
@@ -444,6 +467,16 @@ ref.on('value',snap=>{
 function save(){saving=true;setSyncDot('');ref.set(D).then(()=>setSyncDot('ok')).catch(()=>{setSyncDot('err');showToast('同步失敗');});}
 
 // ── Utils ──
+
+function toggleSection(bodyId, arrowId){
+  const body = document.getElementById(bodyId);
+  const arrow = document.getElementById(arrowId);
+  if(!body) return;
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  if(arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
 function fmt(n){return'$'+Math.round(n).toLocaleString('zh-TW');}
 function today(){return new Date().toISOString().split('T')[0];}
 function curMonth(){const n=new Date();return n.getFullYear()+'-'+(n.getMonth()+1).toString().padStart(2,'0');}
