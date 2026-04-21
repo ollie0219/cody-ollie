@@ -11,21 +11,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --bg:#f4f2ed;--bg2:#ece9e2;--bg3:#e2dfd7;
-  --card:#fff;--border:#d8d4ca;--border2:#c8c4b8;
-  --text:#38362e;--t2:#6a6860;--t3:#9a9890;
-  --gd:#3d5c40;--g:#5c7a5f;--gl:#eaf0ea;--gm:#9ab89c;
-  --red:#9a5a5a;--rl:#f2eaea;
-  --amb:#8a7448;--al:#f2ece0;
+  --bg:#f0ede6;--bg2:#e8e3d8;--bg3:#ddd8cc;
+  --card:#faf8f4;--border:#d4cfc4;--border2:#c4bfb2;
+  --text:#4b3832;--t2:#7a6a60;--t3:#a89888;
+  --gd:#c0392b;--g:#e74c3c;--gl:#fdecea;--gm:#e8937a;
+  --red:#c0392b;--rl:#fdecea;
+  --amb:#7b6341;--al:#f2ece0;
   --blu:#4a6278;--bl:#e4ecf2;
   --r:16px;--rs:10px;
+  --brown:#4b3832;--cream:#faf8f4;--orange:#e8560a;
 }
 html,body{background:var(--bg);font-family:"Noto Sans TC",sans-serif;color:var(--text);font-size:15px;overflow-x:hidden}
 .app{max-width:480px;margin:0 auto;min-height:100vh}
 /* Header */
 .hdr{padding:48px 16px 10px;background:var(--card);border-bottom:1px solid var(--border)}
 .hdr-top{display:flex;justify-content:space-between;align-items:center}
-.hdr-title{font-size:20px;font-weight:600;color:var(--gd)}
+.hdr-title{font-size:20px;font-weight:600;color:var(--brown)}
 .hdr-sub{font-size:12px;color:var(--t3);margin-top:2px}
 .dot{width:8px;height:8px;border-radius:50%;background:#ccc}
 .dot.ok{background:var(--g)}.dot.err{background:var(--red)}
@@ -33,7 +34,7 @@ html,body{background:var(--bg);font-family:"Noto Sans TC",sans-serif;color:var(-
 .nav{display:flex;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;padding:0 4px}
 .nav::-webkit-scrollbar{display:none}
 .nav button{flex-shrink:0;padding:11px 14px;border:none;background:none;color:var(--t3);font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;font-weight:400;transition:all 0.15s}
-.nav button.on{color:var(--gd);border-bottom-color:var(--g);font-weight:500}
+.nav button.on{color:var(--gd);border-bottom-color:var(--gd);font-weight:500}
 /* Tabs */
 .tab{display:none;padding:14px 14px 80px}.tab.on{display:block}
 /* Cards */
@@ -57,12 +58,12 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 .frow{display:grid;gap:7px;margin-bottom:7px}
 .c1{grid-template-columns:1fr}.c2{grid-template-columns:1fr 1fr}
 .btn{padding:9px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;font-family:inherit;cursor:pointer;width:100%;font-weight:400;transition:all 0.15s}
-.btn.primary{background:var(--g);color:#fff;border-color:var(--g);font-weight:500}
+.btn.primary{background:var(--gd);color:#fff;border-color:var(--gd);font-weight:500}
 .btn.sm{width:auto;padding:6px 12px;font-size:13px}
 /* Who buttons */
 .who-btns{display:flex;gap:6px;margin-bottom:7px}
 .who-btn{flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:13px;font-family:inherit;cursor:pointer;text-align:center;transition:all 0.15s}
-.who-btn.on{border-color:var(--g);background:var(--gl);color:var(--gd);font-weight:500}
+.who-btn.on{border-color:var(--gd);background:var(--gl);color:var(--gd);font-weight:500}
 /* Sticky input */
 .sinput{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:12px}
 /* Items */
@@ -87,7 +88,9 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 /* Progress */
 .prog-wrap{position:relative;margin:10px 0 6px}
 .prog-track{height:10px;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
-.prog-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gd),var(--gm));transition:width 0.6s ease}
+.prog-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#c0392b,#e8560a,#c0392b);background-size:200% 100%;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);animation:shimmer 3s infinite linear}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes breathe{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
 .prog-labels{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
 .prog-main{font-size:20px;font-weight:600;color:var(--gd)}
 .prog-pct{font-size:14px;font-weight:500;color:var(--g)}
@@ -95,6 +98,9 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 /* Chart */
 .chart-wrap{position:relative;height:140px;margin-top:8px}
 /* Toast */
+.pill{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s}
+.pill.on{background:var(--gd);color:#fff;border-color:var(--gd)}
+#cat-pills::-webkit-scrollbar{display:none}
 .toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:9px 18px;border-radius:20px;font-size:13px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1}
 </style>
@@ -136,7 +142,7 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       <input class="inp" type="number" id="d-amount" placeholder="金額" inputmode="numeric" min="0">
     </div>
     <div class="frow c2" style="margin-bottom:7px">
-      <input class="inp" type="text" id="d-item" placeholder="品項名稱（選填）">
+      <input class="inp" type="text" id="d-item" placeholder="品項名稱（選填）" oninput="autoDetectCat(this.value)">
       <input class="inp" type="text" id="d-note" placeholder="備註（選填）">
     </div>
     <div class="who-btns">
@@ -146,7 +152,20 @@ select.inp{appearance:auto;-webkit-appearance:auto}
     </div>
     <button class="btn primary" onclick="addDaily()">新增開銷</button>
   </div>
-  <input class="inp" id="d-search" placeholder="🔍 搜尋品項、分類、備註..." oninput="renderDaily()" style="margin-bottom:8px">
+  <input class="inp" id="d-search" placeholder="🔍 搜尋品項、分類、備註..." oninput="clearCatFilter();renderDaily()" style="margin-bottom:8px">
+  <div id="cat-pills" style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px;-webkit-overflow-scrolling:touch">
+    <button class="pill on" onclick="setCatFilter('')" id="pill-all">全部</button>
+    <button class="pill" onclick="setCatFilter('餐飲')" id="pill-餐飲">餐飲</button>
+    <button class="pill" onclick="setCatFilter('日用品')" id="pill-日用品">日用品</button>
+    <button class="pill" onclick="setCatFilter('娛樂')" id="pill-娛樂">娛樂</button>
+    <button class="pill" onclick="setCatFilter('交通')" id="pill-交通">交通</button>
+    <button class="pill" onclick="setCatFilter('美妝保養')" id="pill-美妝保養">美妝保養</button>
+    <button class="pill" onclick="setCatFilter('醫療健康')" id="pill-醫療健康">醫療健康</button>
+    <button class="pill" onclick="setCatFilter('衣物')" id="pill-衣物">衣物</button>
+    <button class="pill" onclick="setCatFilter('寵物')" id="pill-寵物">寵物</button>
+    <button class="pill" onclick="setCatFilter('送禮')" id="pill-送禮">送禮</button>
+    <button class="pill" onclick="setCatFilter('其他')" id="pill-其他">其他</button>
+  </div>
   <div class="mnav">
     <button class="mnav-btn" onclick="changeDMonth(-1)">‹</button>
     <span class="mnav-lbl" id="d-month-lbl"></span>
@@ -165,31 +184,49 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <div id="tab-overview" class="tab">
   <!-- 大狗窩進度 -->
   <div class="card">
-    <div style="font-size:15px;font-weight:600;color:var(--gd);margin-bottom:8px">大狗窩目標進度 🐾</div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="font-size:15px;font-weight:600;color:var(--gd)">大狗窩目標進度 🐾</div>
+      <button onclick="toggleSavings()" style="background:none;border:none;cursor:pointer;color:var(--t3);padding:4px;line-height:1;border-radius:6px">
+        <svg id="eye-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 存款 & 目標 (隱藏狀態) -->
+    <div id="savings-row" style="display:none;gap:12px;margin-bottom:12px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:6px">
-        <span style="font-size:12px;color:var(--t3)">目標</span>
-        <input class="inp" type="number" id="ov-goal" value="8000000" inputmode="numeric"
-          onchange="saveGoal(this.value)"
+        <span style="font-size:12px;color:var(--t3)">存款</span>
+        <input class="inp" type="number" id="ov-savings" placeholder="輸入金額" inputmode="numeric"
+          onchange="saveSavings(this.value)"
           style="width:120px;font-size:13px;font-weight:600;color:var(--gd);text-align:right;padding:5px 8px">
       </div>
       <div style="display:flex;align-items:center;gap:6px">
-        <span style="font-size:12px;color:var(--t3)">目前存款</span>
-        <input class="inp" type="number" id="ov-savings" placeholder="輸入金額" inputmode="numeric"
-          onchange="saveSavings(this.value)"
-          style="width:130px;font-size:13px;font-weight:600;color:var(--gd);text-align:right;padding:5px 8px">
+        <span style="font-size:12px;color:var(--t3)">目標</span>
+        <input class="inp" type="number" id="ov-goal" value="" inputmode="numeric"
+          onchange="saveGoal(this.value)"
+          style="width:120px;font-size:13px;font-weight:600;color:var(--gd);text-align:right;padding:5px 8px">
       </div>
     </div>
-    <div class="prog-labels">
-      <span class="prog-main" id="ov-savamt">$0</span>
-      <span class="prog-pct" id="ov-pct">0%</span>
+
+    <!-- 進度顯示 (隱藏狀態) -->
+    <div id="savings-display" style="display:none;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+      <span id="ov-savamt" style="font-size:22px;font-weight:600;color:var(--gd)">$0</span>
+      <span id="ov-pct" style="font-size:14px;font-weight:500;color:var(--g)">0%</span>
     </div>
-    <div class="prog-wrap">
-      <div class="prog-track">
-        <div class="prog-fill" id="ov-bar" style="width:0%"></div>
-      </div>
+
+    <!-- 進度條 (永遠顯示，但隱藏時變灰) -->
+    <div class="prog-track" style="margin-bottom:4px">
+      <div class="prog-fill" id="ov-bar" style="width:0%"></div>
     </div>
-    <div class="prog-hint" id="ov-hint">還差 $8,000,000</div>
+
+    <!-- 里程碑 -->
+    <div style="position:relative;height:38px" id="milestone-wrap"></div>
+
+    <!-- 提示 (隱藏狀態) -->
+    <div id="ov-hint-row" style="display:none">
+      <div class="prog-hint" id="ov-hint">還差 $8,000,000</div>
+    </div>
   </div>
   <!-- 月份切換 -->
   <div class="mnav">
@@ -277,37 +314,24 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- Costco -->
 <div id="tab-costco" class="tab">
-  <!-- 拍照上傳區 -->
-  <div class="sinput" style="text-align:center">
-    <div style="font-size:15px;font-weight:600;color:var(--gd);margin-bottom:4px">📷 掃描收據</div>
-    <div style="font-size:12px;color:var(--t3);margin-bottom:12px">拍下 Costco 收據，自動辨識品項</div>
-    <input type="file" id="costco-file" accept="image/*" style="display:none" onchange="scanReceipt(this)">
-    <button class="btn primary" onclick="document.getElementById('costco-file').click()" style="margin-bottom:8px">
-      📷 拍照 / 選擇收據照片
-    </button>
-    <div id="scan-status" style="font-size:13px;color:var(--t3);min-height:20px"></div>
-  </div>
-
-  <!-- 辨識結果預覽 -->
-  <div class="card" id="scan-preview" style="display:none">
-    <div class="stitle">辨識結果 — 請確認後儲存</div>
-    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-      <div style="flex:1;min-width:120px">
-        <div style="font-size:12px;color:var(--t3);margin-bottom:4px">日期</div>
-        <input class="inp" type="date" id="scan-date" style="font-size:13px">
-      </div>
-      <div style="flex:1;min-width:100px">
-        <div style="font-size:12px;color:var(--t3);margin-bottom:4px">總金額</div>
-        <input class="inp" type="number" id="scan-total" inputmode="numeric" style="font-size:13px;text-align:right">
-      </div>
+  <div class="sinput">
+    <div class="frow c2" style="margin-bottom:7px">
+      <input class="inp" type="date" id="cc-date">
+      <input class="inp" type="text" id="cc-name" placeholder="品項名稱">
     </div>
-    <div id="scan-items-list" style="margin-bottom:10px"></div>
-    <button class="btn primary" onclick="saveCostcoTrip()">儲存這次採購</button>
-    <button class="btn" onclick="cancelScan()" style="margin-top:6px">取消</button>
+    <div class="frow c1" style="margin-bottom:7px">
+      <input class="inp" type="number" id="cc-price" placeholder="價格" inputmode="numeric">
+    </div>
+    <button class="btn primary" onclick="addCostcoItem()">新增品項</button>
   </div>
-
-  <!-- 歷史紀錄 -->
-  <div id="costco-history"></div>
+  <input class="inp" id="cc-search" placeholder="🔍 搜尋品項..." oninput="renderCostco()" style="margin-bottom:8px">
+  <div class="card">
+    <div id="cc-list"><div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div></div>
+    <div class="trow" id="cc-trow" style="display:none">
+      <span class="tlbl">Costco 總計</span>
+      <span class="tval ce" id="cc-total">$0</span>
+    </div>
+  </div>
 </div>
 
 <!-- 意見箱 -->
@@ -332,7 +356,20 @@ firebase.initializeApp({databaseURL:"https://cody-ollie-default-rtdb.asia-southe
 const ref=firebase.database().ref('data');
 
 const TRASH='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
+const SYNC='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>';
 const PENCIL='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
+
+const KEYWORD_CAT = {
+  餐飲: ['早餐','午餐','晚餐','飯','麵','咖啡','茶','飲料','火鍋','燒烤','外送','餐廳','小吃','便當','壽司','漢堡','披薩','甜點','蛋糕','奶茶'],
+  交通: ['油錢','停車','加油','捷運','公車','計程車','uber','taxi','高鐵','火車','機票','過路費','ETC'],
+  日用品: ['衛生紙','洗碗','洗衣','清潔','沐浴','洗髮','牙膏','牙刷','面紙','垃圾袋','保鮮膜'],
+  寵物: ['貓','狗','罐罐','飼料','貓砂','寵物','獸醫','疫苗','玩具'],
+  美妝保養: ['保養','面膜','化妝','精華','乳液','口紅','粉底','香水','美容'],
+  醫療健康: ['醫院','診所','藥','健保','看診','掛號','維他命','保健'],
+  衣物: ['衣服','褲子','鞋','包包','外套','裙子','上衣','內衣'],
+  娛樂: ['電影','演唱會','展覽','遊戲','書','KTV','旅遊','住宿'],
+  送禮: ['禮物','生日','包裝','花','祝福'],
+};
 const CAT_CLS={餐飲:'bg',日用品:'ba',娛樂:'bb',交通:'bb',美妝保養:'br',醫療健康:'bg',衣物:'ba',寵物:'bg',送禮:'br',其他:'ba'};
 const DEFAULT_APPLIANCES=[
   {date:'2024-06-12',name:'大房間冷氣',amount:40000,note:'全國電子',id:101},
@@ -348,7 +385,7 @@ const DEFAULT_APPLIANCES=[
 
 let D={daily:{},fixed_extra:[],annual_extra:[],feedback:[],appliances:[],costco:[],goal:8000000,savings_amount:0};
 let saving=false,firstLoad=true;
-let dMonth='',ovMonth='',selectedWho='';
+let dMonth='',ovMonth='',selectedWho='',catFilter='';
 let trendChart=null;
 
 // ── Firebase ──
@@ -439,6 +476,37 @@ function changeOvMonth(dir){
 }
 
 // ── Who buttons ──
+
+function setCatFilter(cat){
+  catFilter = cat;
+  document.getElementById('d-search').value = '';
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
+  const pid = cat ? 'pill-'+cat : 'pill-all';
+  const el = document.getElementById(pid);
+  if(el) el.classList.add('on');
+  renderDaily();
+}
+
+function clearCatFilter(){
+  catFilter = '';
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
+  const all = document.getElementById('pill-all');
+  if(all) all.classList.add('on');
+}
+
+
+function autoDetectCat(val){
+  if(!val) return;
+  const v = val.toLowerCase();
+  for(const [cat, keywords] of Object.entries(KEYWORD_CAT)){
+    if(keywords.some(k => v.includes(k))){
+      const sel = document.getElementById('d-cat');
+      if(sel) sel.value = cat;
+      return;
+    }
+  }
+}
+
 function setWho(who){
   selectedWho=who;
   ['ollie','cody','both'].forEach(w=>{
@@ -475,7 +543,11 @@ function renderDaily(){
   const m=dMonth||curMonth();
   const raw=(D.daily&&D.daily[m])||[];
   const q=(document.getElementById('d-search')?.value||'').toLowerCase();
-  const items=q?raw.filter(it=>[it.item,it.cat,it.note,it.who].filter(Boolean).join(' ').toLowerCase().includes(q)):raw;
+  const items=raw.filter(it=>{
+    const matchQ=!q||[it.item,it.cat,it.note,it.who].filter(Boolean).join(' ').toLowerCase().includes(q);
+    const matchCat=!catFilter||it.cat===catFilter;
+    return matchQ&&matchCat;
+  });
   const sorted=[...items].sort((a,b)=>b.date>a.date?1:-1);
   const list=document.getElementById('d-list');
   if(!list)return;
@@ -775,6 +847,42 @@ function toggleDone(id){
 function delFeedback(id){D.feedback=(D.feedback||[]).filter(i=>i.id!==id);save();renderFeedback();}
 
 // ── 目標/存款 ──
+
+let savingsVisible = false;
+
+function toggleSavings(){
+  savingsVisible = !savingsVisible;
+  const svg = document.getElementById('eye-svg');
+  if(svg){
+    svg.innerHTML = savingsVisible
+      ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+      : '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+  }
+  const sr=document.getElementById('savings-row');if(sr)sr.style.display=savingsVisible?'flex':'none';
+  const sd=document.getElementById('savings-display');if(sd)sd.style.display=savingsVisible?'flex':'none';
+  const hr=document.getElementById('ov-hint-row');if(hr)hr.style.display=savingsVisible?'block':'none';
+  updateOverview();
+}
+
+function renderMilestones(target, savings=0){
+  const wrap = document.getElementById('milestone-wrap');
+  if(!wrap) return;
+  const milestones = [
+    {amount: 1000000, label: '100萬'},
+    {amount: 2000000, label: '裝潢款'},
+    {amount: 4000000, label: '家具款'},
+    {amount: 6000000, label: '頭期款'},
+    {amount: 8000000, label: '大狗窩'},
+  ];
+  wrap.innerHTML = milestones.map(m => {
+    const pct = Math.min(100, Math.round(m.amount / target * 100));
+    return `<div style="position:absolute;left:${pct}%;transform:translateX(-50%);text-align:center;top:0">
+      <div style="width:2px;height:10px;background:var(--border2);margin:0 auto"></div>
+      <div style="font-size:9px;color:var(--t3);white-space:nowrap;margin-top:1px;line-height:1.2">${m.label}</div>
+    </div>`;
+  }).join('');
+}
+
 function saveGoal(val){const v=parseFloat(val);if(!v||v<=0)return;D.goal=v;save();updateOverview();showToast('目標已更新');}
 function saveSavings(val){const v=parseFloat(val);if(isNaN(v)||v<0)return;D.savings_amount=v;save();updateOverview();showToast('存款已更新');}
 
@@ -788,6 +896,7 @@ function updateOverview(){
   const pe=document.getElementById('ov-pct');if(pe)pe.textContent=pct+'%';
   const bar=document.getElementById('ov-bar');if(bar)bar.style.width=pct+'%';
   const hi=document.getElementById('ov-hint');if(hi)hi.textContent=diff>0?'還差 '+fmt(diff):'🎉 已達成目標！';
+  renderMilestones(target, savings);
 
   const m=ovMonth||curMonth();
   const dailyItems=(D.daily&&D.daily[m])||[];
@@ -880,7 +989,6 @@ function renderAll(){
 // ══════════════════════════════════════
 // Costco 掃描功能
 // ══════════════════════════════════════
-const VISION_KEY = 'AIzaSyDlB0pcaByLRO30n6ctGkDFpi7xiYgeFJY';
 let scannedItems = [];
 
 async function scanReceipt(input) {
@@ -889,190 +997,187 @@ async function scanReceipt(input) {
   const status = document.getElementById('scan-status');
   status.textContent = '⏳ 辨識中，請稍候...';
 
-  // Convert to base64
-  const base64 = await new Promise((res, rej) => {
-    const reader = new FileReader();
-    reader.onload = () => res(reader.result.split(',')[1]);
-    reader.onerror = rej;
-    reader.readAsDataURL(file);
-  });
+  const VKEY = 'AIzaSyDlB0pcaByLRO30n6ctGkDFpi7xiYgeFJY';
+
+  // Resize image to reduce payload size
+  const resized = await resizeImage(file, 1200);
 
   try {
     const resp = await fetch(
-      `https://vision.googleapis.com/v1/images:annotate?key=${VISION_KEY}`,
+      `https://vision.googleapis.com/v1/images:annotate?key=${VKEY}`,
       {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           requests: [{
-            image: {content: base64},
-            features: [{type: 'TEXT_DETECTION', maxResults: 1}]
+            image: {content: resized},
+            features: [{type: 'TEXT_DETECTION'}]
           }]
         })
       }
     );
     const data = await resp.json();
-    const text = data.responses?.[0]?.fullTextAnnotation?.text || '';
-    if (!text) { status.textContent = '❌ 無法辨識，請重試'; return; }
+    if (!resp.ok) {
+      status.textContent = '❌ API錯誤 ' + resp.status + '：' + (data.error?.message || '未知錯誤');
+      return;
+    }
+    const text = data.responses?.[0]?.fullTextAnnotation?.text ||
+                 data.responses?.[0]?.textAnnotations?.[0]?.description || '';
+    if (!text) { status.textContent = '❌ 無法辨識文字，請確認照片清晰'; return; }
     parseReceipt(text);
-    status.textContent = '✅ 辨識完成，請確認後儲存';
+    status.textContent = '✅ 辨識完成！';
   } catch(e) {
-    status.textContent = '❌ 辨識失敗：' + e.message;
+    console.error(e);
+    status.textContent = '❌ 失敗：' + e.message;
   }
   input.value = '';
 }
 
-function parseReceipt(text) {
-  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-  scannedItems = [];
-  let total = 0;
-  let date = today();
-
-  // Parse date (MM/DD/YYYY or similar)
-  const dateRe = /(\d{2})[/](\d{2})[/](\d{4})/;
-  for (const l of lines) {
-    const dm = l.match(dateRe);
-    if (dm) { date = `${dm[3]}-${dm[1].padStart(2,'0')}-${dm[2].padStart(2,'0')}`; break; }
-  }
-
-  // Parse total
-  const totalRe = /總金額.*?(\d[\d,]+)/;
-  for (const l of lines) {
-    const tm = l.match(totalRe);
-    if (tm) { total = parseInt(tm[1].replace(/,/g,'')); break; }
-  }
-
-  // Parse items: look for lines with price pattern
-  // Pattern: item name on one line, next line has code + 1x + price
-  for (let i = 0; i < lines.length - 1; i++) {
-    const line = lines[i];
-    const next = lines[i+1] || '';
-    // Skip COUPON lines and headers
-    if (line.includes('COUPON') || line.includes('總金額') || line.includes('聯名卡') ||
-        line.includes('找零') || line.includes('會員') || line.includes('COSTCO') ||
-        line.includes('台中') || line.includes('SALE') || line.includes('紅利') ||
-        line.match(/^\d{5,}$/) || line.includes('BOB') || line.includes('預掃')) continue;
-
-    // Check if next line has price pattern (digits 1x digits)
-    const priceMatch = next.match(/(\d{5,})\s+1x\s+(\d+)/);
-    if (priceMatch) {
-      const price = parseInt(priceMatch[2]);
-      if (price > 0 && price < 100000 && line.length > 1) {
-        scannedItems.push({ name: line, price, id: Date.now() + scannedItems.length });
+async function resizeImage(file, maxSize) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      let w = img.width, h = img.height;
+      if (w > maxSize || h > maxSize) {
+        if (w > h) { h = h * maxSize / w; w = maxSize; }
+        else { w = w * maxSize / h; h = maxSize; }
       }
-      i++; // skip price line
-    }
-  }
-
-  // Render preview
-  const dateEl = document.getElementById('scan-date');
-  const totalEl = document.getElementById('scan-total');
-  if (dateEl) dateEl.value = date;
-  if (totalEl) totalEl.value = total || scannedItems.reduce((s,i)=>s+i.price,0);
-
-  renderScanItems();
-  document.getElementById('scan-preview').style.display = 'block';
-}
-
-function renderScanItems() {
-  const list = document.getElementById('scan-items-list');
-  if (!list) return;
-  list.innerHTML = scannedItems.length ? scannedItems.map((it,i) => `
-    <div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--bg3)">
-      <div style="flex:1;font-size:14px">${it.name}</div>
-      <input type="number" value="${it.price}" inputmode="numeric"
-        onchange="scannedItems[${i}].price=parseFloat(this.value)||0;updateScanTotal()"
-        style="width:80px;padding:4px 6px;font-size:13px;border:1px solid var(--border);border-radius:6px;text-align:right;background:var(--bg2);color:var(--text)">
-      <button onclick="scannedItems.splice(${i},1);renderScanItems();updateScanTotal()"
-        style="background:none;border:none;color:#b8b8b0;cursor:pointer;padding:2px;font-size:16px;line-height:1">×</button>
-    </div>`).join('') +
-    `<button onclick="addScanItem()" style="margin-top:8px;width:100%;padding:6px;border:1px dashed var(--border);border-radius:8px;background:none;color:var(--t3);font-size:13px;cursor:pointer">＋ 新增品項</button>`
-    : `<div style="font-size:13px;color:var(--t3);padding:8px 0">未辨識到品項，請手動新增</div>
-       <button onclick="addScanItem()" style="margin-top:6px;width:100%;padding:6px;border:1px dashed var(--border);border-radius:8px;background:none;color:var(--t3);font-size:13px;cursor:pointer">＋ 新增品項</button>`;
-}
-
-function addScanItem() {
-  scannedItems.push({ name: '新品項', price: 0, id: Date.now() });
-  renderScanItems();
-}
-
-function updateScanTotal() {
-  const el = document.getElementById('scan-total');
-  if (el) el.value = scannedItems.reduce((s,i)=>s+i.price,0);
-}
-
-function cancelScan() {
-  scannedItems = [];
-  document.getElementById('scan-preview').style.display = 'none';
-  document.getElementById('scan-status').textContent = '';
-}
-
-function saveCostcoTrip() {
-  const date = document.getElementById('scan-date').value || today();
-  const total = parseFloat(document.getElementById('scan-total').value) || scannedItems.reduce((s,i)=>s+i.price,0);
-  if (!scannedItems.length && !total) { showToast('請至少輸入金額'); return; }
-
-  if (!D.costco) D.costco = [];
-  D.costco.push({
-    date,
-    total,
-    items: [...scannedItems],
-    id: Date.now()
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      resolve(canvas.toDataURL('image/jpeg', 0.85).split(',')[1]);
+    };
+    img.src = url;
   });
-  cancelScan();
-  save();
-  renderCostco();
-  showToast('已儲存！');
 }
 
-function renderCostco() {
-  const container = document.getElementById('costco-history');
-  if (!container) return;
-  const trips = [...(D.costco || [])].sort((a,b) => b.date > a.date ? 1 : -1);
-  if (!trips.length) {
-    container.innerHTML = '<div style="font-size:13px;color:var(--t3);padding:8px 4px">尚無採購紀錄</div>';
-    return;
-  }
-  container.innerHTML = trips.map(trip => `
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleCostcoTrip(${trip.id})">
-        <div>
-          <div style="font-size:15px;font-weight:600">🛒 ${trip.date}</div>
-          <div style="font-size:12px;color:var(--t3);margin-top:2px">${trip.items.length} 項商品</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:16px;font-weight:600;color:var(--red)">${fmt(trip.total)}</div>
-          <div style="display:flex;gap:6px;margin-top:4px;justify-content:flex-end">
-            <span style="font-size:18px;color:var(--t3)" id="arrow-${trip.id}">▾</span>
-            <button onclick="event.stopPropagation();delCostcoTrip(${trip.id})" style="background:none;border:none;color:#b8b8b0;cursor:pointer;padding:2px">${TRASH}</button>
-          </div>
+
+
+
+
+
+
+
+
+
+
+// ── Costco ──
+function addCostcoItem(){
+  const date=document.getElementById('cc-date').value||today();
+  const name=document.getElementById('cc-name').value.trim();
+  const price=parseFloat(document.getElementById('cc-price').value);
+  if(!name||!price){showToast('請填入品項和價格');return;}
+  if(!D.costco)D.costco=[];
+  D.costco.push({date,name,price,id:Date.now()});
+  document.getElementById('cc-name').value='';
+  document.getElementById('cc-price').value='';
+  document.getElementById('cc-date').value=today();
+  save();renderCostco();showToast('已新增');
+  setTimeout(()=>{const el=document.getElementById('cc-name');if(el)el.focus();},100);
+}
+
+function renderCostco(){
+  const q=(document.getElementById('cc-search')?.value||'').toLowerCase();
+  const all=D.costco||[];
+  const filtered=q?all.filter(it=>it.name.toLowerCase().includes(q)):all;
+  const sorted=[...filtered].sort((a,b)=>b.date>a.date?1:-1);
+  const list=document.getElementById('cc-list');
+  if(!list)return;
+  // Build price history map for comparison
+  const priceMap = {};
+  const sortedAll = [...(D.costco||[])].sort((a,b)=>a.date>b.date?1:-1);
+  sortedAll.forEach(it=>{
+    if(!priceMap[it.name]) priceMap[it.name]=[];
+    priceMap[it.name].push({date:it.date, price:it.price});
+  });
+
+  list.innerHTML=sorted.length?sorted.map(it=>{
+    const history = priceMap[it.name]||[];
+    const idx = history.findIndex(h=>h.date===it.date&&h.price===it.price);
+    const prev = idx > 0 ? history[idx-1] : null;
+    let diffTag = '';
+    if(prev){
+      const diff = it.price - prev.price;
+      if(diff > 0) diffTag = `<span style="font-size:10px;color:var(--red);margin-left:3px">↑${diff}</span>`;
+      else if(diff < 0) diffTag = `<span style="font-size:10px;color:var(--gd);margin-left:3px">↓${Math.abs(diff)}</span>`;
+      else diffTag = `<span style="font-size:10px;color:var(--t3);margin-left:3px">—</span>`;
+    }
+    return `
+    <div class="item" id="cci-${it.id}">
+      <div class="il">
+        <div class="iname">${it.name}</div>
+        <div class="imeta">${it.date}${prev?' · 上次 '+fmt(prev.price):''}</div>
+      </div>
+      <div class="ir">
+        <div class="iamt ce">${fmt(it.price)}${diffTag}</div>
+        <div class="ibtn-row">
+          <button class="del" onclick="syncCostcoToDaily(${it.id})" style="color:#b8b8b0" title="轉入日常開銷">${SYNC}</button>
+          <button class="del" onclick="editCostcoItem(${it.id})" style="color:#b8b8b0">${PENCIL}</button>
+          <button class="del" onclick="delCostcoItem(${it.id})">${TRASH}</button>
         </div>
       </div>
-      <div id="trip-detail-${trip.id}" style="display:none;margin-top:10px;border-top:1px solid var(--bg3);padding-top:10px">
-        ${trip.items.map(it => `
-          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--bg3);font-size:14px">
-            <span style="color:var(--t2)">${it.name}</span>
-            <span style="font-weight:500;color:var(--red)">${fmt(it.price)}</span>
-          </div>`).join('')}
-        ${trip.items.length === 0 ? '<div style="font-size:13px;color:var(--t3)">無品項明細</div>' : ''}
-      </div>
-    </div>`).join('');
+    </div>`;
+  }).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
+  const trow=document.getElementById('cc-trow');
+  if(trow)trow.style.display=all.length?'flex':'none';
+  const tel=document.getElementById('cc-total');
+  if(tel)tel.textContent=fmt(all.reduce((s,i)=>s+i.price,0));
 }
 
-function toggleCostcoTrip(id) {
-  const detail = document.getElementById('trip-detail-' + id);
-  const arrow = document.getElementById('arrow-' + id);
-  if (!detail) return;
-  const isOpen = detail.style.display !== 'none';
-  detail.style.display = isOpen ? 'none' : 'block';
-  if (arrow) arrow.textContent = isOpen ? '▾' : '▴';
+
+function syncCostcoToDaily(id){
+  const it=(D.costco||[]).find(i=>i.id===id);
+  if(!it)return;
+  // Switch to daily tab
+  const btn=document.querySelector('.nav button');
+  go('daily',btn);
+  // Fill in the form
+  const amtEl=document.getElementById('d-amount');
+  const itemEl=document.getElementById('d-item');
+  const dateEl=document.getElementById('d-date');
+  const catEl=document.getElementById('d-cat');
+  if(amtEl)amtEl.value=it.price;
+  if(itemEl)itemEl.value='Costco - '+it.name;
+  if(dateEl)dateEl.value=it.date;
+  if(catEl)catEl.value='日用品';
+  showToast('已帶入日常開銷，請確認後新增');
+  setTimeout(()=>{if(amtEl)amtEl.focus();},300);
 }
 
-function delCostcoTrip(id) {
-  D.costco = (D.costco || []).filter(t => t.id !== id);
-  save();
-  renderCostco();
-  showToast('已刪除');
+function delCostcoItem(id){
+  D.costco=(D.costco||[]).filter(i=>i.id!==id);
+  save();renderCostco();
+}
+
+function editCostcoItem(id){
+  const it=(D.costco||[]).find(i=>i.id===id);if(!it)return;
+  const ex=document.getElementById('ecc-'+id);if(ex){ex.remove();return;}
+  const div=document.createElement('div');div.id='ecc-'+id;
+  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
+  div.innerHTML=`
+    <div class="frow c2" style="margin-bottom:7px">
+      <input class="inp" type="text" id="ecc-n-${id}" value="${it.name}">
+      <input class="inp" type="number" id="ecc-p-${id}" value="${it.price}" inputmode="numeric" style="text-align:right">
+    </div>
+    <div class="frow c1" style="margin-bottom:7px">
+      <input class="inp" type="date" id="ecc-d-${id}" value="${it.date}">
+    </div>
+    <div class="frow c2">
+      <button class="btn primary" onclick="saveEditCostco(${id})">儲存</button>
+      <button class="btn" onclick="document.getElementById('ecc-${id}').remove()">取消</button>
+    </div>`;
+  const el=document.getElementById('cci-'+id);if(el)el.after(div);
+}
+
+function saveEditCostco(id){
+  const it=(D.costco||[]).find(i=>i.id===id);if(!it)return;
+  const n=document.getElementById('ecc-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
+  const p=document.getElementById('ecc-p-'+id);if(p){const v=parseFloat(p.value);if(v>0)it.price=v;}
+  const d=document.getElementById('ecc-d-'+id);if(d&&d.value)it.date=d.value;
+  const r=document.getElementById('ecc-'+id);if(r)r.remove();
+  save();renderCostco();showToast('已修改');
 }
 
 initAll();
