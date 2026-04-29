@@ -204,7 +204,6 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       <div class="hdr-title">Cody ＆ Ollie</div>
       <div class="hdr-sub">一起加油買大狗窩!!!</div>
     </div>
-    <div class="dot" id="sync" style="position:absolute;right:16px;top:52px"></div>
   </div>
 </div>
 
@@ -417,24 +416,6 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <!-- 大型家電 -->
 <div id="tab-appliance" class="tab">
   <div class="card">
-    <div style="font-size:13px;font-weight:600;color:var(--acc);margin-bottom:10px">✅ 已購清單</div>
-    <div class="frow c2" style="margin-bottom:7px">
-      <input class="inp" type="text" id="ap-name" placeholder="品項名稱">
-      <input class="inp" type="number" id="ap-amount" placeholder="金額" inputmode="numeric">
-    </div>
-    <div class="frow c2" style="margin-bottom:7px">
-      <input class="inp" type="date" id="ap-date">
-      <input class="inp" type="text" id="ap-note" placeholder="購買地點／備註">
-    </div>
-    <button class="btn primary" onclick="addAppliance()">＋ 新增已購</button>
-    <div id="ap-list" style="margin-top:10px"></div>
-    <div class="trow">
-      <span class="tlbl">大型家電總計</span>
-      <span class="tval ce" id="ap-total">$0</span>
-    </div>
-  </div>
-  <!-- 待購清單 -->
-  <div class="card">
     <div style="font-size:13px;font-weight:600;color:var(--sea);margin-bottom:10px">🛒 待購清單</div>
     <div class="frow c2" style="margin-bottom:7px">
       <input class="inp" type="text" id="wl-name" placeholder="品項名稱">
@@ -453,7 +434,25 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       </div>
     </div>
   </div>
-</div>
+</div><div class="card">
+    <div style="font-size:13px;font-weight:600;color:var(--acc);margin-bottom:10px">✅ 已購清單</div>
+    <div class="frow c2" style="margin-bottom:7px">
+      <input class="inp" type="text" id="ap-name" placeholder="品項名稱">
+      <input class="inp" type="number" id="ap-amount" placeholder="金額" inputmode="numeric">
+    </div>
+    <div class="frow c2" style="margin-bottom:7px">
+      <input class="inp" type="date" id="ap-date">
+      <input class="inp" type="text" id="ap-note" placeholder="購買地點／備註">
+    </div>
+    <button class="btn primary" onclick="addAppliance()">＋ 新增已購</button>
+    <div id="ap-list" style="margin-top:10px"></div>
+    <div class="trow">
+      <span class="tlbl">大型家電總計</span>
+      <span class="tval ce" id="ap-total">$0</span>
+    </div>
+  </div>
+  <!-- 待購清單 -->
+  
 
 <!-- Costco -->
 <div id="tab-costco" class="tab">
@@ -671,7 +670,7 @@ function renderWhoIcon(addedBy){
 }
 function curMonth(){const n=new Date();return n.getFullYear()+'-'+(n.getMonth()+1).toString().padStart(2,'0');}
 function nowStr(){const n=new Date();return n.getFullYear()+'/'+(n.getMonth()+1).toString().padStart(2,'0')+'/'+n.getDate().toString().padStart(2,'0')+' '+n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');}
-function setSyncDot(s){const d=document.getElementById('sync');if(d)d.className='dot'+(s==='ok'?' ok':s==='err'?' err':'');}
+function setSyncDot(s){}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
 function go(id,btn){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
@@ -766,7 +765,7 @@ function clearCatFilter(){
   document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
   const a=document.getElementById('pill-all');if(a)a.classList.add('on');
 }
-function quickCat(cat){
+function quickCat(cat,noFocus=false){
   const sel=document.getElementById('d-cat');if(sel)sel.value=cat;
   document.querySelectorAll('.cat-sel-btn').forEach(b=>{
     b.classList.remove('on');
@@ -783,7 +782,7 @@ function quickCat(cat){
     btn.style.borderColor=st.borderColor;
     document.body.removeChild(tmp);
   }
-  const amtEl=document.getElementById('d-amount');if(amtEl)amtEl.focus();
+  if(!noFocus){const amtEl=document.getElementById('d-amount');if(amtEl)amtEl.focus();}
 }
 
 function autoDetectCat(val){
@@ -791,7 +790,7 @@ function autoDetectCat(val){
   const v=val.toLowerCase();
   for(const[cat,kws]of Object.entries(KEYWORD_CAT)){
     if(kws.some(k=>v.includes(k))){
-      quickCat(cat);return;
+      quickCat(cat,true);return;
     }
   }
 }
@@ -849,12 +848,19 @@ function renderDaily(skipChartRebuild=false){
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
           <button class="del" onclick="editDaily(${it.id})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="if(confirm('確定刪除此筆紀錄？'))delDaily(${it.id})">${TRASH}</button>
+          <button class="del" onclick="confirmDel('daily',${it.id})">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">本月尚無紀錄</div>';
   document.getElementById('d-total').textContent=fmt(raw.reduce((s,i)=>s+i.amount,0));
   updateOverview(skipChartRebuild);
+}
+
+function confirmDel(type,id){
+  if(!confirm('確定刪除？'))return;
+  if(type==='daily')delDaily(id);
+  else if(type==='appliance')delAppliance(id);
+  else if(type==='costco')delCostcoItem(id);
 }
 
 function delDaily(id){
@@ -1149,7 +1155,7 @@ function renderAppliances(){
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
           <button class="del" onclick="editAppliance(${it.id||i})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="if(confirm('確定刪除？'))delAppliance(${it.id||i})">${TRASH}</button>
+          <button class="del" onclick="confirmDel('appliance',${it.id||i})">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
@@ -1264,14 +1270,14 @@ function renderCostco(){
           return `<div class="item" id="cci-${it.id}">
             <div class="il">
               <div class="iname">${esc(it.name)}</div>
-              ${prev?`<div style="font-size:11px;color:var(--t3)">上次 ${fmt(prev.price)}</div>`:''}
+              ${prev?'<div style="font-size:11px;color:var(--t3)">上次 '+fmt(prev.price)+'</div>':''}
             </div>
             <div class="ir">
               <div class="iamt ce">${fmt(it.price)}${diffTag}</div>
               <div class="ibtn-row">
                 ${syncBtn}
                 <button class="del" onclick="editCostcoItem(${it.id})" style="color:#c8b898">${PENCIL}</button>
-                <button class="del" onclick="if(confirm('確定刪除？'))delCostcoItem(${it.id})">${TRASH}</button>
+                <button class="del" onclick="confirmDel('costco',${it.id})">${TRASH}</button>
               </div>
             </div>
           </div>`;
