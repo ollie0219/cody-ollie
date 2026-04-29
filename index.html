@@ -415,6 +415,7 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- 大型家電 -->
 <div id="tab-appliance" class="tab">
+  <!-- 待購清單 -->
   <div class="card">
     <div style="font-size:13px;font-weight:600;color:var(--sea);margin-bottom:10px">🛒 待購清單</div>
     <div class="frow c2" style="margin-bottom:7px">
@@ -434,7 +435,8 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       </div>
     </div>
   </div>
-</div><div class="card">
+  <!-- 已購清單 -->
+  <div class="card">
     <div style="font-size:13px;font-weight:600;color:var(--acc);margin-bottom:10px">✅ 已購清單</div>
     <div class="frow c2" style="margin-bottom:7px">
       <input class="inp" type="text" id="ap-name" placeholder="品項名稱">
@@ -451,8 +453,7 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       <span class="tval ce" id="ap-total">$0</span>
     </div>
   </div>
-  <!-- 待購清單 -->
-  
+</div>
 
 <!-- Costco -->
 <div id="tab-costco" class="tab">
@@ -847,8 +848,8 @@ function renderDaily(skipChartRebuild=false){
       <div class="ir">
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editDaily(${it.id})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="confirmDel('daily',${it.id})">${TRASH}</button>
+          <button class="del" onclick="editDaily('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del" onclick="confirmDel('daily','${it.id}')">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">本月尚無紀錄</div>';
@@ -898,25 +899,25 @@ function editDaily(id){
     <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰花的</div>
     <div class="frow c2" style="margin-bottom:7px">
       <div style="display:flex;gap:6px">
-        <button onclick="setEditWho(${id},'Ollie')" id="ewb-ollie-${id}"
+        <button onclick="setEditWho('${id}','Ollie')" id="ewb-ollie-${id}"
           style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${(found.addedBy==='Ollie'||found.who==='Ollie')?'var(--accl)':'var(--card)'};color:${(found.addedBy==='Ollie'||found.who==='Ollie')?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Ollie</button>
-        <button onclick="setEditWho(${id},'Cody')" id="ewb-cody-${id}"
+        <button onclick="setEditWho('${id}','Cody')" id="ewb-cody-${id}"
           style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${(found.addedBy==='Cody'||found.who==='Cody')?'var(--accl)':'var(--card)'};color:${(found.addedBy==='Cody'||found.who==='Cody')?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Cody</button>
-        <button onclick="setEditWho(${id},'')" id="ewb-both-${id}"
+        <button onclick="setEditWho('${id}','')" id="ewb-both-${id}"
           style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${(!found.addedBy||found.addedBy==='一起'||found.addedBy==='兩人')?'var(--accl)':'var(--card)'};color:${(!found.addedBy||found.addedBy==='一起'||found.addedBy==='兩人')?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">一起</button>
       </div>
     </div>
     <input type="hidden" id="edit-who-${id}" value="${found.addedBy||found.who||''}">
     <div style="font-size:11px;color:var(--t3);margin-bottom:4px;margin-top:2px">誰記帳</div>
     <div style="display:flex;gap:6px;margin-bottom:7px">
-      <button onclick="setEditRecorder(${id},'Ollie')" id="erb-ollie-${id}"
+      <button onclick="setEditRecorder('${id}','Ollie')" id="erb-ollie-${id}"
         style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${found.recordedBy==='Ollie'?'var(--accl)':'var(--card)'};color:${found.recordedBy==='Ollie'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Ollie</button>
-      <button onclick="setEditRecorder(${id},'Cody')" id="erb-cody-${id}"
+      <button onclick="setEditRecorder('${id}','Cody')" id="erb-cody-${id}"
         style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${found.recordedBy==='Cody'||!found.recordedBy?'var(--accl)':'var(--card)'};color:${found.recordedBy==='Cody'||!found.recordedBy?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Cody</button>
     </div>
     <input type="hidden" id="edit-recorder-${id}" value="${found.recordedBy||'Cody'}">
     <div class="frow c2">
-      <button class="btn primary" onclick="saveEditDaily(${id})">儲存</button>
+      <button class="btn primary" onclick="saveEditDaily('${id}')">儲存</button>
       <button class="btn" onclick="document.getElementById('edi-${id}').remove()">取消</button>
     </div>`;
   const el=document.getElementById('di-'+id);if(el)el.after(div);
@@ -1025,7 +1026,7 @@ function editFixed(id){
   </div>
   <input type="hidden" id="efxwho-${id}" value="${fw}">
   <div class="frow c2">
-    <button class="btn primary" onclick="saveEditFixed(${id})">儲存</button>
+    <button class="btn primary" onclick="saveEditFixed('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('efx-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('fxi-'+id);if(el)el.after(div);
@@ -1087,8 +1088,8 @@ function renderAnnual(){
       <div class="ir">
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editAnnual(${it.id})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delAnnual(${it.id})">${TRASH}</button>
+          <button class="del" onclick="editAnnual('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del" onclick="delAnnual('${it.id}')">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
@@ -1111,7 +1112,7 @@ function editAnnual(id){
     <input class="inp" type="number" id="ean-a-${id}" value="${it.amount}" inputmode="numeric" style="text-align:right">
   </div>
   <div class="frow c2">
-    <button class="btn primary" onclick="saveEditAnnual(${id})">儲存</button>
+    <button class="btn primary" onclick="saveEditAnnual('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('ean-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('ani-'+id);if(el)el.after(div);
@@ -1154,8 +1155,8 @@ function renderAppliances(){
       <div class="ir">
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editAppliance(${it.id||i})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="confirmDel('appliance',${it.id||i})">${TRASH}</button>
+          <button class="del" onclick="editAppliance('${it.id||i}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del" onclick="confirmDel('appliance','${it.id||i}')">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
@@ -1178,7 +1179,7 @@ function editAppliance(id){
     <input class="inp" type="text" id="eap-nt-${id}" value="${esc(it.note||'')}" placeholder="購買地點／備註">
   </div>
   <div class="frow c2">
-    <button class="btn primary" onclick="saveEditAppliance(${id})">儲存</button>
+    <button class="btn primary" onclick="saveEditAppliance('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('eap-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('api-'+id);if(el)el.after(div);
@@ -1266,7 +1267,7 @@ function renderCostco(){
           const prev=idx>0?hist[idx-1]:null;
           let diffTag='';
           if(prev){const diff=it.price-prev.price;if(diff>0)diffTag=`<span style="font-size:10px;color:var(--red);margin-left:3px">↑${diff}</span>`;else if(diff<0)diffTag=`<span style="font-size:10px;color:var(--mat);margin-left:3px">↓${Math.abs(diff)}</span>`;}
-          const syncBtn=it.synced?'<span style="font-size:10px;color:var(--mat)">✓</span>':`<button class="del" onclick="syncCostcoToDaily(${it.id})" style="color:#c8b898">${SYNC}</button>`;
+          const syncBtn=it.synced?'<span style="font-size:10px;color:var(--mat)">✓</span>':`<button class="del" onclick="syncCostcoToDaily('${it.id}')" style="color:#c8b898">${SYNC}</button>`;
           return `<div class="item" id="cci-${it.id}">
             <div class="il">
               <div class="iname">${esc(it.name)}</div>
@@ -1276,8 +1277,8 @@ function renderCostco(){
               <div class="iamt ce">${fmt(it.price)}${diffTag}</div>
               <div class="ibtn-row">
                 ${syncBtn}
-                <button class="del" onclick="editCostcoItem(${it.id})" style="color:#c8b898">${PENCIL}</button>
-                <button class="del" onclick="confirmDel('costco',${it.id})">${TRASH}</button>
+                <button class="del" onclick="editCostcoItem('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+                <button class="del" onclick="confirmDel('costco','${it.id}')">${TRASH}</button>
               </div>
             </div>
           </div>`;
@@ -1332,7 +1333,7 @@ function editCostcoItem(id){
     <input class="inp" type="date" id="ecc-d-${id}" value="${it.date}">
   </div>
   <div class="frow c2">
-    <button class="btn primary" onclick="saveEditCostco(${id})">儲存</button>
+    <button class="btn primary" onclick="saveEditCostco('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('ecc-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('cci-'+id);if(el)el.after(div);
@@ -1361,7 +1362,7 @@ function renderFeedback(){
   list.innerHTML=items.length?items.map(it=>`
     <div class="item" style="${it.done?'opacity:0.5':''}">
       <div style="display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0">
-        <button onclick="toggleDone(${it.id})"
+        <button onclick="toggleDone('${it.id}')"
           style="flex-shrink:0;margin-top:2px;width:20px;height:20px;border-radius:50%;border:2px solid ${it.done?'var(--mat)':'var(--border2)'};background:${it.done?'var(--mat)':'transparent'};cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px">
           ${it.done?'✓':''}
         </button>
@@ -1370,7 +1371,7 @@ function renderFeedback(){
           <div class="imeta">${it.time}${it.done?' · 已完成 '+it.doneAt:''}</div>
         </div>
       </div>
-      <button class="del" onclick="delFeedback(${it.id})" style="margin-left:8px;flex-shrink:0">${TRASH}</button>
+      <button class="del" onclick="delFeedback('${it.id}')" style="margin-left:8px;flex-shrink:0">${TRASH}</button>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">目前沒有留言</div>';
 }
 function toggleDone(id){const it=(D.feedback||[]).find(i=>i.id===id);if(!it)return;it.done=!it.done;it.doneAt=it.done?nowStr():'';save();renderFeedback();}
@@ -1827,7 +1828,7 @@ function renderWishlist(){
   const sorted=[...items].sort((a,b)=>a.done===b.done?0:a.done?1:-1);
   list.innerHTML=sorted.length?sorted.map(it=>`
     <div class="wl-item" id="wli-${it.id}" style="${it.done?'opacity:0.5':''}">
-      <button class="wl-check${it.done?' done':''}" onclick="toggleWishlist(${it.id})">${it.done?'✓':''}</button>
+      <button class="wl-check${it.done?' done':''}" onclick="toggleWishlist('${it.id}')">${it.done?'✓':''}</button>
       <div style="flex:1;min-width:0;margin:0 8px">
         <div style="font-size:14px;font-weight:500;${it.done?'text-decoration:line-through;color:var(--t3)':''}">${esc(it.name)}</div>
         ${it.note?`<div style="font-size:12px;color:var(--t3);margin-top:1px">${esc(it.note)}</div>`:''}
@@ -1835,8 +1836,8 @@ function renderWishlist(){
       <div style="text-align:right;flex-shrink:0">
         ${it.price?`<div style="font-size:13px;font-weight:600;color:var(--sea)">${fmt(it.price)}</div>`:'<div style="font-size:12px;color:var(--t3)">未估價</div>'}
         <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:3px">
-          <button class="del" onclick="editWishlist(${it.id})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delWishlist(${it.id})">${TRASH}</button>
+          <button class="del" onclick="editWishlist('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del" onclick="delWishlist('${it.id}')">${TRASH}</button>
         </div>
       </div>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">還沒有待購項目</div>';
@@ -1876,7 +1877,7 @@ function editWishlist(id){
     <input class="inp" type="text" id="ewlnt-${id}" value="${esc(it.note||'')}" placeholder="備註">
   </div>
   <div class="frow c2">
-    <button class="btn primary" onclick="saveEditWishlist(${id})">儲存</button>
+    <button class="btn primary" onclick="saveEditWishlist('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('ewl-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('wli-'+id);if(el)el.after(div);
