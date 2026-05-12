@@ -622,6 +622,14 @@ ref.on('value',snap=>{
     ['fixed_extra','annual_extra','feedback'].forEach(k=>{
       if(D[k]&&!Array.isArray(D[k]))D[k]=Object.values(D[k]);
     });
+    // Normalize all IDs to strings (old data used numeric Date.now() IDs)
+    ['fixed_extra','annual_extra','feedback','appliances','costco'].forEach(k=>{
+      if(Array.isArray(D[k]))D[k].forEach(it=>{if(it.id!==undefined)it.id=String(it.id);});
+    });
+    if(D.daily){Object.values(D.daily).forEach(arr=>{
+      if(Array.isArray(arr))arr.forEach(it=>{if(it.id!==undefined)it.id=String(it.id);});
+    });}
+    if(Array.isArray(D.wishlist))D.wishlist.forEach(it=>{if(it.id!==undefined)it.id=String(it.id);});
     if(!Array.isArray(D.appliances)||D.appliances.length===0)D.appliances=[...DEFAULT_APPLIANCES];
     else if(!Array.isArray(D.appliances))D.appliances=Object.values(D.appliances);
     if(!D.daily)D.daily={};
@@ -867,8 +875,8 @@ function confirmDel(type,id){
 function delDaily(id){
   let deleted=null;
   Object.keys(D.daily||{}).forEach(m=>{
-    const it=(D.daily[m]||[]).find(i=>i.id===id);
-    if(it){deleted=it;D.daily[m]=D.daily[m].filter(i=>i.id!==id);}
+    const it=(D.daily[m]||[]).find(i=>String(i.id)===String(id));
+    if(it){deleted=it;D.daily[m]=D.daily[m].filter(i=>String(i.id)!==String(id));}
   });
   if(deleted){
     // Clean up empty month arrays
@@ -880,7 +888,7 @@ function delDaily(id){
 
 function editDaily(id){
   let found=null;
-  Object.keys(D.daily||{}).forEach(m=>{const it=(D.daily[m]||[]).find(i=>i.id===id);if(it)found=it;});
+  Object.keys(D.daily||{}).forEach(m=>{const it=(D.daily[m]||[]).find(i=>String(i.id)===String(id));if(it)found=it;});
   if(!found)return;
   const ex=document.getElementById('edi-'+id);if(ex){ex.remove();return;}
   const cats=['餐飲','日用品','娛樂','交通','美妝保養','醫療健康','衣物','寵物','送禮','住宿','其他'];
@@ -950,7 +958,7 @@ function setEditRecorder(id,who){
 
 function saveEditDaily(id){
   Object.keys(D.daily||{}).forEach(m=>{
-    const it=(D.daily[m]||[]).find(i=>i.id===id);if(!it)return;
+    const it=(D.daily[m]||[]).find(i=>String(i.id)===String(id));if(!it)return;
     const c=document.getElementById('ec-cat-'+id);if(c)it.cat=c.value;
     const a=document.getElementById('ec-amt-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
     const n=document.getElementById('ec-note-'+id);if(n)it.note=n.value;
@@ -986,30 +994,31 @@ function renderFixed(){
   const extra=D.fixed_extra||[];
   const elist=document.getElementById('fixed-extra-list');
   if(elist)elist.innerHTML=extra.length?extra.map(it=>{
-    const spreadTag=it.fromAnnual?'<span style="font-size:10px;color:var(--t3)">(均攤)</span>':'';
-    return '<div class="item" id="fxi-'+it.id+'">'+
-      '<div class="il"><div class="iname">'+esc(it.name)+spreadTag+'</div>'+
-      '<div class="imeta">'+esc(it.who||'一起')+'</div></div>'+
-      '<div class="ir">'+
-      '<div class="iamt ce">'+fmt(it.amount)+'</div>'+
-      '<div class="ibtn-row">'+
-      '<button class="del" onclick="editFixed('+it.id+')" style="color:#c8b898">'+PENCIL+'</button>'+
-      '<button class="del" onclick="delFixed('+it.id+')">'+TRASH+'</button>'+
-      '</div></div></div>';
-  }).join(''):'';
-  const et=document.getElementById('fixed-extra-trow');if(et)et.style.display=extra.length?'flex':'none';
-  const etot=extra.reduce((s,i)=>s+i.amount,0);
-  const etel=document.getElementById('fixed-extra-total');if(etel)etel.textContent=fmt(etot);
-  const mtel=document.getElementById('fixed-month-total');if(mtel)mtel.textContent=fmt(etot);
-}
-
+    const spreadTag=it.fromAnnual?'<span style="font-size:10px;color:var(--t3);margin-left:4px">(均攤)</span>':'';
+    const who=it.who||'';
+    const whoTag=who==='Ollie'
+      ?'<span style="font-size:10px;font-weight:600;color:#fff;background:var(--acc);border-radius:10px;padding:1px 7px;margin-left:5px">Ollie</span>'
+      :who==='Cody'
+      ?'<span style="font-size:10px;font-weight:600;color:#fff;background:var(--pink);border-radius:10px;padding:1px 7px;margin-left:5px">Cody</span>'
+      :'<span style="font-size:10px;font-weight:600;color:var(--acc);background:var(--accl);border-radius:10px;padding:1px 7px;margin-left:5px">一起</span>';
+    return `<div class="item" id="fxi-${it.id}">
+      <div class="il">
+        <div class="iname">${esc(it.name)}${spreadTag}${whoTag}</div>
+        <div class="imeta">${fmt(it.amount)}/月</div>
+      </div>
+      <div class="ir">
+      <div class="ibtn-row">
+      <button class="del" onclick="editFixed('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+      <button class="del" onclick="delFixed('${it.id}')">${TRASH}</button>
+      </div></div></div>`;
+  }).join(''):'';}
 function delFixed(id){
-  D.fixed_extra=(D.fixed_extra||[]).filter(i=>i.id!==id&&i.fromAnnual!==id);
+  D.fixed_extra=(D.fixed_extra||[]).filter(i=>String(i.id)!==String(id)&&String(i.fromAnnual)!==String(id));
   save();renderFixed();updateOverview();
 }
 
 function editFixed(id){
-  const it=(D.fixed_extra||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.fixed_extra||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('efx-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='efx-'+id;
   div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
@@ -1044,7 +1053,7 @@ function setEfxWho(id,who){
 }
 
 function saveEditFixed(id){
-  const it=(D.fixed_extra||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.fixed_extra||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('efn-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const a=document.getElementById('efa-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
   const wh=document.getElementById('efxwho-'+id);if(wh)it.who=wh.value;
@@ -1097,13 +1106,13 @@ function renderAnnual(){
 }
 
 function delAnnual(id){
-  D.annual_extra=(D.annual_extra||[]).filter(i=>i.id!==id);
-  D.fixed_extra=(D.fixed_extra||[]).filter(i=>i.fromAnnual!==id);
+  D.annual_extra=(D.annual_extra||[]).filter(i=>String(i.id)!==String(id));
+  D.fixed_extra=(D.fixed_extra||[]).filter(i=>String(i.fromAnnual)!==String(id));
   save();renderAnnual();renderFixed();updateOverview();
 }
 
 function editAnnual(id){
-  const it=(D.annual_extra||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.annual_extra||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('ean-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='ean-'+id;
   div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
@@ -1119,7 +1128,7 @@ function editAnnual(id){
 }
 
 function saveEditAnnual(id){
-  const it=(D.annual_extra||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.annual_extra||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('ean-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const a=document.getElementById('ean-a-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
   const r=document.getElementById('ean-'+id);if(r)r.remove();
@@ -1163,10 +1172,10 @@ function renderAppliances(){
   document.getElementById('ap-total').textContent=fmt(raw.reduce((s,i)=>s+i.amount,0));
 }
 
-function delAppliance(id){D.appliances=D.appliances.filter(it=>it.id!==id);save();renderAppliances();}
+function delAppliance(id){D.appliances=D.appliances.filter(it=>String(it.id)!==String(id));save();renderAppliances();}
 
 function editAppliance(id){
-  const it=(D.appliances||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.appliances||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('eap-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='eap-'+id;
   div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
@@ -1186,7 +1195,7 @@ function editAppliance(id){
 }
 
 function saveEditAppliance(id){
-  const it=(D.appliances||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.appliances||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('eap-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const a=document.getElementById('eap-a-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
   const d=document.getElementById('eap-d-'+id);if(d&&d.value)it.date=d.value;
@@ -1300,7 +1309,7 @@ function toggleCcDay(id){
 }
 
 function syncCostcoToDaily(id){
-  const it=(D.costco||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const navBtns=document.querySelectorAll('.nav button');
   go('daily',navBtns[0]);
   const amtEl=document.getElementById('d-amount');
@@ -1318,10 +1327,10 @@ function syncCostcoToDaily(id){
   setTimeout(()=>{if(amtEl)amtEl.focus();},300);
 }
 
-function delCostcoItem(id){D.costco=(D.costco||[]).filter(i=>i.id!==id);save();renderCostco();}
+function delCostcoItem(id){D.costco=(D.costco||[]).filter(i=>String(i.id)!==String(id));save();renderCostco();}
 
 function editCostcoItem(id){
-  const it=(D.costco||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('ecc-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='ecc-'+id;
   div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
@@ -1340,7 +1349,7 @@ function editCostcoItem(id){
 }
 
 function saveEditCostco(id){
-  const it=(D.costco||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('ecc-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const p=document.getElementById('ecc-p-'+id);if(p){const v=parseFloat(p.value);if(v>0)it.price=v;}
   const d=document.getElementById('ecc-d-'+id);if(d&&d.value)it.date=d.value;
@@ -1374,8 +1383,8 @@ function renderFeedback(){
       <button class="del" onclick="delFeedback('${it.id}')" style="margin-left:8px;flex-shrink:0">${TRASH}</button>
     </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">目前沒有留言</div>';
 }
-function toggleDone(id){const it=(D.feedback||[]).find(i=>i.id===id);if(!it)return;it.done=!it.done;it.doneAt=it.done?nowStr():'';save();renderFeedback();}
-function delFeedback(id){D.feedback=(D.feedback||[]).filter(i=>i.id!==id);save();renderFeedback();}
+function toggleDone(id){const it=(D.feedback||[]).find(i=>String(i.id)===String(id));if(!it)return;it.done=!it.done;it.doneAt=it.done?nowStr():'';save();renderFeedback();}
+function delFeedback(id){D.feedback=(D.feedback||[]).filter(i=>String(i.id)!==String(id));save();renderFeedback();}
 
 // ── 目標/存款 ──
 function saveGoal(val){const v=parseFloat(val);if(!v||v<=0)return;D.goal=v;save();updateOverview();showToast('目標已更新');}
@@ -1853,19 +1862,19 @@ function clearDoneWishlist(){
 }
 
 function toggleWishlist(id){
-  const it=(D.wishlist||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;
   it.done=!it.done;
   if(it.done)showToast('已標記購買！');
   save();renderWishlist();
 }
 
 function delWishlist(id){
-  D.wishlist=(D.wishlist||[]).filter(i=>i.id!==id);
+  D.wishlist=(D.wishlist||[]).filter(i=>String(i.id)!==String(id));
   save();renderWishlist();
 }
 
 function editWishlist(id){
-  const it=(D.wishlist||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('ewl-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='ewl-'+id;
   div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:4px 0;border:1px solid var(--border)';
@@ -1884,7 +1893,7 @@ function editWishlist(id){
 }
 
 function saveEditWishlist(id){
-  const it=(D.wishlist||[]).find(i=>i.id===id);if(!it)return;
+  const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('ewln-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const p=document.getElementById('ewlp-'+id);if(p)it.price=parseFloat(p.value)||0;
   const nt=document.getElementById('ewlnt-'+id);if(nt)it.note=nt.value.trim();
