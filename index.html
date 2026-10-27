@@ -7,7 +7,6 @@
 <meta name="apple-mobile-web-app-title" content="C&O家計簿">
 <title>Cody ＆ Ollie</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
   --bg:#fdf6ec;--bg2:#f5ead8;--bg3:#eedfc8;
@@ -28,63 +27,63 @@ body.dark{
   --accl:#2a1f08;--pinkl:#2a1018;--seal:#0e1a28;--matl:#1a1a08;--rl:#2a0808;
   --green:#2ecc71;
 }
-html,body{background:var(--bg);font-family:"Noto Sans TC",sans-serif;color:var(--text);font-size:15px;overflow-x:hidden;transition:background 0.3s,color 0.3s}
+html,body{background:var(--bg);font-family:"Noto Sans TC",sans-serif;color:var(--text);font-size:14px;overflow-x:hidden;transition:background 0.3s,color 0.3s}
 .app{max-width:480px;margin:0 auto;min-height:100vh}
-.hdr{padding:48px 16px 10px;background:var(--card);border-bottom:1px solid var(--border)}
+.hdr{padding:48px 16px 8px;background:var(--card);border-bottom:1px solid var(--border)}
 .hdr-top{display:flex;justify-content:center;align-items:center;position:relative}
 .hdr-title{font-size:20px;font-weight:700;color:var(--acc)}
-.hdr-sub{font-size:12px;color:var(--t3);margin-top:2px}
-.dark-toggle{position:absolute;right:0;top:0;background:none;border:1px solid var(--border);border-radius:8px;padding:5px 8px;cursor:pointer;font-size:14px;color:var(--t2)}
+.hdr-sub{font-size:12px;color:var(--t3);margin-top:4px}
+.dark-toggle{position:absolute;right:0;top:0;background:none;border:1px solid var(--border);border-radius:8px;padding:4px 8px;cursor:pointer;font-size:14px;color:var(--t2)}
 .nav{display:flex;background:var(--card);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;padding:0 4px}
 .nav::-webkit-scrollbar{display:none}
-.nav button{flex-shrink:0;padding:11px 13px;border:none;background:none;color:var(--t3);font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;font-weight:400;transition:all 0.15s}
+.nav button{flex-shrink:0;padding:12px 12px;border:none;background:none;color:var(--t3);font-size:14px;font-family:inherit;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;font-weight:400;transition:all 0.15s}
 .nav button.on{color:var(--acc);border-bottom-color:var(--acc);font-weight:600}
-.tab{display:none;padding:14px 14px 80px}.tab.on{display:block}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 6px rgba(240,140,33,0.06)}
-.stitle{font-size:11px;font-weight:600;color:var(--t3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.tab{display:none;padding:12px 12px 80px}.tab.on{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin-bottom:12px;box-shadow:0 1px 6px rgba(240,140,33,0.06)}
+.stitle{font-size:12px;font-weight:600;color:var(--t3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
 .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bg3)}
 .row:last-child{border-bottom:none}
 .rl{font-size:14px;color:var(--t2)}.rv{font-size:14px;font-weight:500}
-.trow{display:flex;justify-content:space-between;align-items:center;padding-top:10px;margin-top:4px;border-top:1px solid var(--border2)}
+.trow{display:flex;justify-content:space-between;align-items:center;padding-top:8px;margin-top:4px;border-top:1px solid var(--border2)}
 .tlbl{font-size:14px;font-weight:500;color:var(--t2)}.tval{font-size:16px;font-weight:600}
 .ce{color:var(--acc)}.ca{color:var(--sea)}
 .sgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
-.sl{font-size:11px;color:var(--t3);margin-bottom:4px}.sv{font-size:18px;font-weight:600}
-.inp{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:14px;font-family:inherit;outline:none;-webkit-appearance:none;transition:border 0.15s}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:12px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.sl{font-size:12px;color:var(--t3);margin-bottom:4px}.sv{font-size:20px;font-weight:600}
+.inp{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:14px;font-family:inherit;outline:none;-webkit-appearance:none;transition:border 0.15s}
 .inp:focus{border-color:var(--acc)}
 select.inp{appearance:auto;-webkit-appearance:auto}
-.frow{display:grid;gap:7px;margin-bottom:7px}
+.frow{display:grid;gap:8px;margin-bottom:8px}
 .c1{grid-template-columns:1fr}.c2{grid-template-columns:1fr 1fr}
-.btn{padding:9px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;font-family:inherit;cursor:pointer;width:100%;font-weight:400;transition:all 0.15s}
+.btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;font-family:inherit;cursor:pointer;width:100%;font-weight:400;transition:all 0.15s}
 .btn.primary{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
 .btn.primary:active{background:var(--acc2)}
-.btn.sm{width:auto;padding:6px 14px;font-size:13px}
-.who-btns{display:flex;gap:6px;margin-bottom:7px}
-.who-btn{flex:1;padding:7px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:13px;font-family:inherit;cursor:pointer;text-align:center;transition:all 0.15s;font-weight:400}
+.btn.sm{width:auto;padding:4px 12px;font-size:14px}
+.who-btns{display:flex;gap:4px;margin-bottom:8px}
+.who-btn{flex:1;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:14px;font-family:inherit;cursor:pointer;text-align:center;transition:all 0.15s;font-weight:400}
 .who-btn.on{border-color:var(--acc);background:var(--accl);color:var(--acc);font-weight:600}
 .sinput{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:12px}
-.item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bg3)}
+.item{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--bg3)}
 .item:last-child{border-bottom:none}
-.il{flex:1;min-width:0}.iname{font-size:14px;font-weight:500}.imeta{font-size:12px;color:var(--t3);margin-top:2px}
-.ir{text-align:right;flex-shrink:0;margin-left:10px}.iamt{font-size:14px;font-weight:600}
-.ibtn-row{display:flex;gap:6px;justify-content:flex-end;margin-top:3px}
-.del{color:#c8b898;background:none;border:none;cursor:pointer;padding:2px;line-height:1;border-radius:4px}
+.il{flex:1;min-width:0}.iname{font-size:14px;font-weight:500}.imeta{font-size:12px;color:var(--t3);margin-top:4px}
+.ir{text-align:right;flex-shrink:0;margin-left:8px}.iamt{font-size:14px;font-weight:600}
+.ibtn-row{display:flex;gap:4px;justify-content:flex-end;margin-top:4px}
+.del{color:#c8b898;background:none;border:none;cursor:pointer;padding:4px;line-height:1;border-radius:4px}
 .del:active{color:var(--red)}
 @keyframes highlight-new{0%{background:rgba(240,140,33,0.22)}100%{background:transparent}}
 .item-new{animation:highlight-new 2.5s ease-out forwards;border-radius:6px}
-.badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:500;vertical-align:middle;border:1px solid transparent}
+.badge{display:inline-block;padding:4px 8px;border-radius:10px;font-size:12px;font-weight:500;vertical-align:middle;border:1px solid transparent}
 .bg{background:var(--accl);color:var(--acc)}.ba{background:var(--matl);color:var(--mat)}.bb{background:var(--seal);color:var(--sea)}
 .sbar{height:6px;border-radius:3px;background:var(--bg3);margin-top:4px;overflow:hidden}
 .sfill{height:100%;border-radius:3px;background:var(--acc)}
-.mnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;padding:0 2px}
-.mnav-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:5px 12px;cursor:pointer;font-size:16px;color:var(--t2);font-family:inherit}
+.mnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;padding:0 4px}
+.mnav-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:4px 12px;cursor:pointer;font-size:16px;color:var(--t2);font-family:inherit}
 .mnav-lbl{font-size:14px;font-weight:500;color:var(--t2)}
 .prog-track{height:10px;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
 .prog-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:200% 100%;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);animation:shimmer 3s infinite linear}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes breathe{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
-.pill{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;font-weight:400}
+.pill{flex-shrink:0;padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;font-weight:400}
 .pill.on{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:500}
 #cat-pills::-webkit-scrollbar{display:none}
 .cat-餐飲{background:#FEE9D1;color:#D4622A;border-color:#F5C4A0}
@@ -99,43 +98,152 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 .cat-住宿{background:#E0F7FA;color:#006064;border-color:#80DEEA}
 .cat-其他{background:#F5F5F5;color:#616161;border-color:#E0E0E0}
 #cat-select-row::-webkit-scrollbar{display:none}
-.cat-sel-btn{flex-shrink:0;padding:6px 11px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;font-weight:400}
+.cat-sel-btn{flex-shrink:0;padding:4px 12px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--t2);font-size:12px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:all 0.15s;font-weight:400}
 .cat-sel-btn.on{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:600}
-.rpg-card{background:linear-gradient(135deg,var(--card) 0%,var(--accl) 100%);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(240,140,33,0.1)}
+.rpg-card{background:linear-gradient(135deg,var(--card) 0%,var(--accl) 100%);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:8px;box-shadow:0 2px 8px rgba(240,140,33,0.1)}
 .rpg-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--pink));display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 2px 8px rgba(240,140,33,0.3)}
 .rpg-xpbar-track{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:4px 0}
 .rpg-xpbar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--acc),var(--acc2));background-size:200% 100%;transition:width 0.8s ease;animation:shimmer 2s infinite linear}
-.rpg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.bubble{font-size:11px;background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:4px 8px;margin-top:4px;color:var(--t2);display:none}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:9px 18px;border-radius:20px;font-size:13px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
+.rpg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.bubble{font-size:12px;background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:4px 8px;margin-top:4px;color:var(--t2);display:none}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:8px 16px;border-radius:20px;font-size:14px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
 .toast.show{opacity:1;pointer-events:auto}
 .firework{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
 .milestone-card{border-radius:10px;padding:8px 4px;text-align:center;border:1.5px solid var(--border);background:var(--card);transition:all 0.3s}
 .milestone-card.unlocked{border-color:var(--mat);background:var(--matl)}
 .milestone-card.next{border-color:var(--acc);background:var(--accl);animation:pulse-border 1.8s infinite}
-.milestone-card .m-icon{font-size:20px;display:block;margin-bottom:2px}
-.milestone-card .m-label{font-size:9px;color:var(--t3);font-weight:500}
+.milestone-card .m-icon{font-size:20px;display:block;margin-bottom:4px}
+.milestone-card .m-label{font-size:12px;color:var(--t3);font-weight:500}
 .milestone-card.unlocked .m-label{color:var(--mat);font-weight:600}
 .milestone-card.next .m-label{color:var(--acc);font-weight:600}
-.milestone-card .m-pct{font-size:9px;color:var(--t3)}
+.milestone-card .m-pct{font-size:12px;color:var(--t3)}
 .milestone-card.unlocked .m-pct{color:var(--mat)}
 @keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(240,140,33,0.4)}50%{box-shadow:0 0 0 4px rgba(240,140,33,0)}}
-.cmp-row{margin-bottom:10px}
-.cmp-label{display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-bottom:3px}
-.title-item{padding:8px 10px;border-radius:8px;background:var(--bg2);border:1px solid var(--border)}
+.cmp-row{margin-bottom:8px}
+.cmp-label{display:flex;justify-content:space-between;font-size:12px;color:var(--t3);margin-bottom:4px}
+.title-item{padding:8px 8px;border-radius:8px;background:var(--bg2);border:1px solid var(--border)}
 .title-item.active{background:var(--accl);border-color:var(--acc)}
-.title-item .ti-lv{font-size:10px;color:var(--t3);margin-bottom:2px}
+.title-item .ti-lv{font-size:12px;color:var(--t3);margin-bottom:4px}
 .title-item .ti-name{font-size:12px;font-weight:500}
 .title-item.active .ti-lv{color:var(--acc)}
 .title-item.active .ti-name{color:var(--acc);font-weight:700}
-.wl-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bg3)}
+.wl-item{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--bg3)}
 .wl-item:last-child{border-bottom:none}
-.wl-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--sea);background:transparent;cursor:pointer;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;transition:all 0.2s}
+.wl-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--sea);background:transparent;cursor:pointer;flex-shrink:0;margin-top:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;transition:all 0.2s}
 .wl-check.done{background:var(--sea);border-color:var(--sea)}
-.sal-badge-o{background:var(--accl);color:var(--acc);border:1px solid var(--acc);border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600;display:inline-block}
-.sal-badge-c{background:var(--pinkl);color:var(--pink);border:1px solid var(--pink);border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600;display:inline-block}
-.offline-bar{display:none;background:var(--red);color:#fff;font-size:12px;text-align:center;padding:6px;position:sticky;top:0;z-index:100}
+.sal-badge-o{background:var(--accl);color:var(--acc);border:1px solid var(--acc);border-radius:10px;padding:4px 8px;font-size:12px;font-weight:600;display:inline-block}
+.sal-badge-c{background:var(--pinkl);color:var(--pink);border:1px solid var(--pink);border-radius:10px;padding:4px 8px;font-size:12px;font-weight:600;display:inline-block}
+.offline-bar{display:none;background:var(--red);color:#fff;font-size:12px;text-align:center;padding:4px;position:sticky;top:0;z-index:100}
 .offline-bar.show{display:block}
+.range-actions .btn{width:auto;flex:1 1 40%;padding:8px;font-size:14px}
+#bill-list .ir{max-width:125px}#bill-list .btn{font-size:12px;padding:4px;margin-top:4px}
+#habit-people .btn{font-size:12px;padding:8px 4px}#habit-people .rpg-card{min-width:0}
+#tab-fixed label,#tab-overview label{min-width:0;font-size:12px;color:var(--t2)}
+#tab-fixed input[type=month],#tab-overview input[type=date]{min-width:0;max-width:100%}
+#tab-rpg .btn:disabled,#tab-fixed .btn:disabled{opacity:.55;cursor:default}
+#tab-rpg{--game-ink:#514b60;--game-muted:#8d8295;--game-accent:#987f9f;--game-paper:#fffaf2;--game-line:#eadfe3;color:var(--game-ink)}
+.game-world{position:relative;background:var(--game-paper);border:1px solid var(--game-line);border-radius:24px;overflow:hidden;box-shadow:0 8px 28px #6f56630b;margin-bottom:12px}
+.game-heading{padding:24px 24px 4px;display:flex;align-items:center;justify-content:space-between;gap:8px}.game-eyebrow{font-size:12px;letter-spacing:2.2px;color:#aa8990;font-weight:600}.game-heading h2{font-size:20px;font-weight:600;margin:8px 0 0;letter-spacing:.4px}.game-stamp{font-size:12px;padding:8px 8px;border:1px solid #d7c5cf;border-radius:8px;white-space:nowrap;transform:rotate(5deg);color:#997f94}
+.game-scene-wrap{position:relative;margin:0 8px}.home-scene{width:100%;height:auto;display:block}.sky-picker{position:absolute;top:16px;right:12px;display:flex;background:#ffffffb3;border:1px solid #fff9;border-radius:20px;padding:4px;gap:4px}.sky-picker button{border:0;border-radius:50%;width:29px;height:29px;background:transparent;font-size:20px;color:#8d8098;cursor:pointer}.sky-picker .selected{background:#9484a1;color:white}.scene-caption{position:absolute;bottom:6%;width:100%;text-align:center;font-size:12px;color:#fff;text-shadow:0 1px 4px #3c4e58}
+.scene-hit,.scene-character{cursor:pointer;outline:none}.scene-hit:focus-visible,.scene-character:focus-visible{filter:drop-shadow(0 0 4px #fff)}.scene-hit:hover{filter:brightness(1.07)}.scene-character{transform-box:fill-box;transform-origin:center bottom;animation:character-breathe 3.5s ease-in-out infinite}.scene-character:hover{filter:drop-shadow(0 0 5px #fff8)}.scene-character.is-bouncing{animation:character-hop .6s ease-in-out}.scene-cloud{animation:cloud-drift 9s ease-in-out infinite}.twinkle{animation:star-twinkle 3s infinite alternate}
+.game-chapter{padding:8px 24px 16px}.chapter-top{display:flex;justify-content:space-between;align-items:center}.chapter-top small{font-size:12px;color:var(--game-muted)}.chapter-top h3{font-size:16px;margin:4px 0 12px}.chapter-top>strong{font-size:28px;font-weight:500;color:#967894}.chapter-top>strong small{font-size:14px;margin-left:4px}.game-track{height:10px;border-radius:20px;background:#eee5e9;overflow:hidden}.game-track span{height:100%;display:block;border-radius:20px;background:linear-gradient(90deg,#cfafad,#9a85a8);transition:width .7s ease}.game-track.thin{height:5px}
+.milestone-road{display:grid;grid-template-columns:repeat(4,1fr);margin:12px 0 8px;gap:4px}.milestone-road button{font-family:inherit;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:4px;color:#b3a8b4;font-size:12px;cursor:pointer}.milestone-road button>span{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#eee9eb;font-size:16px}.milestone-road button small{font-size:12px}.milestone-road button.done{color:#7b8f7b}.milestone-road button.done>span{background:#dce7d7;color:#758c71}.chapter-bottom{display:flex;justify-content:space-between;font-size:12px;color:var(--game-muted);margin-top:12px}
+.game-panel{padding:16px;background:var(--game-paper);border:1px solid var(--game-line);border-radius:20px;margin-bottom:12px}.game-person-switch{display:flex;background:#eee7eb;border-radius:13px;padding:4px;gap:4px;margin-bottom:16px}.game-person-switch button{flex:1;border:0;border-radius:10px;background:transparent;padding:8px 8px;cursor:pointer;color:#95899a;font-family:inherit;font-size:14px}.game-person-switch button.selected{background:#fffaf5;box-shadow:0 2px 5px #6d586112;color:#625369}.game-person-switch button small{font-size:12px;margin-left:8px;color:#a391a7}.game-level{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px}.game-level strong{font-size:14px}.game-level span,.game-level-note{font-size:12px;color:var(--game-muted)}.game-level-note{margin-top:8px;line-height:1.6}.mission-title{font-size:14px;font-weight:600;margin:24px 0 12px;display:flex;justify-content:space-between;gap:4px}.mission-title span{font-size:12px;font-weight:400;color:var(--game-muted)}.game-panel>.mission-title:first-child{margin-top:0}
+.mission{width:100%;display:flex;align-items:center;text-align:left;gap:12px;font-family:inherit;border:1px solid #e8dfe6;border-radius:13px;background:#fffdf8;padding:12px 8px;margin-top:8px;color:var(--game-ink);cursor:pointer;transition:transform .15s,box-shadow .15s}.mission:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 5px 15px #75577b14}.mission-icon{background:#efe5eb;width:34px;height:34px;display:grid;place-items:center;border-radius:11px;font-size:20px;color:#9c849d;flex-shrink:0}.mission>span:nth-child(2){flex:1;min-width:0}.mission b{font-size:12px;font-weight:500;display:block}.mission small{font-size:12px;color:var(--game-muted);display:block;line-height:1.5;margin-top:4px}.mission>strong{font-size:16px;color:#9b7d98;text-align:right;white-space:nowrap}.mission>strong small{font-size:12px;margin-top:0}.mission.complete{background:#f0f3ea;border-color:#e2e8d8}.mission.complete .mission-icon{background:#dfe8d7;color:#7d9477}.mission.complete>strong{font-size:12px;color:#819679}.team-quest{margin-top:12px;background:#f4eae5;border:1px dashed #d5bdb5;border-radius:12px;padding:12px;font-size:12px}.team-quest b{float:right;color:#ad8f88}.team-quest div{font-size:12px;line-height:1.6;color:#a08b86;margin-top:4px}
+.chapter-nav{display:flex;align-items:center;gap:4px}.chapter-nav>button{border:0;background:transparent;font-size:27px;color:#a894aa;padding:4px;cursor:pointer}.chapter-nav button:disabled{opacity:.25;cursor:default}.chapter-list{display:flex;gap:4px;flex:1;min-width:0}.chapter-list button{flex:1;min-width:0;border:1px solid #e7dce4;background:#fffcf8;border-radius:12px;padding:8px 4px;color:#b09dac;font-family:inherit;cursor:pointer}.chapter-list button.selected{border-color:#bba3bc;background:#f0e6ed;color:#8c7290}.chapter-list span{display:block;font-size:20px}.chapter-list b{display:block;font-size:14px;margin:4px 0}.chapter-list small{font-size:12px;display:block}.back-current{width:100%;padding:8px;margin-top:12px;border:0;background:#ede4eb;color:#8d7290;border-radius:9px;cursor:pointer;font-family:inherit}.game-rules{padding:8px 8px;color:#9a8c9b;font-size:12px;line-height:1.8}.game-rules summary{cursor:pointer}.game-feedback{position:sticky;bottom:85px;z-index:4;border-radius:14px;background:#514b60ed;color:#fff7ec;padding:0 16px;max-height:0;overflow:hidden;opacity:0;font-size:12px;line-height:1.7;transition:opacity .2s,padding .2s}.game-feedback.visible{max-height:110px;padding:12px 16px;margin-bottom:12px;opacity:1;box-shadow:0 5px 20px #4c3e6022}
+.game-burst{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:5}.game-burst i{position:absolute;top:15%;left:var(--x);width:7px;height:11px;border-radius:2px;animation:confetti-fall 1.5s ease-out forwards;animation-delay:calc(var(--i)*15ms)}
+@keyframes character-breathe{50%{transform:translateY(-3px) rotate(2deg)}}@keyframes character-hop{30%{transform:translateY(-16px) rotate(-7deg)}65%{transform:translateY(-8px) rotate(5deg)}}@keyframes cloud-drift{50%{transform:translateX(20px)}}@keyframes star-twinkle{to{opacity:.3}}@keyframes confetti-fall{0%{opacity:0;transform:translateY(-20px) rotate(0)}20%{opacity:1}100%{opacity:0;transform:translateY(320px) rotate(var(--rot))}}
+body.dark #tab-rpg{--game-ink:#e9dce8;--game-muted:#b4a2b7;--game-paper:#302c36;--game-line:#514554}body.dark .game-person-switch{background:#423746}body.dark .game-person-switch button.selected{background:#615066;color:#fff1e7}body.dark .mission{background:#3b3341;border-color:#57475c}body.dark .mission.complete{background:#384237}body.dark .team-quest{background:#493b3f}body.dark .chapter-list button{background:#3c3442;border-color:#5d4b64}body.dark .chapter-list button.selected{background:#69546d;color:#fff1ea}body.dark .game-track{background:#554658}
+@media(max-width:360px){.game-heading{padding:16px 16px 4px}.game-heading h2{font-size:16px}.game-panel{padding:12px}.game-chapter{padding:8px 16px 16px}.mission{gap:8px}.game-stamp{font-size:12px}}
+@media(prefers-reduced-motion:reduce){#tab-rpg *,#tab-rpg *::before,#tab-rpg *::after{animation:none!important;transition:none!important}}
+
+/* Approved V4 readability and feedback refinements */
+.field-wrap{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.field-wrap>.inp{width:100%;box-sizing:border-box}.field-label{font-size:14px;font-weight:600;color:var(--t2);line-height:1.4}.field-error{font-size:14px;line-height:1.5;color:#ad3434;text-align:left}.field-error:empty{display:none}.inp[aria-invalid=true]{border-color:#bb4747;box-shadow:0 0 0 2px #bb474715}.inp{font-size:16px}.imeta,.detail-meta,.summary-note{font-size:14px;line-height:1.6;color:var(--t2)}.detail-meta{display:block}.ibtn-row{gap:8px;flex-wrap:wrap;justify-content:flex-end}.del{min-width:40px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px}.edit-action{color:#416e97!important;background:#edf3f8}.delete-action{color:#ad4b4b;background:#fbefed}.del:focus-visible,.mission:focus-visible{outline:2px solid var(--acc);outline-offset:3px}.overview-people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.person-total{border:1px solid var(--border);border-radius:14px;padding:12px 4px;background:var(--card);color:var(--text);font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:8px;align-items:center}.person-total strong{font-size:clamp(14px,4vw,21px);overflow-wrap:anywhere}.person-total span{font-size:14px}.yearly-owners{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--t2);margin:4px 0 12px}.yearly-month{margin-top:12px}.goal-milestones{height:auto!important;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:12px}.goal-step{display:flex;flex-direction:column;gap:4px;text-align:center;font-size:12px;color:var(--t2)}.goal-step>span{align-self:center;background:var(--bg);border-radius:99px;padding:4px 8px}.goal-step.done>span{background:#e4eddf;color:#47713a}.goal-step small{font-size:12px;overflow-wrap:anywhere}.purchase-overlay{position:fixed;inset:0;background:#211a145c;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}.purchase-overlay[hidden]{display:none}.purchase-sheet{width:100%;max-width:420px;max-height:85dvh;overflow:auto;padding:24px;background:var(--card,#fff);border-radius:22px;box-sizing:border-box;box-shadow:0 20px 80px #0003}.purchase-sheet .field-wrap{margin:12px 0}.purchase-sheet h3{margin:0 0 12px}.purchase-sheet .purchase-actions{display:flex;gap:12px;margin-top:16px}.purchase-sheet button{min-height:44px}.feedback-toggle{min-height:40px;border:1px solid var(--border);border-radius:10px;padding:8px 12px;background:var(--bg);color:var(--text);font:inherit}#feedback-done summary{padding:12px 0;cursor:pointer;font-size:14px;color:var(--t2)}.scene-talk{position:absolute;z-index:6;top:12%;left:8%;max-width:65%;background:#fffdf7;color:#514135;border:1px solid #decbb4;border-radius:16px 16px 16px 3px;box-shadow:0 4px 15px #40301516;padding:12px 16px;font-size:14px;line-height:1.5;pointer-events:none}.scene-talk[data-person=cody]{left:auto;right:8%;border-radius:16px 16px 3px 16px}.scene-talk[hidden]{display:none}.mission-reward{margin:-2px 0 12px;padding:8px 12px;border-radius:12px;background:#e9f1e3;color:#406036;font-size:14px;line-height:1.5;animation:rewardIn .3s ease-out}.draft-notice{font-size:14px;line-height:1.6;background:#f8f1df;border-radius:12px;padding:12px;margin-bottom:12px}.record-highlight{outline:2px solid var(--acc);outline-offset:4px;border-radius:12px}@keyframes rewardIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.mission-reward{animation:none}}
+
+
+.person-total small{font-size:12px;color:var(--t2)}.costco-status{min-height:40px;border:1px solid var(--border);border-radius:10px;background:var(--bg2);color:var(--text);padding:8px;font:inherit;font-size:14px;cursor:pointer}.purchase-sheet .field{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--t2);margin:12px 0}.purchase-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.purchase-heading button{width:44px;flex-shrink:0}.who-btn{min-height:40px}.imeta{color:var(--t2)!important;font-size:14px!important}
+
+/* Shared visual system: all tabs and generated forms. */
+:root{--font-ui:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;--t2:#71614d;--t3:#7d6b55;--r:16px;--rs:12px}
+body.dark{--t2:#cfbea4;--t3:#bba98d}
+html,body{font-family:var(--font-ui);font-size:14px;line-height:1.6}
+button,input,select,textarea{font-family:var(--font-ui)!important;letter-spacing:normal;line-height:1.5}
+button{font-weight:500}input,select,textarea{font-size:16px!important}
+strong,b{font-weight:600}h2,h3{line-height:1.4;font-weight:600}
+.hdr{padding:32px 16px 16px}.hdr-title{font-size:20px;line-height:1.4}.hdr-sub{margin-top:4px;font-size:12px}
+.nav button{font-size:14px;padding:12px;min-height:48px;color:var(--t2)}
+.tab{padding:16px 16px 80px}.card,.rpg-card,.game-panel{padding:16px;margin-bottom:16px;border-radius:var(--r)}
+.stitle{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--t2);margin-bottom:12px;line-height:1.5}
+.row,.item,.wl-item{padding:12px 0;gap:12px}.iname,.rl,.rv,.iamt{font-size:14px;line-height:1.6}
+.imeta,.sl,.detail-meta,.summary-note,.cmp-label{font-size:12px!important;line-height:1.6;color:var(--t2)!important}
+.imeta{margin-top:4px}.sv,.tval{font-size:20px;line-height:1.4;font-variant-numeric:tabular-nums}
+.trow{padding-top:12px;margin-top:8px}.sgrid,.rpg-grid{gap:12px;margin-bottom:16px}.stat{padding:12px;border-radius:12px}
+.frow{gap:12px;margin-bottom:12px}.field-wrap{gap:4px}.field-label,.purchase-sheet .field{font-size:12px;font-weight:600;line-height:1.5}.field-error{font-size:12px;line-height:1.5}
+.inp{min-height:44px;padding:8px 12px;border-radius:8px}.inp::placeholder{color:var(--t3);opacity:1}.inp:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btn,.who-btn,.mnav-btn,.feedback-toggle,.costco-status,.back-current{min-height:44px;border-radius:8px;font-size:14px;padding:8px 12px;line-height:1.5}
+.btn.sm{font-size:14px;padding:8px 12px}.who-btns{gap:8px;margin-bottom:12px}.sinput{padding:16px;margin-bottom:16px}
+.pill,.cat-sel-btn{min-height:36px;padding:8px 12px;font-size:12px}.badge{font-size:12px;padding:0 8px;line-height:1.7}
+.ibtn-row{gap:8px;margin-top:8px}.del{min-width:44px;min-height:44px;border-radius:8px}.edit-action{color:#416e97!important}.delete-action{color:#ad4b4b}
+body.dark .edit-action{background:#243849;color:#acd4f5!important}body.dark .delete-action{background:#442b29;color:#f4b5ad}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.person-total{padding:12px 8px;gap:8px;border-radius:12px}.person-total strong{font-size:20px;font-variant-numeric:tabular-nums}.person-total span,.person-total small{font-size:12px}
+.overview-people{gap:8px;margin:16px 0}.yearly-owners{gap:8px 16px;font-size:12px}.goal-step,.goal-step small{font-size:12px}.goal-step{gap:8px}
+.purchase-sheet{padding:24px;border-radius:16px}.purchase-sheet .field-wrap{margin:16px 0}.purchase-sheet h3{font-size:20px}.purchase-actions{gap:12px;margin-top:16px}
+#tab-rpg{--game-ink:var(--text);--game-muted:var(--t2);--game-paper:var(--card);--game-line:var(--border)}
+.game-world{border-radius:16px;margin-bottom:16px}.game-heading{padding:16px 16px 8px}.game-heading h2{font-size:20px;margin:8px 0 0;letter-spacing:normal}.game-eyebrow{font-size:12px;letter-spacing:.04em;color:var(--t2)}.game-stamp{font-size:12px;transform:none;padding:4px 8px;color:var(--t2)}
+.game-chapter{padding:8px 16px 16px}.chapter-top h3{font-size:16px;margin:4px 0 12px}.chapter-top small,.chapter-bottom{font-size:12px}.chapter-bottom{gap:12px;flex-wrap:wrap}.chapter-top>strong{font-size:28px}
+.game-level strong,.mission-title,.mission b{font-size:14px;font-weight:600}.game-level span,.game-level-note,.mission small,.mission-title span,.mission>strong small,.game-person-switch button small,.chapter-list small,.milestone-road button small{font-size:12px;color:var(--game-muted)}
+.game-person-switch{margin-bottom:16px}.game-person-switch button{min-height:44px;font-size:14px}.game-person-switch button small{display:block;margin-left:0}
+.mission-title{margin:24px 0 12px;align-items:center;flex-wrap:wrap}.mission{gap:12px;padding:12px;margin-top:12px;border-radius:12px}.mission small{line-height:1.6}.mission>strong{font-size:20px}.mission.complete>strong{font-size:12px;color:#527147}.mission:disabled{opacity:1!important;cursor:default}
+.milestone-road{gap:8px;margin:16px 0 12px}.milestone-road button{font-size:12px;min-height:44px;color:var(--t2)}.milestone-road button.done{color:#527147}.chapter-list{gap:8px}.chapter-list button{padding:12px 4px;color:var(--t2)}.chapter-list b{font-size:14px}.chapter-nav>button{min-width:32px;min-height:44px}
+.team-quest,.team-quest div,.game-rules{font-size:12px;line-height:1.6;color:var(--t2)}.team-quest{padding:12px;margin-top:16px}.team-quest b{color:var(--text)}.team-quest div{margin-top:8px}.game-rules{padding:12px 8px}.game-feedback,.scene-talk,.mission-reward{font-size:14px;line-height:1.6;border-radius:12px}
+.toast{white-space:normal;font-size:14px;line-height:1.5;padding:12px 16px}.m-label,.m-pct,.ti-lv{font-size:12px!important}
+@media(max-width:360px){.tab{padding-left:12px;padding-right:12px}.person-total strong{font-size:16px}.mission{gap:8px}.game-heading{gap:8px}.game-heading h2{font-size:20px}.game-stamp{white-space:normal;max-width:88px}.goal-step small{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Range controls: keep keyboard focus inside the button boundary. */
+.range-actions{gap:8px!important}
+.range-actions .btn:focus-visible{outline:2px solid var(--acc);outline-offset:-2px;border-color:var(--acc)}
+
+/* Mobile input: stable controls and visible, separate pressed/selected states. */
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-padding-bottom:100px}
+#daily-entry input,#daily-entry select{font-size:16px!important;min-width:0}
+#d-amount{font-size:24px!important}
+.batch-context{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-bottom:16px;align-items:end}
+.batch-context>div{margin:0!important}.batch-context label{display:block}.batch-context input{margin-top:4px;width:100%;min-width:0}
+#daily-more{margin:12px 0}#daily-more summary{font-size:14px;color:var(--t2);padding:8px 0;cursor:pointer}#daily-more input{margin-top:4px}
+.entry-actions{display:flex;gap:8px;background:var(--bg2);padding:8px 0;align-items:center}.entry-actions .btn{flex:1;min-height:48px}.entry-actions .primary{font-size:24px;font-weight:500;padding:4px 12px}
+#daily-entry.keyboard-open{padding-bottom:88px}#daily-entry.keyboard-open .entry-actions{position:fixed;z-index:90;padding:8px;border:1px solid var(--border);border-radius:12px;box-shadow:0 4px 20px #0002}
+#batch-receipt{display:flex;align-items:center;gap:8px;margin-top:12px;padding:12px;background:var(--card);border-radius:12px;font-size:12px;line-height:1.6}#batch-receipt span{flex:1}#batch-receipt .btn{flex-shrink:0}
+.overview-modes{display:flex;gap:8px;margin-bottom:16px}.overview-modes .selected{background:var(--accl);color:var(--text);border-color:var(--acc);font-weight:600;box-shadow:inset 0 -2px var(--acc)}
+#overview-controls .mnav{margin-bottom:12px}#range-caption{margin-top:12px}#ov-custom,#ov-year-nav{margin:12px 0}
+button{touch-action:manipulation;transition:background-color .12s,box-shadow .12s,transform .12s}
+button:not(:disabled):active{filter:brightness(.9);transform:translateY(1px);box-shadow:inset 0 0 0 2px var(--border2)}button:disabled{opacity:.45;cursor:default}
+@media(hover:hover) and (pointer:fine){.btn:not(:disabled):hover,.who-btn:hover,.mnav-btn:not(:disabled):hover,.pill:hover,.cat-sel-btn:hover{filter:brightness(.96);border-color:var(--acc)}.del:hover{filter:brightness(.9)}}
+#year-summary>.sgrid:first-of-type{display:block}#year-summary>.sgrid:first-of-type>.stat:first-child{display:none}#year-summary>.sgrid:nth-of-type(3){display:none}
+
+
+#year-summary .year-primary{display:block}#year-summary .year-primary>.stat:first-child{display:none}
+@media(max-width:480px){.goal-milestones{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.goal-step small{white-space:nowrap}}
+
+/* Compact record lists shared across tabs and detail dialogs. */
+.item,.wl-item{padding:8px 0;gap:8px}
+.row{padding:8px 0;gap:8px}
+.item .iname,.item .iamt,.wl-item .iname,.wl-item .iamt{line-height:1.4}
+.item .imeta,.wl-item .imeta{margin-top:4px;line-height:1.4}
+.item .ir,.wl-item .ir{margin-left:8px}
+.ibtn-row{gap:4px;margin-top:2px;align-items:center}
+.item .del,.wl-item .del{position:relative;min-width:36px;width:36px;min-height:28px;height:28px;padding:4px;border-radius:4px;background:transparent!important;box-shadow:none;flex-shrink:0}
+.item .del::after,.wl-item .del::after{content:"";position:absolute;inset:-8px 0}
+.item .del svg,.wl-item .del svg{width:14px;height:14px}
+.item .edit-action,.wl-item .edit-action{color:var(--t3)!important}
+.item .delete-action,.wl-item .delete-action{color:var(--t3)}
+.item .delete-action:active,.wl-item .delete-action:active{color:var(--red)}
+.ibtn-row .btn.sm,.ibtn-row .costco-status{min-height:32px;padding:4px 8px;font-size:12px;border-radius:6px}
+#fb-list .feedback-toggle{min-height:32px;min-width:32px;padding:4px 8px}
+@media(hover:hover) and (pointer:fine){.item .edit-action:hover,.wl-item .edit-action:hover{color:var(--sea)!important}.item .delete-action:hover,.wl-item .delete-action:hover{color:var(--red)}}
+
 </style>
 </head>
 <body>
@@ -170,52 +278,44 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- 日常開銷 -->
 <div id="tab-daily" class="tab on">
-  <div class="sinput">
-    <div class="frow c1" style="margin-bottom:7px">
-      <input class="inp" type="number" id="d-amount" placeholder="金額" inputmode="decimal" min="0" style="font-size:18px;font-weight:600;text-align:center;padding:12px" onkeydown="if(event.key==='Enter')addDaily()">
-    </div>
-    <div style="display:flex;gap:5px;margin-bottom:7px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px" id="cat-select-row">
-      <button class="cat-sel-btn on" onclick="quickCat('餐飲')" id="cs-餐飲">餐飲</button>
-      <button class="cat-sel-btn" onclick="quickCat('日用品')" id="cs-日用品">日用品</button>
-      <button class="cat-sel-btn" onclick="quickCat('娛樂')" id="cs-娛樂">娛樂</button>
-      <button class="cat-sel-btn" onclick="quickCat('交通')" id="cs-交通">交通</button>
-      <button class="cat-sel-btn" onclick="quickCat('美妝保養')" id="cs-美妝保養">美妝</button>
-      <button class="cat-sel-btn" onclick="quickCat('醫療健康')" id="cs-醫療健康">醫療</button>
-      <button class="cat-sel-btn" onclick="quickCat('衣物')" id="cs-衣物">衣物</button>
-      <button class="cat-sel-btn" onclick="quickCat('寵物')" id="cs-寵物">寵物</button>
-      <button class="cat-sel-btn" onclick="quickCat('送禮')" id="cs-送禮">送禮</button>
-      <button class="cat-sel-btn" onclick="quickCat('住宿')" id="cs-住宿">住宿</button>
-      <button class="cat-sel-btn" onclick="quickCat('其他')" id="cs-其他">其他</button>
-    </div>
-    <div class="frow c1" style="margin-bottom:7px">
-      <input class="inp" type="text" id="d-item" placeholder="品項名稱（選填）" oninput="autoDetectCat(this.value)" onkeydown="if(event.key==='Enter')addDaily()">
-    </div>
-    <input type="hidden" id="d-cat" value="餐飲">
-    <div class="frow c2" style="margin-bottom:7px">
-      <input class="inp" type="date" id="d-date">
-      <input class="inp" type="text" id="d-note" placeholder="備註（選填）" onkeydown="if(event.key==='Enter')addDaily()">
-    </div>
-    <div style="display:flex;gap:12px;margin-bottom:7px">
+  <div class="sinput" id="daily-entry"><div class="batch-context"><label class="field-label" for="d-date">消費日期<input class="inp" type="date" id="d-date"></label>    <div style="display:flex;gap:12px;margin-bottom:8px">
       <div style="flex:1">
-        <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰花的</div>
-        <div style="display:flex;gap:5px">
+        <div style="font-size:12px;color:var(--t3);margin-bottom:4px">誰花的</div>
+        <div id="daily-who-group" role="group" aria-label="誰花的" style="display:flex;gap:4px">
           <button class="who-btn" id="wb-ollie" onclick="setWho('Ollie')">Ollie</button>
           <button class="who-btn" id="wb-cody" onclick="setWho('Cody')">Cody</button>
-          <button class="who-btn on" id="wb-both" onclick="setWho('')">一起</button>
-        </div>
-      </div>
-      <div style="flex:1">
-        <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰記帳</div>
-        <div style="display:flex;gap:5px">
-          <button class="who-btn" id="rb-ollie" onclick="setRecorder('Ollie')">Ollie</button>
-          <button class="who-btn on" id="rb-cody" onclick="setRecorder('Cody')">Cody</button>
         </div>
       </div>
     </div>
-    <button class="btn primary" onclick="addDaily()">＋</button>
+</div>
+    <div class="frow c1" style="margin-bottom:8px">
+      <input class="inp" type="number" id="d-amount" placeholder="金額" inputmode="decimal" min="0" style="font-size:20px;font-weight:600;text-align:center;padding:12px" enterkeyhint="next" onkeydown="dailyEntryKey(event,'amount')">
+    </div>
+
+    <div class="frow c1" style="margin-bottom:8px">
+      <input class="inp" type="text" id="d-item" placeholder="品項名稱（選填）" oninput="autoDetectCat(this.value)" enterkeyhint="done" onkeydown="dailyEntryKey(event,'item')">
+    </div>
+    <div style="display:flex;gap:4px;margin-bottom:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px" id="cat-select-row">
+      <button class="cat-sel-btn on" onclick="quickCat('餐飲',true)" id="cs-餐飲">餐飲</button>
+      <button class="cat-sel-btn" onclick="quickCat('日用品',true)" id="cs-日用品">日用品</button>
+      <button class="cat-sel-btn" onclick="quickCat('娛樂',true)" id="cs-娛樂">娛樂</button>
+      <button class="cat-sel-btn" onclick="quickCat('交通',true)" id="cs-交通">交通</button>
+      <button class="cat-sel-btn" onclick="quickCat('美妝保養',true)" id="cs-美妝保養">美妝</button>
+      <button class="cat-sel-btn" onclick="quickCat('醫療健康',true)" id="cs-醫療健康">醫療</button>
+      <button class="cat-sel-btn" onclick="quickCat('衣物',true)" id="cs-衣物">衣物</button>
+      <button class="cat-sel-btn" onclick="quickCat('寵物',true)" id="cs-寵物">寵物</button>
+      <button class="cat-sel-btn" onclick="quickCat('送禮',true)" id="cs-送禮">送禮</button>
+      <button class="cat-sel-btn" onclick="quickCat('住宿',true)" id="cs-住宿">住宿</button>
+      <button class="cat-sel-btn" onclick="quickCat('其他',true)" id="cs-其他">其他</button>
+    </div>
+    <input type="hidden" id="d-cat" value="餐飲">
+<details id="daily-more"><summary>備註（選填）</summary><label for="d-note" class="field-label">備註</label><input class="inp" type="text" id="d-note" placeholder="備註（選填）" onkeydown="dailyEntryKey(event,'item')"></details>
+    <div id="entry-actions" class="entry-actions"><button id="entry-next" class="btn" type="button" onclick="nextDailyField()">下一步</button><button class="btn primary" type="button" onclick="addDaily()" aria-label="新增並繼續記帳">＋</button><button class="btn" type="button" onclick="finishBatch()">完成</button></div>
+<div class="summary-note">＋ 新增並繼續 · 完成會儲存本筆並結束</div>
+<div id="batch-receipt" role="status" hidden><span id="batch-receipt-text"></span><button id="batch-undo" type="button" class="btn sm" onclick="undoBatchEntry()">復原</button></div>
   </div>
   <input class="inp" id="d-search" placeholder="🔍 搜尋品項、分類、備註..." oninput="clearCatFilter();renderDaily(true)" style="margin-bottom:8px">
-  <div id="cat-pills" style="display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px">
+  <div id="cat-pills" style="display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px">
     <button class="pill on" onclick="setCatFilter('')" id="pill-all">全部</button>
     <button class="pill" onclick="setCatFilter('餐飲')" id="pill-餐飲">餐飲</button>
     <button class="pill" onclick="setCatFilter('日用品')" id="pill-日用品">日用品</button>
@@ -235,7 +335,7 @@ select.inp{appearance:auto;-webkit-appearance:auto}
     <button class="mnav-btn" onclick="changeDMonth(1)" id="d-next-btn">›</button>
   </div>
   <div class="card">
-    <div id="d-list"><div style="font-size:13px;color:var(--t3);padding:4px 0">本月尚無紀錄</div></div>
+    <div id="d-list"><div style="font-size:14px;color:var(--t3);padding:4px 0">本月尚無紀錄</div></div>
     <div class="trow">
       <span class="tlbl" id="d-total-lbl">本月日常開銷</span>
       <span class="tval ce" id="d-total">$0</span>
@@ -245,9 +345,48 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- 總覽 -->
 <div id="tab-overview" class="tab">
+<div class="card" id="overview-controls"><div class="stitle">查看區間</div>
+<div class="overview-modes" role="group" aria-label="統計範圍"><button id="ov-mode-month" class="btn selected" aria-pressed="true" onclick="setOverviewMode('month')">月</button><button id="ov-mode-year" class="btn" aria-pressed="false" onclick="setOverviewMode('year')">年</button><button id="ov-mode-custom" class="btn" aria-pressed="false" onclick="setOverviewMode('custom')">自訂</button></div>
+<div class="mnav" id="ov-month-nav"><button class="mnav-btn" onclick="changeOvMonth(-1)" aria-label="上一個月">‹</button><span class="mnav-lbl" id="ov-month-lbl"></span><button class="mnav-btn" onclick="changeOvMonth(1)" id="ov-next-btn" aria-label="下一個月">›</button></div>
+<div id="ov-year-nav" hidden><label for="year-select" class="field-label">查看年份</label><select class="inp" id="year-select" onchange="selectOverviewYear(this.value)"></select></div>
+<div id="ov-custom" hidden><div class="frow c2"><label class="field-label">開始日期<input class="inp" type="date" id="range-start"></label><label class="field-label">結束日期<input class="inp" type="date" id="range-end"></label></div><button class="btn primary" onclick="applyRange()">套用區間</button></div>
+<div class="summary-note" id="range-caption"></div></div>
+<div class="stat overview-total"><div class="sl" id="ov-exp-lbl">區間總開銷</div><div class="sv ce" id="ov-exp">$0</div></div>
+  <div class="overview-people">
+    <button type="button" class="person-total cody" onclick="showOvDetail('Cody')"><span>Cody</span><strong id="ov-cody-total">$0</strong><small>點擊看明細</small></button>
+    <button type="button" class="person-total ollie" onclick="showOvDetail('Ollie')"><span>Ollie</span><strong id="ov-ollie-total">$0</strong><small>點擊看明細</small></button>
+    <button type="button" class="person-total unassigned" onclick="showOvDetail('未指定')"><span>未指定</span><strong id="ov-unassigned-total">$0</strong><small>點擊看明細</small></button>
+  </div>
+  <div class="card" id="ov-breakdown"><div class="stitle">四類支出</div>
+<div class="row"><span>日常開銷</span><span class="rv ce" id="ov-daily">$0</span></div>
+<div class="row"><span>家電購買</span><span class="rv ce" id="ov-appliance">$0</span></div>
+<div class="row"><span>固定月費估算</span><span class="rv ce" id="ov-fixed">$0</span></div>
+<div class="row"><span>年度費用攤提</span><span class="rv ce" id="ov-annual">$0</span></div>
+<div class="summary-note">固定月費與年度費用依「目前設定金額」估算所選期間，非歷史實付；年度費用按月攤提，不足整月按天比例計算。家電依購買日期計入。</div><details id="ov-cat-card"><summary>日常開銷分類</summary><div id="ov-cat-list"></div></details></div>
+  <div class="card">
+    <div class="stitle">所選區間支出趨勢</div>
+    <div style="position:relative;height:240px"><canvas id="trend-chart"></canvas></div>
+  </div>
+  <div class="card" id="year-summary" hidden>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="stitle" style="margin-bottom:0">年度明細</div>
+      
+    </div>
+    <div class="sgrid year-primary" style="margin-bottom:8px">
+      <div class="stat"><div class="sl">年度支出</div><div class="sv ce" id="yearly-total">$0</div></div>
+      <div class="stat"><div class="sl">月均開銷</div><div class="sv ce" id="yearly-avg">$0</div></div>
+    </div>
+    <div hidden class="sgrid" style="margin-bottom:8px">
+      <div class="stat"><div class="sl">Cody 年度開銷</div><div class="sv" style="color:var(--pink)" id="yearly-cody">$0</div></div>
+      <div class="stat"><div class="sl">Ollie 年度開銷</div><div class="sv" style="color:var(--acc)" id="yearly-ollie">$0</div></div>
+    </div>
+<div class="summary-note" id="yearly-note"></div><div hidden class="row"><span>未指定歸屬</span><span id="yearly-unassigned">$0</span></div>
+    <div style="font-size:12px;color:var(--t2);margin-bottom:4px">每月支出</div>
+    <div id="yearly-bars"></div>
+  </div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <div style="font-size:15px;font-weight:700;color:var(--acc)">大狗窩目標進度 🏠</div>
+      <div style="font-size:14px;font-weight:700;color:var(--acc)">大狗窩目標進度 🏠</div>
       <button onclick="toggleSavings()" style="background:none;border:none;cursor:pointer;color:var(--t3);padding:4px;border-radius:6px">
         <svg id="eye-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>
@@ -255,16 +394,16 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       </button>
     </div>
     <div id="savings-row" style="display:none;gap:12px;margin-bottom:12px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:6px">
+      <div style="display:flex;align-items:center;gap:4px">
         <span style="font-size:12px;color:var(--t3)">存款</span>
-        <input class="inp" type="number" id="ov-savings" placeholder="輸入金額" inputmode="decimal" onchange="saveSavings(this.value)" style="width:120px;font-size:13px;font-weight:600;color:var(--acc);text-align:right;padding:5px 8px">
+        <input class="inp" type="number" id="ov-savings" placeholder="輸入金額" inputmode="decimal" onchange="saveSavings(this.value)" style="width:120px;font-size:14px;font-weight:600;color:var(--acc);text-align:right;padding:4px 8px">
       </div>
-      <div style="display:flex;align-items:center;gap:6px">
+      <div style="display:flex;align-items:center;gap:4px">
         <span style="font-size:12px;color:var(--t3)">目標</span>
-        <input class="inp" type="number" id="ov-goal" inputmode="decimal" onchange="saveGoal(this.value)" style="width:120px;font-size:13px;font-weight:600;color:var(--acc);text-align:right;padding:5px 8px">
+        <input class="inp" type="number" id="ov-goal" inputmode="decimal" onchange="saveGoal(this.value)" style="width:120px;font-size:14px;font-weight:600;color:var(--acc);text-align:right;padding:4px 8px">
       </div>
     </div>
-    <div id="savings-display" style="display:none;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+    <div id="savings-display" style="display:none;justify-content:space-between;align-items:baseline;margin-bottom:4px">
       <span id="ov-savamt" style="font-size:22px;font-weight:700;color:var(--acc)">$0</span>
       <span id="ov-pct" style="font-size:14px;font-weight:500;color:var(--acc2)">0%</span>
     </div>
@@ -276,53 +415,8 @@ select.inp{appearance:auto;-webkit-appearance:auto}
       <div style="font-size:12px;color:var(--t3);margin-top:4px" id="ov-hint">還差 $8,000,000</div>
     </div>
   </div>
-  <div class="mnav">
-    <button class="mnav-btn" onclick="changeOvMonth(-1)">‹</button>
-    <span class="mnav-lbl" id="ov-month-lbl"></span>
-    <button class="mnav-btn" onclick="changeOvMonth(1)" id="ov-next-btn">›</button>
-  </div>
-  <div class="sgrid">
-    <div class="stat" style="grid-column:span 2"><div class="sl" id="ov-exp-lbl">本月支出</div><div class="sv ce" id="ov-exp">$0</div></div>
-  </div>
-
   <div class="card">
-    <div class="stitle">支出明細</div>
-    <div class="row"><span class="rl">固定支出</span><span class="rv ce" id="ov-fixed">$0</span></div>
-    <div class="row"><span class="rl">日常開銷</span><span class="rv ce" id="ov-daily">$0</span></div>
-    <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--bg3);display:flex;gap:8px">
-      <div onclick="showOvDetail('Ollie')" style="flex:1;background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--acc);margin-bottom:2px">👽 Ollie</div>
-        <div style="font-size:14px;font-weight:700;color:var(--acc)" id="ov-ollie-total">$0</div>
-        <div style="font-size:10px;color:var(--acc);margin-top:2px;opacity:0.6">點擊看明細</div>
-      </div>
-      <div onclick="showOvDetail('Cody')" style="flex:1;background:var(--pinkl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--pink);margin-bottom:2px">🐩 Cody</div>
-        <div style="font-size:14px;font-weight:700;color:var(--pink)" id="ov-cody-total">$0</div>
-        <div style="font-size:10px;color:var(--pink);margin-top:2px;opacity:0.6">點擊看明細</div>
-      </div>
-    </div>
-  </div>
-  <div class="card" id="ov-cat-card" style="display:none">
-    <div class="stitle">開銷分類</div><div id="ov-cat-list"></div>
-  </div>
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <div class="stitle" style="margin-bottom:0">年度總結</div>
-      <select class="inp" id="year-select" onchange="updateYearlySummary()" style="width:90px;font-size:12px;padding:4px 8px"></select>
-    </div>
-    <div class="sgrid" style="margin-bottom:8px">
-      <div class="stat"><div class="sl">全年支出</div><div class="sv ce" id="yearly-total">$0</div></div>
-      <div class="stat"><div class="sl">月均支出</div><div class="sv ce" id="yearly-avg">$0</div></div>
-    </div>
-    <div style="font-size:12px;color:var(--t2);margin-bottom:6px">每月支出</div>
-    <div id="yearly-bars"></div>
-  </div>
-  <div class="card">
-    <div class="stitle">過去6個月支出趨勢</div>
-    <div style="position:relative;height:140px"><canvas id="trend-chart"></canvas></div>
-  </div>
-  <div class="card">
-    <button onclick="exportData()" class="btn" style="font-size:13px;color:var(--t2)">📦 匯出所有資料（JSON）</button>
+    <button onclick="exportData()" class="btn" style="font-size:14px;color:var(--t2)">📦 匯出所有資料（JSON）</button>
   </div>
 </div>
 
@@ -330,44 +424,44 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <div id="tab-fixed" class="tab">
   <!-- 每月固定總計 -->
   <div class="card" style="margin-bottom:8px">
-    <div style="font-size:11px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:8px">每月固定</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-      <div onclick="openFixedList('ollie')" style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--acc);margin-bottom:2px">👽 Ollie</div>
+    <div style="font-size:12px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:8px">每月固定</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+      <div onclick="openFixedList('ollie')" style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--acc);margin-bottom:4px">👽 Ollie</div>
         <div style="font-size:14px;font-weight:700;color:var(--acc)" id="fm-ollie">$0</div>
       </div>
-      <div onclick="openFixedList('cody')" style="background:var(--pinkl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--pink);margin-bottom:2px">🐩 Cody</div>
+      <div onclick="openFixedList('cody')" style="background:var(--pinkl);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--pink);margin-bottom:4px">🐩 Cody</div>
         <div style="font-size:14px;font-weight:700;color:var(--pink)" id="fm-cody">$0</div>
       </div>
-      <div onclick="openFixedList('both')" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--t2);margin-bottom:2px">♥ 一起</div>
+      <div onclick="openFixedList('both')" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--t2);margin-bottom:4px">♥ 一起</div>
         <div style="font-size:14px;font-weight:700;color:var(--t2)" id="fm-both">$0</div>
       </div>
-      <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:7px 10px;text-align:center">
-        <div style="font-size:10px;color:var(--t2);margin-bottom:2px">月合計</div>
+      <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:8px 8px;text-align:center">
+        <div style="font-size:12px;color:var(--t2);margin-bottom:4px">月合計</div>
         <div style="font-size:14px;font-weight:700;color:var(--text)" id="fm-total">$0</div>
       </div>
     </div>
   </div>
   <!-- 年度費用總計 -->
   <div class="card" style="margin-bottom:8px">
-    <div style="font-size:11px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:8px">年度費用</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-      <div onclick="openFixedList('an-ollie')" style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--acc);margin-bottom:2px">👽 Ollie</div>
+    <div style="font-size:12px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:8px">年度費用</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
+      <div onclick="openFixedList('an-ollie')" style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--acc);margin-bottom:4px">👽 Ollie</div>
         <div style="font-size:14px;font-weight:700;color:var(--acc)" id="fa-ollie">$0</div>
       </div>
-      <div onclick="openFixedList('an-cody')" style="background:var(--pinkl);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--pink);margin-bottom:2px">🐩 Cody</div>
+      <div onclick="openFixedList('an-cody')" style="background:var(--pinkl);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--pink);margin-bottom:4px">🐩 Cody</div>
         <div style="font-size:14px;font-weight:700;color:var(--pink)" id="fa-cody">$0</div>
       </div>
-      <div onclick="openFixedList('an-both')" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:7px 10px;text-align:center;cursor:pointer">
-        <div style="font-size:10px;color:var(--t2);margin-bottom:2px">♥ 一起</div>
+      <div onclick="openFixedList('an-both')" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:8px 8px;text-align:center;cursor:pointer">
+        <div style="font-size:12px;color:var(--t2);margin-bottom:4px">♥ 一起</div>
         <div style="font-size:14px;font-weight:700;color:var(--t2)" id="fa-both">$0</div>
       </div>
-      <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:7px 10px;text-align:center">
-        <div style="font-size:10px;color:var(--t2);margin-bottom:2px">年合計</div>
+      <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:8px 8px;text-align:center">
+        <div style="font-size:12px;color:var(--t2);margin-bottom:4px">年合計</div>
         <div style="font-size:14px;font-weight:700;color:var(--text)" id="fa-total">$0</div>
       </div>
     </div>
@@ -375,16 +469,16 @@ select.inp{appearance:auto;-webkit-appearance:auto}
   <!-- 新增表單 -->
   <div class="card">
     <div class="stitle">新增費用</div>
-    <div style="display:flex;gap:6px;margin-bottom:10px">
+    <div style="display:flex;gap:4px;margin-bottom:8px">
       <button class="who-btn on" id="ftype-monthly" onclick="setFixedType('monthly')">每月</button>
       <button class="who-btn" id="ftype-annual" onclick="setFixedType('annual')">每年</button>
     </div>
-    <div class="frow c2" style="margin-bottom:7px">
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="text" id="fx-name" placeholder="項目名稱" onkeydown="if(event.key==='Enter')addFixedItem()">
       <input class="inp" type="number" id="fx-amount" placeholder="金額" inputmode="decimal" onkeydown="if(event.key==='Enter')addFixedItem()">
     </div>
-    <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰的費用</div>
-    <div class="who-btns" style="margin-bottom:7px">
+    <div style="font-size:12px;color:var(--t3);margin-bottom:4px">誰的費用</div>
+    <div class="who-btns" style="margin-bottom:8px">
       <button class="who-btn" id="fxwb-ollie" onclick="setFixedWho('Ollie')">Ollie</button>
       <button class="who-btn" id="fxwb-cody" onclick="setFixedWho('Cody')">Cody</button>
       <button class="who-btn on" id="fxwb-both" onclick="setFixedWho('')">一起</button>
@@ -396,36 +490,38 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <!-- 大型家電 -->
 <div id="tab-appliance" class="tab">
   <div class="card">
-    <div style="font-size:13px;font-weight:600;color:var(--sea);margin-bottom:10px">🛒 待購清單</div>
-    <div class="frow c2" style="margin-bottom:7px">
+    <div style="font-size:14px;font-weight:600;color:var(--sea);margin-bottom:8px">🛒 待購清單</div>
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="text" id="wl-name" placeholder="品項名稱" onkeydown="if(event.key==='Enter')addWishlist()">
       <input class="inp" type="number" id="wl-price" placeholder="預估金額" inputmode="decimal">
     </div>
-    <div class="frow c1" style="margin-bottom:7px">
+    <div class="frow c1" style="margin-bottom:8px">
       <input class="inp" type="text" id="wl-note" placeholder="備註（選填）" onkeydown="if(event.key==='Enter')addWishlist()">
     </div>
     <button class="btn primary" style="background:var(--sea);border-color:var(--sea)" onclick="addWishlist()">＋ 加入待購</button>
-    <div id="wl-list" style="margin-top:10px"></div>
+    <div id="wl-list" style="margin-top:8px"></div>
     <div class="trow" id="wl-trow" style="display:none">
       <span class="tlbl">待購預算合計</span>
       <div style="display:flex;align-items:center;gap:8px">
-        <button id="wl-clear-btn" class="btn sm" style="display:none;font-size:11px;color:var(--t3);padding:4px 10px" onclick="clearDoneWishlist()">清除已購</button>
+        <button id="wl-clear-btn" class="btn sm" style="display:none;font-size:12px;color:var(--t3);padding:4px 8px" onclick="clearDoneWishlist()">清除已購</button>
         <span class="tval" style="color:var(--sea)" id="wl-total">$0</span>
       </div>
     </div>
   </div>
   <div class="card">
-    <div style="font-size:13px;font-weight:600;color:var(--acc);margin-bottom:10px">✅ 已購清單</div>
-    <div class="frow c2" style="margin-bottom:7px">
+    <div style="font-size:14px;font-weight:600;color:var(--acc);margin-bottom:8px">✅ 已購清單</div>
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="text" id="ap-name" placeholder="品項名稱" onkeydown="if(event.key==='Enter')addAppliance()">
       <input class="inp" type="number" id="ap-amount" placeholder="金額" inputmode="decimal">
     </div>
-    <div class="frow c2" style="margin-bottom:7px">
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="date" id="ap-date">
       <input class="inp" type="text" id="ap-note" placeholder="購買地點／備註" onkeydown="if(event.key==='Enter')addAppliance()">
     </div>
+    <label class="field-label" for="ap-who">誰的費用</label>
+    <select class="inp" id="ap-who"><option value="">請選擇</option><option value="Cody">Cody</option><option value="Ollie">Ollie</option></select>
     <button class="btn primary" onclick="addAppliance()">＋ 新增已購</button>
-    <div id="ap-list" style="margin-top:10px"></div>
+    <div id="ap-list" style="margin-top:8px"></div>
     <div class="trow"><span class="tlbl">大型家電總計</span><span class="tval ce" id="ap-total">$0</span></div>
   </div>
 </div>
@@ -433,12 +529,12 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <!-- Costco -->
 <div id="tab-costco" class="tab">
   <div class="sinput">
-    <div class="frow c2" style="margin-bottom:7px">
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="date" id="cc-date">
       <input class="inp" type="text" id="cc-name" placeholder="品項名稱" list="costco-suggestions" autocomplete="off" oninput="showLastPrice(this.value)" onkeydown="if(event.key==='Enter')addCostcoItem()">
     </div>
-    <div id="cc-last-price" style="font-size:11px;color:var(--t3);margin:-4px 0 6px;min-height:14px"></div>
-    <div class="frow c1" style="margin-bottom:7px">
+    <div id="cc-last-price" style="font-size:12px;color:var(--t3);margin:-4px 0 6px;min-height:14px"></div>
+    <div class="frow c1" style="margin-bottom:8px">
       <input class="inp" type="number" id="cc-price" placeholder="價格" inputmode="decimal" onkeydown="if(event.key==='Enter')addCostcoItem()">
     </div>
     <button class="btn primary" onclick="addCostcoItem()">＋</button>
@@ -446,7 +542,7 @@ select.inp{appearance:auto;-webkit-appearance:auto}
   <datalist id="costco-suggestions"></datalist>
   <input class="inp" id="cc-search" placeholder="🔍 搜尋品項..." oninput="renderCostco()" style="margin-bottom:8px">
   <div class="card">
-    <div id="cc-list"><div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div></div>
+    <div id="cc-list"><div style="font-size:14px;color:var(--t3);padding:4px 0">尚無紀錄</div></div>
     <div class="trow" id="cc-trow" style="display:none">
       <span class="tlbl">Costco 總計</span><span class="tval ce" id="cc-total">$0</span>
     </div>
@@ -455,77 +551,32 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- 錢錢人 -->
 <div id="tab-rpg" class="tab">
-  <div class="rpg-grid">
-    <div class="rpg-card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <div class="rpg-avatar">👽</div>
-        <div style="flex:1;min-width:0">
-          <div style="font-size:11px;color:var(--t3)">OLLIE</div>
-          <div style="font-size:14px;font-weight:700;color:var(--acc)" id="ollie-title">LV.1 練習生</div>
-        </div>
-      </div>
-      <div style="font-size:11px;color:var(--t3);margin-bottom:2px">EXP <span id="ollie-exp">0</span> / <span id="ollie-next">50</span></div>
-      <div class="rpg-xpbar-track"><div class="rpg-xpbar-fill" id="ollie-xpbar" style="width:0%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-top:6px">
-        <span>備註率 <b id="o-int" style="color:var(--acc)">0%</b></span>
-        <span>記帳 <b id="o-entries" style="color:var(--acc);text-decoration:underline;cursor:pointer" onclick="showRpgEntries('Ollie')">0</b> 筆</span>
-      </div>
-      <div class="bubble" id="ollie-bubble"></div>
-    </div>
-    <div class="rpg-card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <div class="rpg-avatar" style="background:linear-gradient(135deg,var(--pink),var(--sea))">🐩</div>
-        <div style="flex:1;min-width:0">
-          <div style="font-size:11px;color:var(--t3)">CODY</div>
-          <div style="font-size:14px;font-weight:700;color:var(--pink)" id="cody-title">LV.1 練習生</div>
-        </div>
-      </div>
-      <div style="font-size:11px;color:var(--t3);margin-bottom:2px">EXP <span id="cody-exp">0</span> / <span id="cody-next">50</span></div>
-      <div class="rpg-xpbar-track"><div class="rpg-xpbar-fill" id="cody-xpbar" style="width:0%;background:linear-gradient(90deg,var(--pink),var(--sea),var(--pink));background-size:200% 100%"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-top:6px">
-        <span>備註率 <b id="c-int" style="color:var(--pink)">0%</b></span>
-        <span>記帳 <b id="c-entries" style="color:var(--pink);text-decoration:underline;cursor:pointer" onclick="showRpgEntries('Cody')">0</b> 筆</span>
-      </div>
-      <div class="bubble" id="cody-bubble"></div>
-    </div>
-  </div>
-  <div class="card"><div class="stitle">兩人對比</div><div id="rpg-compare-body"></div></div>
-  <div class="card">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <div style="font-size:14px;font-weight:700;color:var(--acc)">🏠 大狗窩建設進度</div>
-      <div style="font-size:12px;color:var(--t3)">共同 EXP <span id="total-exp" style="font-weight:600;color:var(--acc)">0</span></div>
-    </div>
-    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-bottom:4px">
-      <span id="house-stage-label" style="font-weight:500;color:var(--acc)"></span>
-      <span id="house-pct" style="font-weight:600">0%</span>
-    </div>
-    <div class="prog-track" style="height:16px;border-radius:8px;margin-bottom:10px">
-      <div class="prog-fill" id="house-bar" style="width:0%;height:100%;border-radius:8px"></div>
-    </div>
-    <div id="house-unlocks" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px"></div>
-  </div>
-  <div class="card"><div class="stitle">稱號系統</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px" id="title-grid"></div></div>
+ <div id="game-world" class="game-world"></div>
+ <div id="game-feedback" class="game-feedback" role="status" aria-live="polite"></div>
+ <div id="game-console"></div>
+ <div id="game-collection"></div>
+ <details class="game-rules"><summary>玩法與經驗值</summary><p>每天記帳或核對零支出 +20 EXP，每人每天一次；每週整理 +40 EXP，兩人都完成再加共同 +60 EXP。點角色、家具與換景不加 EXP。每 2,000 EXP 完成一章，舊經驗值與完成章節持續保留。</p></details>
 </div>
 
 <!-- 薪水 -->
 <div id="tab-salary" class="tab">
   <div class="sinput">
-    <div class="frow c2" style="margin-bottom:7px">
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="date" id="sal-date">
       <input class="inp" type="number" id="sal-amount" placeholder="金額" inputmode="decimal" onkeydown="if(event.key==='Enter')addSalary()">
     </div>
-    <div class="frow c1" style="margin-bottom:7px">
+    <div class="frow c1" style="margin-bottom:8px">
       <input class="inp" type="text" id="sal-note" placeholder="備註（公司名稱等）" onkeydown="if(event.key==='Enter')addSalary()">
     </div>
     <button class="btn primary" onclick="addSalary()">＋ 新增薪水</button>
   </div>
   <input class="inp" id="sal-search" placeholder="🔍 搜尋備註..." oninput="renderSalary()" style="margin-bottom:8px">
   <div class="card">
-    <div style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:8px 14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
+    <div style="background:var(--accl);border:1px solid var(--border);border-radius:10px;padding:8px 12px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
       <div style="font-size:12px;color:var(--acc)">👽 Ollie 累計薪水</div>
-      <div style="font-size:18px;font-weight:700;color:var(--acc)" id="sal-ollie-total">$0</div>
+      <div style="font-size:20px;font-weight:700;color:var(--acc)" id="sal-ollie-total">$0</div>
     </div>
-    <div id="sal-list"><div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div></div>
+    <div id="sal-list"><div style="font-size:14px;color:var(--t3);padding:4px 0">尚無紀錄</div></div>
     <div class="trow" id="sal-trow" style="display:none">
       <span class="tlbl">總計</span>
       <span class="tval" style="color:var(--green)" id="sal-total">$0</span>
@@ -536,24 +587,32 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 <!-- 意見箱 -->
 <div id="tab-feedback" class="tab">
   <div class="card">
-    <div style="font-size:15px;font-weight:700;color:var(--acc);margin-bottom:4px">C & O 修改意見 💬</div>
-    <div style="font-size:12px;color:var(--t3);margin-bottom:10px">記錄想要修改的功能或建議</div>
+    <div style="font-size:14px;font-weight:700;color:var(--acc);margin-bottom:4px">C & O 修改意見 💬</div>
+    <div style="font-size:12px;color:var(--t3);margin-bottom:8px">記錄想要修改的功能或建議</div>
     <textarea class="inp" id="fb-text" placeholder="輸入意見或留言..." style="height:70px;resize:none;margin-bottom:8px"></textarea>
     <button class="btn primary" onclick="addFeedback()">送出</button>
-    <div id="fb-list" style="margin-top:10px"></div>
+    <div id="fb-list" style="margin-top:8px"></div>
   </div>
 </div>
 </div>
 
+<div id="purchase-modal" class="purchase-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="purchase-title">
+ <div class="purchase-sheet"><div class="purchase-heading"><h3 id="purchase-title">確認購買</h3><button class="btn sm" onclick="closePurchase()" aria-label="關閉購買確認">✕</button></div>
+ <input type="hidden" id="purchase-wish-id"><div id="purchase-name"></div>
+ <div class="frow c2"><label class="field">實際金額<input class="inp" type="number" id="purchase-amount" inputmode="numeric"></label><label class="field">購買日期<input class="inp" type="date" id="purchase-date"></label></div>
+ <label class="field">誰的費用<select class="inp" id="purchase-who"><option value="">請選擇</option><option value="Cody">Cody</option><option value="Ollie">Ollie</option></select></label>
+ <p class="summary-note">確認後建立已購紀錄並計入總覽，不需要再記入日常開銷。</p><button class="btn primary" onclick="confirmPurchase()">確認購買</button>
+ </div>
+</div>
 <!-- 總覽明細 Modal -->
 <div id="ov-detail-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto" onclick="if(event.target===this)closeOvDetail()">
-  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:20px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <div style="font-size:16px;font-weight:700" id="ov-detail-title">明細</div>
       <button onclick="closeOvDetail()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--t3)">✕</button>
     </div>
     <div id="ov-detail-list"></div>
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+    <div style="margin-top:12px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:14px;font-weight:500;color:var(--t2)">合計</span>
       <span style="font-size:16px;font-weight:700" id="ov-detail-total"></span>
     </div>
@@ -562,43 +621,43 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- 固定支出清單 Modal -->
 <div id="fixed-list-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto" onclick="if(event.target===this)closeFixedList()">
-  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:20px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <div style="font-size:16px;font-weight:700" id="fl-title">費用明細</div>
       <button onclick="closeFixedList()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--t3)">✕</button>
     </div>
     <div id="fl-list"></div>
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
+    <div style="margin-top:12px;padding-top:8px;border-top:1px solid var(--border);display:flex;justify-content:space-between">
       <span style="font-size:14px;font-weight:500;color:var(--t2)">合計</span>
-      <span style="font-size:15px;font-weight:700" id="fl-total">$0</span>
+      <span style="font-size:14px;font-weight:700" id="fl-total">$0</span>
     </div>
   </div>
 </div>
 
 <!-- 固定支出編輯 Modal -->
 <div id="fixed-edit-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto" onclick="if(event.target===this)closeFixedEdit()">
-  <div style="max-width:480px;margin:80px auto 20px;background:var(--card);border-radius:var(--r);padding:20px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="max-width:480px;margin:80px auto 20px;background:var(--card);border-radius:var(--r);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <div style="font-size:16px;font-weight:700;color:var(--acc)">編輯費用</div>
       <button onclick="closeFixedEdit()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--t3)">✕</button>
     </div>
     <!-- 每月/每年切換 -->
-    <div style="display:flex;gap:6px;margin-bottom:12px">
+    <div style="display:flex;gap:4px;margin-bottom:12px">
       <button class="who-btn on" id="fe-type-monthly" onclick="setFeType('monthly')">每月</button>
       <button class="who-btn" id="fe-type-annual" onclick="setFeType('annual')">每年</button>
     </div>
-    <div class="frow c2" style="margin-bottom:10px">
+    <div class="frow c2" style="margin-bottom:8px">
       <input class="inp" type="text" id="fe-name" placeholder="項目名稱">
       <input class="inp" type="number" id="fe-amount" placeholder="金額" inputmode="decimal">
     </div>
-    <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰的費用</div>
-    <div style="display:flex;gap:6px;margin-bottom:10px">
+    <div style="font-size:12px;color:var(--t3);margin-bottom:4px">誰的費用</div>
+    <div style="display:flex;gap:4px;margin-bottom:8px">
       <button class="who-btn" id="fe-wb-ollie" onclick="setFeWho('Ollie')">Ollie</button>
       <button class="who-btn" id="fe-wb-cody" onclick="setFeWho('Cody')">Cody</button>
       <button class="who-btn" id="fe-wb-both" onclick="setFeWho('')">一起</button>
     </div>
-    <div id="fe-spread-row" style="display:none;margin-bottom:10px">
-      <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t2);cursor:pointer">
+    <div id="fe-spread-row" style="display:none;margin-bottom:8px">
+      <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t2);cursor:pointer">
         <input type="checkbox" id="fe-spread" style="width:16px;height:16px"> 均攤到每月
       </label>
     </div>
@@ -613,8 +672,8 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- RPG Modal -->
 <div id="rpg-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto" onclick="if(event.target===this)closeRpgModal()">
-  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:20px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:16px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
       <div style="font-size:16px;font-weight:700;color:var(--acc)" id="rpg-modal-title">記帳明細</div>
       <button onclick="closeRpgModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--t3)">✕</button>
     </div>
@@ -624,19 +683,19 @@ select.inp{appearance:auto;-webkit-appearance:auto}
 
 <!-- Costco 一鍵轉入 Modal -->
 <div id="cs-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto" onclick="if(event.target===this)closeCSModal()">
-  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:20px">
+  <div style="max-width:480px;margin:60px auto 20px;background:var(--card);border-radius:var(--r);padding:16px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
       <div style="font-size:16px;font-weight:700;color:var(--acc)" id="cs-modal-title">一鍵轉入日常開銷</div>
       <button onclick="closeCSModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--t3)">✕</button>
     </div>
-    <div style="font-size:12px;color:var(--t3);margin-bottom:10px">選擇誰去買的</div>
+    <div style="font-size:12px;color:var(--t3);margin-bottom:8px">選擇誰去買的</div>
     <div style="display:flex;gap:8px;margin-bottom:12px">
       <button class="who-btn on" id="cswb-ollie" onclick="setCSSyncWho('Ollie')">Ollie</button>
       <button class="who-btn" id="cswb-cody" onclick="setCSSyncWho('Cody')">Cody</button>
       <button class="who-btn" id="cswb-both" onclick="setCSSyncWho('')">一起</button>
     </div>
     <div id="cs-modal-list" style="margin-bottom:12px;max-height:300px;overflow-y:auto"></div>
-    <button class="btn primary" onclick="confirmCSSync()">✅ 全部轉入日常開銷</button>
+    <button class="btn primary" onclick="confirmCSSync()">✅ 加入日常開銷</button>
   </div>
 </div>
 
@@ -706,7 +765,8 @@ const DEFAULT_SALARY=[
 
 let D={daily:{},fixed_extra:[],annual_extra:[],feedback:[],appliances:[],costco:[],wishlist:[],salary:[],goal:8000000,savings_amount:0};
 let saving=false,firstLoad=true,isOffline=false,pendingData=null;
-let dMonth='',ovMonth='',selectedWho='',catFilter='',selectedRecorder='Cody';
+let hasLoadedAccount=false;
+let dMonth='',ovMonth='',selectedWho='',catFilter='';
 let selectedFixedWho='',selectedAnnualWho='',selectedSalaryWho='Ollie';
 let savingsVisible=false,trendChart=null,lastCostcoDate='',lastCat='餐飲';
 let undoTimer=null,csSyncWho='Ollie',csSyncDate='';
@@ -753,6 +813,9 @@ ref.on('value',snap=>{
     if(!D.salary||D.salary.length===0)D.salary=[...DEFAULT_SALARY];
     else if(!Array.isArray(D.salary))D.salary=Object.values(D.salary);
   }
+  if(!hasLoadedAccount&&!(val&&val.habitGame))delete D.habitGame;
+  hasLoadedAccount=true;
+  ensureGame();
   if(firstLoad){firstLoad=false;hideOverlay();initAll();renderAll();}
   else{renderAll();if(!saving)showToast('資料已同步');}
   saving=false;
@@ -763,6 +826,7 @@ ref.on('value',snap=>{
 });
 
 function save(){
+  ensureGame();accrueHabits();
   saving=true;
   const sd=Object.assign({},D);delete sd.rpg;
   if(isOffline){pendingData=JSON.parse(JSON.stringify(sd));return;}
@@ -772,15 +836,15 @@ function hideOverlay(){const lo=document.getElementById('loading-overlay');if(lo
 setTimeout(()=>{hideOverlay();if(firstLoad){firstLoad=false;initAll();renderAll();}},6000);
 
 function fmt(n){return '$'+Math.round(n).toLocaleString('zh-TW');}
-function today(){return new Date().toISOString().split('T')[0];}
+function today(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
 function curMonth(){const n=new Date();return n.getFullYear()+'-'+(n.getMonth()+1).toString().padStart(2,'0');}
 function nowStr(){const n=new Date();return n.getFullYear()+'/'+(n.getMonth()+1).toString().padStart(2,'0')+'/'+n.getDate().toString().padStart(2,'0')+' '+n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');}
 function renderWhoIcon(w){
-  if(w==='Ollie')return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--pink);color:#fff;font-size:9px;font-weight:700;margin-right:3px;flex-shrink:0">O</span>';
-  if(w==='Cody')return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--mat);color:#fff;font-size:9px;font-weight:700;margin-right:3px;flex-shrink:0">C</span>';
-  return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#F2D88F;color:#fff;font-size:10px;margin-right:3px;flex-shrink:0">♥</span>';
+  if(w==='Ollie')return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--pink);color:#fff;font-size:12px;font-weight:700;margin-right:4px;flex-shrink:0">O</span>';
+  if(w==='Cody')return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--mat);color:#fff;font-size:12px;font-weight:700;margin-right:4px;flex-shrink:0">C</span>';
+  return '<span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#F2D88F;color:#fff;font-size:12px;margin-right:4px;flex-shrink:0">♥</span>';
 }
 
 // ── Toast with undo ──
@@ -812,18 +876,14 @@ function go(id,btn){
 
 function initAll(){
   initDark();
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeRpgModal();closeCSModal();closeOvDetail();closeFixedEdit();closeFixedList();}});
-  document.addEventListener('focusin',e=>{
-    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'){
-      setTimeout(()=>e.target.scrollIntoView({behavior:'smooth',block:'center'}),300);
-    }
-  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeRpgModal();closeCSModal();closeOvDetail();closeFixedEdit();closeFixedList();closePurchase();}});
+
   const td=today();
   ['d-date','ap-date','sal-date'].forEach(id=>{const el=document.getElementById(id);if(el&&!el.value)el.value=td;});
   const cc=document.getElementById('cc-date');if(cc&&!cc.value)cc.value=td;
   lastCostcoDate=td;
-  const gi=document.getElementById('ov-goal');if(gi)gi.value=D.goal||8000000;
-  const si=document.getElementById('ov-savings');if(si&&D.savings_amount)si.value=D.savings_amount;
+  const gi=document.getElementById('ov-goal');if(gi)gi.value=Math.round(Number(D.goal)||8000000);
+  const si=document.getElementById('ov-savings');if(si&&D.savings_amount)si.value=Math.round(Number(D.savings_amount));
   dMonth=curMonth();ovMonth=curMonth();
   updateMonthUI('d',dMonth);updateMonthUI('ov',ovMonth);
   initYearSelect();
@@ -844,28 +904,15 @@ function changeDMonth(dir){
   const d=new Date(y,m-1+dir,1);
   dMonth=d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');
   if(dMonth>curMonth())dMonth=curMonth();
-  ovMonth=dMonth;
+
   // FIX#5: 切換月份清空搜尋
   const srch=document.getElementById('d-search');if(srch)srch.value='';
   clearCatFilter();
   updateMonthUI('d',dMonth);updateMonthUI('ov',ovMonth);renderDaily();updateOverview();
 }
-function changeOvMonth(dir){
-  const [y,m]=ovMonth.split('-').map(Number);
-  const d=new Date(y,m-1+dir,1);
-  ovMonth=d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');
-  if(ovMonth>curMonth())ovMonth=curMonth();
-  dMonth=ovMonth;
-  updateMonthUI('ov',ovMonth);updateMonthUI('d',dMonth);updateOverview();renderDaily();
-}
 
-function setRecorder(who){
-  selectedRecorder=who;
-  ['ollie','cody'].forEach(w=>{const b=document.getElementById('rb-'+w);if(b)b.classList.remove('on');});
-  const b=document.getElementById('rb-'+who.toLowerCase());if(b)b.classList.add('on');
-}
 function setWho(who){
-  selectedWho=who;
+  selectedWho=who;fieldError('daily-who-group','');
   ['ollie','cody','both'].forEach(w=>{const b=document.getElementById('wb-'+w);if(b)b.classList.remove('on');});
   const map={Ollie:'ollie',Cody:'cody','':'both'};
   const b=document.getElementById('wb-'+(map[who]||'both'));if(b)b.classList.add('on');
@@ -913,31 +960,33 @@ function autoDetectCat(val){
 }
 
 // ── 日常開銷 ──
-function addDaily(){
+function base_addDaily(){
   const amount=parseFloat(document.getElementById('d-amount').value);
   if(!amount||amount<=0){showToast('請輸入金額');return;}
   const cat=document.getElementById('d-cat').value;
   const item=document.getElementById('d-item').value;
   const note=document.getElementById('d-note').value;
   const date=document.getElementById('d-date').value||today();
-  const addedBy=selectedWho||'一起';
+  if(!['Ollie','Cody'].includes(selectedWho)){showToast('請選擇誰花的');return;}
+  const addedBy=selectedWho;
   // FIX#1: 用日期月份，不是 curMonth()
   const m=date.substring(0,7);
   if(!D.daily[m])D.daily[m]=[];
-  const recorderKey=selectedRecorder.toLowerCase();
+  const recorderKey=selectedWho.toLowerCase();
+  ensureGame();
   const expBefore=calcRpg(recorderKey).exp;
   const newId=uid();
-  D.daily[m].push({cat,amount,item,note,who:selectedWho,addedBy,recordedBy:selectedRecorder,date,id:newId});
+  D.daily[m].push({cat,amount,item,note,who:selectedWho,addedBy,date,id:newId,...(window._pendingSyncCostcoId?{sourceCostcoId:String(window._pendingSyncCostcoId)}:{})});
   document.getElementById('d-amount').value='';
   document.getElementById('d-item').value='';
   document.getElementById('d-note').value='';
   // FIX#1: 切換到正確月份
-  dMonth=m;ovMonth=m;
+  dMonth=m;
   updateMonthUI('d',dMonth);updateMonthUI('ov',ovMonth);
   checkAndTriggerLevelUp(recorderKey,expBefore);
   if(window._pendingSyncCostcoId){
     const ci=(D.costco||[]).find(i=>i.id===window._pendingSyncCostcoId);
-    if(ci)ci.synced=true;window._pendingSyncCostcoId=null;
+    if(ci){ci.synced=true;ci.dailyId=newId;}window._pendingSyncCostcoId=null;clearCostcoDraftNotice();
   }
   save();renderDaily(false,newId);updateOverview();renderRpg();showToast('已新增！');
   setTimeout(()=>{const el=document.getElementById('d-amount');if(el)el.focus();},100);
@@ -963,11 +1012,11 @@ function renderDaily(skipChart=false,highlightId=null){
       <div class="ir">
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editDaily('${it.id}')" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delDailyUndo('${it.id}')">${TRASH}</button>
+          <button class="del edit-action" aria-label="編輯" onclick="editDaily('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del delete-action" aria-label="刪除" onclick="delDailyUndo('${it.id}')">${TRASH}</button>
         </div>
       </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">本月尚無紀錄</div>';
+    </div>`).join(''):'<div style="font-size:14px;color:var(--t3);padding:4px 0">本月尚無紀錄</div>';
   document.getElementById('d-total').textContent=fmt(raw.reduce((s,i)=>s+i.amount,0));
   if(highlightId){
     setTimeout(()=>{const el=document.getElementById('di-'+highlightId);if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});},100);
@@ -1001,32 +1050,26 @@ function editDaily(id){
   const cats=['餐飲','日用品','娛樂','交通','美妝保養','醫療健康','衣物','寵物','送禮','住宿','其他'];
   const opts=cats.map(c=>`<option${c===found.cat?' selected':''}>${c}</option>`).join('');
   const div=document.createElement('div');div.id='edi-'+id;
-  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
-  const fw=found.addedBy||found.who||'';const fr=found.recordedBy||'Cody';
-  div.innerHTML=`<div class="frow c1" style="margin-bottom:7px">
-    <input class="inp" type="text" id="ec-item-${id}" value="${found.item||''}" placeholder="品項名稱（選填）">
+  div.style.cssText='background:var(--bg2);border-radius:8px;padding:8px;margin:4px 0;border:1px solid var(--border)';
+  const fw=found.addedBy||found.who||'';
+  div.innerHTML=`<div class="frow c1" style="margin-bottom:8px">
+    <input class="inp" type="text" id="ec-item-${id}" value="${esc(found.item||'')}" placeholder="品項名稱（選填）">
   </div>
-  <div class="frow c2" style="margin-bottom:7px">
+  <div class="frow c2" style="margin-bottom:8px">
     <select class="inp" id="ec-cat-${id}">${opts}</select>
-    <input class="inp" type="number" id="ec-amt-${id}" value="${found.amount}" inputmode="decimal" style="text-align:right">
+    <input class="inp" type="number" id="ec-amt-${id}" value="${Math.round(Number(found.amount)||0)}" inputmode="decimal" style="text-align:right">
   </div>
-  <div class="frow c2" style="margin-bottom:7px">
+  <div class="frow c2" style="margin-bottom:8px">
     <input class="inp" type="date" id="ec-date-${id}" value="${found.date||''}">
-    <input class="inp" type="text" id="ec-note-${id}" value="${found.note||''}" placeholder="備註">
+    <input class="inp" type="text" id="ec-note-${id}" value="${esc(found.note||'')}" placeholder="備註">
   </div>
-  <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰花的</div>
-  <div style="display:flex;gap:6px;margin-bottom:7px">
-    <button onclick="setEditWho('${id}','Ollie')" id="ewb-ollie-${id}" style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${fw==='Ollie'?'var(--accl)':'var(--card)'};color:${fw==='Ollie'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Ollie</button>
-    <button onclick="setEditWho('${id}','Cody')" id="ewb-cody-${id}" style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${fw==='Cody'?'var(--accl)':'var(--card)'};color:${fw==='Cody'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Cody</button>
-    <button onclick="setEditWho('${id}','')" id="ewb-both-${id}" style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${(!fw||fw==='一起')?'var(--accl)':'var(--card)'};color:${(!fw||fw==='一起')?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">一起</button>
+  <div style="font-size:12px;color:var(--t3);margin-bottom:4px">誰花的</div>
+  <div style="display:flex;gap:4px;margin-bottom:8px">
+    <button onclick="setEditWho('${id}','Ollie')" id="ewb-ollie-${id}" style="flex:1;padding:4px;border-radius:8px;border:1px solid var(--border);background:${fw==='Ollie'?'var(--accl)':'var(--card)'};color:${fw==='Ollie'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Ollie</button>
+    <button onclick="setEditWho('${id}','Cody')" id="ewb-cody-${id}" style="flex:1;padding:4px;border-radius:8px;border:1px solid var(--border);background:${fw==='Cody'?'var(--accl)':'var(--card)'};color:${fw==='Cody'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Cody</button>
   </div>
-  <input type="hidden" id="edit-who-${id}" value="${fw}">
-  <div style="font-size:11px;color:var(--t3);margin-bottom:4px">誰記帳</div>
-  <div style="display:flex;gap:6px;margin-bottom:7px">
-    <button onclick="setEditRecorder('${id}','Ollie')" id="erb-ollie-${id}" style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${fr==='Ollie'?'var(--accl)':'var(--card)'};color:${fr==='Ollie'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Ollie</button>
-    <button onclick="setEditRecorder('${id}','Cody')" id="erb-cody-${id}" style="flex:1;padding:5px;border-radius:8px;border:1px solid var(--border);background:${fr==='Cody'?'var(--accl)':'var(--card)'};color:${fr==='Cody'?'var(--acc)':'var(--t2)'};font-size:12px;cursor:pointer;font-family:inherit">Cody</button>
-  </div>
-  <input type="hidden" id="edit-recorder-${id}" value="${fr}">
+  ${!['Ollie','Cody'].includes(fw)?'<div style="font-size:12px;color:var(--t3);margin-bottom:8px">舊紀錄：共同支出，未選人則保留原歸屬。</div>':''}
+  <input type="hidden" id="edit-who-${id}" value="${esc(fw)}">
   <div class="frow c2">
     <button class="btn primary" onclick="saveEditDaily('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('edi-${id}').remove()">取消</button>
@@ -1039,12 +1082,7 @@ function setEditWho(id,who){
   const b=document.getElementById('ewb-'+key+'-'+id);if(b){b.style.background='var(--accl)';b.style.color='var(--acc)';}
   const hf=document.getElementById('edit-who-'+id);if(hf)hf.value=who;
 }
-function setEditRecorder(id,who){
-  ['ollie','cody'].forEach(w=>{const b=document.getElementById('erb-'+w+'-'+id);if(b){b.style.background='var(--card)';b.style.color='var(--t2)';}});
-  const b=document.getElementById('erb-'+who.toLowerCase()+'-'+id);if(b){b.style.background='var(--accl)';b.style.color='var(--acc)';}
-  const hf=document.getElementById('edit-recorder-'+id);if(hf)hf.value=who;
-}
-function saveEditDaily(id){
+function base_saveEditDaily(id){
   Object.keys(D.daily||{}).forEach(m=>{
     const it=(D.daily[m]||[]).find(i=>String(i.id)===String(id));if(!it)return;
     const im=document.getElementById('ec-item-'+id);if(im)it.item=im.value;
@@ -1052,9 +1090,9 @@ function saveEditDaily(id){
     const a=document.getElementById('ec-amt-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
     const n=document.getElementById('ec-note-'+id);if(n)it.note=n.value;
     const dt=document.getElementById('ec-date-'+id);if(dt&&dt.value)it.date=dt.value;
-    const w=document.getElementById('edit-who-'+id);if(w)it.addedBy=w.value||'一起';
-    const rc=document.getElementById('edit-recorder-'+id);if(rc&&rc.value)it.recordedBy=rc.value;
+    const w=document.getElementById('edit-who-'+id);if(w){it.addedBy=w.value||'一起';it.who=w.value;}
   });
+  relocateDaily(id);
   const r=document.getElementById('edi-'+id);if(r)r.remove();
   save();renderDaily();renderRpg();showToast('已修改');
 }
@@ -1077,10 +1115,10 @@ function setFixedWho(who){
   const key=who==='Ollie'?'ollie':who==='Cody'?'cody':'both';
   const b=document.getElementById('fxwb-'+key);if(b)b.classList.add('on');
 }
-function addFixedItem(){
+function base_addFixedItem(){
   const name=document.getElementById('fx-name').value.trim();
   const amount=parseFloat(document.getElementById('fx-amount').value);
-  if(!name||!amount){showToast('請填入項目名稱和金額');return;}
+  if(!name||!Number.isFinite(amount)||amount<=0){showToast('請填入項目名稱和金額');return;}
   const who=selectedFixedWho;
   const id=uid();
   if(selectedFixedType==='monthly'){
@@ -1098,9 +1136,9 @@ function addFixedItem(){
 function addFixed(){addFixedItem();}
 function addAnnual(){addFixedItem();}
 
-function renderFixed(){
+function legacyRenderFixed(){
   // Clean up old spread/fromAnnual items from legacy data
-  if(D.fixed_extra)D.fixed_extra=D.fixed_extra.filter(i=>!i.fromAnnual);
+  // Keep legacy records intact; ignore spread-only templates in current UI.
 
   const monthly=(D.fixed_extra||[]).filter(i=>!i.fromAnnual);
   const annual=Array.isArray(D.annual_extra)?D.annual_extra:Object.values(D.annual_extra||{});
@@ -1170,13 +1208,13 @@ function openFixedList(key){
     <div class="item">
       <div class="il"><div class="iname">${esc(it.name)}</div></div>
       <div class="ir">
-        <div class="iamt ce">${fmt(it.amount)}${isAnnual?'':'<span style="font-size:11px;color:var(--t3)">/月</span>'}</div>
+        <div class="iamt ce">${fmt(it.amount)}${isAnnual?'':'<span style="font-size:12px;color:var(--t3)">/月</span>'}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="openFixedEdit('${it.id}',${isAnnual})" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="${isAnnual?`delAnnual('${it.id}')`:`delFixed('${it.id}')`};renderFixedList()">${TRASH}</button>
+          <button class="del edit-action" aria-label="編輯" onclick="openFixedEdit('${it.id}',${isAnnual})" style="color:#c8b898">${PENCIL}</button>
+          <button class="del delete-action" aria-label="刪除" onclick="${isAnnual?`delAnnual('${it.id}')`:`delFixed('${it.id}')`};renderFixedList()">${TRASH}</button>
         </div>
       </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:12px 0;text-align:center">尚無項目</div>';
+    </div>`).join(''):'<div style="font-size:14px;color:var(--t3);padding:12px 0;text-align:center">尚無項目</div>';
 
   document.getElementById('fixed-list-modal').style.display='block';
   document.body.style.overflow='hidden';
@@ -1193,7 +1231,7 @@ function renderFixedList(){
   if(_flCurrentKey)openFixedList(_flCurrentKey);
 }
 
-function openFixedEdit(id,isAnnual){
+function legacyOpenFixedEdit(id,isAnnual){
   const src=isAnnual
     ?(Array.isArray(D.annual_extra)?D.annual_extra:Object.values(D.annual_extra||{}))
     :(D.fixed_extra||[]);
@@ -1202,7 +1240,7 @@ function openFixedEdit(id,isAnnual){
   document.getElementById('fe-id').value=id;
   document.getElementById('fe-original-type').value=isAnnual?'annual':'monthly';
   document.getElementById('fe-name').value=it.name||'';
-  document.getElementById('fe-amount').value=it.amount||'';
+  document.getElementById('fe-amount').value=Math.round(Number(it.amount)||0)||'';
   _feWho=it.who||'';
   setFeWho(_feWho);
   setFeType(isAnnual?'annual':'monthly');
@@ -1238,14 +1276,14 @@ function setFeWho(who){
   if(b)b.classList.add('on');
 }
 
-function saveFixedEdit(){
+function base_saveFixedEdit(){
   const id=document.getElementById('fe-id').value;
   const origType=document.getElementById('fe-original-type').value;
   const ti=document.getElementById('fe-type-monthly');
   const newType=ti?ti.dataset.curtype||origType:origType;
   const name=document.getElementById('fe-name').value.trim();
   const amount=parseFloat(document.getElementById('fe-amount').value);
-  if(!name||!amount){showToast('請填入名稱和金額');return;}
+  if(!name||!Number.isFinite(amount)||amount<=0){showToast('請填入名稱和金額');return;}
   const who=_feWho;
 
   // Remove old
@@ -1282,17 +1320,6 @@ function renderAnnual(){renderFixed();}
 function setAnnualWho(who){}
 
 // ── 大型家電 ──
-function addAppliance(){
-  const name=document.getElementById('ap-name').value.trim();
-  const amount=parseFloat(document.getElementById('ap-amount').value);
-  if(!name||!amount)return;
-  const date=document.getElementById('ap-date').value||today();
-  const note=document.getElementById('ap-note').value;
-  if(!Array.isArray(D.appliances))D.appliances=[];
-  D.appliances.push({name,amount,date,note,id:uid()});
-  document.getElementById('ap-name').value='';document.getElementById('ap-amount').value='';document.getElementById('ap-note').value='';
-  save();renderAppliances();showToast('已新增');
-}
 function renderAppliances(){
   const raw=D.appliances||[];
   const items=[...raw].sort((a,b)=>b.date>a.date?1:-1);
@@ -1301,16 +1328,16 @@ function renderAppliances(){
     <div class="item" id="api-${it.id||i}">
       <div class="il">
         <div class="iname">${esc(it.name)}</div>
-        <div class="imeta">${[it.date,esc(it.note)].filter(Boolean).join(' · ')}</div>
+        <div class="imeta">${applianceOwnerLabel(it)} · ${[it.date,esc(it.note)].filter(Boolean).join(' · ')}</div>
       </div>
       <div class="ir">
         <div class="iamt ce">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editAppliance('${it.id||i}')" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delApplianceUndo('${it.id||i}')">${TRASH}</button>
+          <button class="del edit-action" aria-label="編輯" onclick="editAppliance('${it.id||i}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del delete-action" aria-label="刪除" onclick="delApplianceUndo('${it.id||i}')">${TRASH}</button>
         </div>
       </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
+    </div>`).join(''):'<div style="font-size:14px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
   document.getElementById('ap-total').textContent=fmt(raw.reduce((s,i)=>s+i.amount,0));
 }
 function delApplianceUndo(id){
@@ -1320,36 +1347,6 @@ function delApplianceUndo(id){
   save();renderAppliances();
   showToast('已刪除',()=>{D.appliances.push(snap);save();renderAppliances();showToast('已復原');},5000);
 }
-function editAppliance(id){
-  const it=(D.appliances||[]).find(i=>String(i.id)===String(id));if(!it)return;
-  const ex=document.getElementById('eap-'+id);if(ex){ex.remove();return;}
-  const div=document.createElement('div');div.id='eap-'+id;
-  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
-  div.innerHTML=`<div class="frow c2" style="margin-bottom:7px">
-    <input class="inp" type="text" id="eap-n-${id}" value="${esc(it.name)}" onkeydown="if(event.key==='Enter')saveEditAppliance('${id}')">
-    <input class="inp" type="number" id="eap-a-${id}" value="${it.amount}" inputmode="decimal" style="text-align:right">
-  </div>
-  <div class="frow c2" style="margin-bottom:7px">
-    <input class="inp" type="date" id="eap-d-${id}" value="${it.date||''}">
-    <input class="inp" type="text" id="eap-nt-${id}" value="${esc(it.note||'')}" placeholder="購買地點／備註">
-  </div>
-  <div class="frow c2">
-    <button class="btn primary" onclick="saveEditAppliance('${id}')">儲存</button>
-    <button class="btn" onclick="document.getElementById('eap-${id}').remove()">取消</button>
-  </div>`;
-  const el=document.getElementById('api-'+id);if(el)el.after(div);
-}
-function saveEditAppliance(id){
-  const it=(D.appliances||[]).find(i=>String(i.id)===String(id));if(!it)return;
-  const n=document.getElementById('eap-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
-  const a=document.getElementById('eap-a-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
-  const d=document.getElementById('eap-d-'+id);if(d&&d.value)it.date=d.value;
-  const nt=document.getElementById('eap-nt-'+id);if(nt)it.note=nt.value;
-  const r=document.getElementById('eap-'+id);if(r)r.remove();
-  save();renderAppliances();showToast('已修改');
-}
-
-// ── Costco ──
 function showLastPrice(name){
   const hint=document.getElementById('cc-last-price');if(!hint)return;
   if(!name||name.length<2){hint.textContent='';return;}
@@ -1357,7 +1354,7 @@ function showLastPrice(name){
   if(matches.length>0){hint.textContent=`上次 ${matches[0].date} 買是 ${fmt(matches[0].price)}`;hint.style.color='var(--acc)';}
   else hint.textContent='';
 }
-function addCostcoItem(){
+function base_addCostcoItem(){
   const date=document.getElementById('cc-date').value||today();
   const name=document.getElementById('cc-name').value.trim();
   const price=parseFloat(document.getElementById('cc-price').value);
@@ -1390,12 +1387,12 @@ function renderCostco(){
     const allSynced=items.every(i=>i.synced);
     return `<div style="margin-bottom:8px">
       <div onclick="toggleCcDay('${detailId}')" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:8px 0;border-bottom:1px solid var(--bg3)">
-        <span style="font-size:13px;font-weight:600;color:var(--text)">${date}</span>
+        <span style="font-size:14px;font-weight:600;color:var(--text)">${date}</span>
         <div style="display:flex;align-items:center;gap:8px">
-          <button onclick="event.stopPropagation();openCSModal('${date}')" style="font-size:11px;padding:3px 8px;border-radius:8px;border:1px solid var(--sea);background:var(--seal);color:var(--sea);cursor:pointer;font-family:inherit;${allSynced?'opacity:0.4':''}">${allSynced?'✓已轉入':'⇄ 一鍵轉入'}</button>
-          <span style="font-size:12px;color:var(--t3)">${items.length} 項</span>
-          <span style="font-size:13px;font-weight:600;color:var(--acc)">${fmt(dayTotal)}</span>
-          <span id="arr-${detailId}" style="color:var(--t3);font-size:11px">▾</span>
+          <button onclick="event.stopPropagation();openCSModal('${date}')" style="font-size:14px;min-height:40px;padding:4px 8px;border-radius:8px;border:1px solid var(--sea);background:var(--seal);color:var(--sea);cursor:pointer;font-family:inherit;${allSynced?'opacity:0.4':''}">${allSynced?'✓ 已加入日常':'加入日常開銷'}</button>
+          <span style="font-size:12px;color:var(--t3)">${items.length} 項${allSynced?'':' · '+items.filter(i=>!i.synced).length+' 筆未加入'}</span>
+          <span style="font-size:14px;font-weight:600;color:var(--acc)">${fmt(dayTotal)}</span>
+          <span id="arr-${detailId}" style="color:var(--t3);font-size:12px">▾</span>
         </div>
       </div>
       <div id="${detailId}" style="display:none">
@@ -1404,26 +1401,26 @@ function renderCostco(){
           const idx=hist.findIndex(h=>h.date===it.date&&h.price===it.price);
           const prev=idx>0?hist[idx-1]:null;
           let diffTag='';
-          if(prev){const diff=it.price-prev.price;if(diff>0)diffTag=`<span style="font-size:10px;color:var(--red);margin-left:3px">↑${diff}</span>`;else if(diff<0)diffTag=`<span style="font-size:10px;color:var(--mat);margin-left:3px">↓${Math.abs(diff)}</span>`;}
-          const syncBtn=it.synced?'<span style="font-size:10px;color:var(--mat)">✓</span>':`<button class="del" onclick="syncCostcoToDaily('${it.id}')" style="color:#c8b898">${SYNC}</button>`;
+          if(prev){const diff=it.price-prev.price;if(diff>0)diffTag=`<span style="font-size:12px;color:var(--red);margin-left:4px">↑${Math.round(diff)}</span>`;else if(diff<0)diffTag=`<span style="font-size:12px;color:var(--mat);margin-left:4px">↓${Math.round(Math.abs(diff))}</span>`;}
+          const syncBtn=costcoStatusButton(it);
           return `<div class="item" id="cci-${it.id}">
             <div class="il">
               <div class="iname">${esc(it.name)}</div>
-              ${prev?'<div style="font-size:11px;color:var(--t3)">上次 '+fmt(prev.price)+'</div>':''}
+              ${prev?'<div class="summary-note">上次 '+fmt(prev.price)+'</div>':''}
             </div>
             <div class="ir">
               <div class="iamt ce">${fmt(it.price)}${diffTag}</div>
               <div class="ibtn-row">
                 ${syncBtn}
-                <button class="del" onclick="editCostcoItem('${it.id}')" style="color:#c8b898">${PENCIL}</button>
-                <button class="del" onclick="delCostcoUndo('${it.id}')">${TRASH}</button>
+                <button class="del edit-action" aria-label="編輯" onclick="editCostcoItem('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+                <button class="del delete-action" aria-label="刪除" onclick="delCostcoUndo('${it.id}')">${TRASH}</button>
               </div>
             </div>
           </div>`;
         }).join('')}
       </div>
     </div>`;
-  }).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
+  }).join(''):'<div style="font-size:14px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
   const trow=document.getElementById('cc-trow');if(trow)trow.style.display=all.length?'flex':'none';
   const tel=document.getElementById('cc-total');if(tel)tel.textContent=fmt(all.reduce((s,i)=>s+i.price,0));
 }
@@ -1438,11 +1435,11 @@ function openCSModal(date){
   ['ollie','cody','both'].forEach(w=>{const b=document.getElementById('cswb-'+w);if(b)b.classList.remove('on');});
   document.getElementById('cswb-ollie').classList.add('on');
   const items=(D.costco||[]).filter(i=>i.date===date&&!i.synced);
-  document.getElementById('cs-modal-title').textContent=`一鍵轉入 ${date}（${items.length} 筆）`;
+  document.getElementById('cs-modal-title').textContent=`加入日常開銷 · ${date}（${items.length} 筆）`;
   const ml=document.getElementById('cs-modal-list');
   ml.innerHTML=items.length
-    ?items.map(it=>`<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--bg3);font-size:13px"><span>${esc(it.name)}</span><span style="font-weight:600;color:var(--acc)">${fmt(it.price)}</span></div>`).join('')
-    :'<div style="font-size:13px;color:var(--mat);padding:8px 0">✓ 這天都已轉入</div>';
+    ?items.map(it=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bg3);font-size:14px"><span>${esc(it.name)}</span><span style="font-weight:600;color:var(--acc)">${fmt(it.price)}</span></div>`).join('')
+    :'<div style="font-size:14px;color:var(--mat);padding:8px 0">✓ 這天都已加入日常</div>';
   document.getElementById('cs-modal').style.display='block';document.body.style.overflow='hidden';
 }
 function closeCSModal(){document.getElementById('cs-modal').style.display='none';document.body.style.overflow='';}
@@ -1451,27 +1448,6 @@ function setCSSyncWho(who){
   ['ollie','cody','both'].forEach(w=>{const b=document.getElementById('cswb-'+w);if(b)b.classList.remove('on');});
   const key=who==='Ollie'?'ollie':who==='Cody'?'cody':'both';
   const b=document.getElementById('cswb-'+key);if(b)b.classList.add('on');
-}
-function confirmCSSync(){
-  const items=(D.costco||[]).filter(i=>i.date===csSyncDate&&!i.synced);
-  if(!items.length){showToast('沒有未轉入的項目');closeCSModal();return;}
-  const m=csSyncDate.substring(0,7);
-  if(!D.daily[m])D.daily[m]=[];
-  items.forEach(it=>{
-    D.daily[m].push({cat:'日用品',amount:it.price,item:'Costco - '+it.name,note:'',who:csSyncWho||'一起',addedBy:csSyncWho||'一起',recordedBy:selectedRecorder,date:it.date,id:uid()});
-    it.synced=true;
-  });
-  dMonth=m;ovMonth=m;updateMonthUI('d',dMonth);updateMonthUI('ov',ovMonth);
-  save();renderCostco();renderDaily();updateOverview();renderRpg();closeCSModal();showToast(`已轉入 ${items.length} 筆！`);
-}
-
-function syncCostcoToDaily(id){
-  const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
-  const navBtns=document.querySelectorAll('.nav button');go('daily',navBtns[0]);
-  const amtEl=document.getElementById('d-amount');const itemEl=document.getElementById('d-item');const dateEl=document.getElementById('d-date');
-  if(amtEl)amtEl.value=it.price;if(itemEl)itemEl.value='Costco - '+it.name;if(dateEl)dateEl.value=it.date;
-  quickCat('日用品');window._pendingSyncCostcoId=it.id;showToast('已帶入日常開銷，確認後新增');
-  setTimeout(()=>{if(amtEl)amtEl.focus();},300);
 }
 function delCostcoUndo(id){
   const deleted=(D.costco||[]).find(i=>String(i.id)===String(id));if(!deleted)return;
@@ -1484,19 +1460,19 @@ function editCostcoItem(id){
   const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('ecc-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='ecc-'+id;
-  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
-  div.innerHTML=`<div class="frow c2" style="margin-bottom:7px">
+  div.style.cssText='background:var(--bg2);border-radius:8px;padding:8px;margin:4px 0;border:1px solid var(--border)';
+  div.innerHTML=`<div class="frow c2" style="margin-bottom:8px">
     <input class="inp" type="text" id="ecc-n-${id}" value="${esc(it.name)}" onkeydown="if(event.key==='Enter')saveEditCostco('${id}')">
-    <input class="inp" type="number" id="ecc-p-${id}" value="${it.price}" inputmode="decimal" style="text-align:right">
+    <input class="inp" type="number" id="ecc-p-${id}" value="${Math.round(Number(it.price)||0)}" inputmode="decimal" style="text-align:right">
   </div>
-  <div class="frow c1" style="margin-bottom:7px"><input class="inp" type="date" id="ecc-d-${id}" value="${it.date}"></div>
+  <div class="frow c1" style="margin-bottom:8px"><input class="inp" type="date" id="ecc-d-${id}" value="${it.date}"></div>
   <div class="frow c2">
     <button class="btn primary" onclick="saveEditCostco('${id}')">儲存</button>
     <button class="btn" onclick="document.getElementById('ecc-${id}').remove()">取消</button>
   </div>`;
   const el=document.getElementById('cci-'+id);if(el)el.after(div);
 }
-function saveEditCostco(id){
+function base_saveEditCostco(id){
   const it=(D.costco||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('ecc-n-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const p=document.getElementById('ecc-p-'+id);if(p){const v=parseFloat(p.value);if(v>0)it.price=v;}
@@ -1506,27 +1482,12 @@ function saveEditCostco(id){
 }
 
 // ── 意見箱 ──
-function addFeedback(){
+function base_addFeedback(){
   const text=document.getElementById('fb-text').value.trim();if(!text)return;
   if(!D.feedback)D.feedback=[];
   D.feedback.push({text,time:nowStr(),id:uid(),done:false,doneAt:''});
   document.getElementById('fb-text').value='';
   save();renderFeedback();showToast('已送出！');
-}
-function renderFeedback(){
-  const items=[...(D.feedback||[])].reverse();
-  const list=document.getElementById('fb-list');if(!list)return;
-  list.innerHTML=items.length?items.map(it=>`
-    <div class="item" style="${it.done?'opacity:0.5':''}">
-      <div style="display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0">
-        <button onclick="toggleDone('${it.id}')" style="flex-shrink:0;margin-top:2px;width:20px;height:20px;border-radius:50%;border:2px solid ${it.done?'var(--mat)':'var(--border2)'};background:${it.done?'var(--mat)':'transparent'};cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px">${it.done?'✓':''}</button>
-        <div class="il">
-          <div class="iname" style="font-weight:400;${it.done?'text-decoration:line-through;color:var(--t3)':''}">${esc(it.text)}</div>
-          <div class="imeta">${it.time}${it.done?' · 已完成 '+it.doneAt:''}</div>
-        </div>
-      </div>
-      <button class="del" onclick="delFeedback('${it.id}')" style="margin-left:8px;flex-shrink:0">${TRASH}</button>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">目前沒有留言</div>';
 }
 function toggleDone(id){const it=(D.feedback||[]).find(i=>String(i.id)===String(id));if(!it)return;it.done=!it.done;it.doneAt=it.done?nowStr():'';save();renderFeedback();}
 function delFeedback(id){D.feedback=(D.feedback||[]).filter(i=>String(i.id)!==String(id));save();renderFeedback();}
@@ -1537,7 +1498,7 @@ function setSalaryWho(who){
   ['ollie','cody'].forEach(w=>{const b=document.getElementById('salwb-'+w);if(b)b.classList.remove('on');});
   document.getElementById('salwb-'+who.toLowerCase()).classList.add('on');
 }
-function addSalary(){
+function base_addSalary(){
   const date=document.getElementById('sal-date').value||today();
   const amount=parseFloat(document.getElementById('sal-amount').value);
   const note=document.getElementById('sal-note').value.trim();
@@ -1564,11 +1525,11 @@ function renderSalary(){
       <div class="ir">
         <div class="iamt" style="color:var(--green)">${fmt(it.amount)}</div>
         <div class="ibtn-row">
-          <button class="del" onclick="editSalary('${it.id}')" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delSalaryUndo('${it.id}')">${TRASH}</button>
+          <button class="del edit-action" aria-label="編輯" onclick="editSalary('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del delete-action" aria-label="刪除" onclick="delSalaryUndo('${it.id}')">${TRASH}</button>
         </div>
       </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
+    </div>`).join(''):'<div style="font-size:14px;color:var(--t3);padding:4px 0">尚無紀錄</div>';
   const trow=document.getElementById('sal-trow');if(trow)trow.style.display=all.length?'flex':'none';
   const tot=document.getElementById('sal-total');if(tot)tot.textContent=fmt(ollieT);
 }
@@ -1583,12 +1544,12 @@ function editSalary(id){
   const it=(D.salary||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('esal-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='esal-'+id;
-  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:6px 0;border:1px solid var(--border)';
-  div.innerHTML=`<div class="frow c2" style="margin-bottom:7px">
+  div.style.cssText='background:var(--bg2);border-radius:8px;padding:8px;margin:4px 0;border:1px solid var(--border)';
+  div.innerHTML=`<div class="frow c2" style="margin-bottom:8px">
     <input class="inp" type="date" id="esald-${id}" value="${it.date}">
-    <input class="inp" type="number" id="esala-${id}" value="${it.amount}" inputmode="decimal" style="text-align:right" onkeydown="if(event.key==='Enter')saveEditSalary('${id}')">
+    <input class="inp" type="number" id="esala-${id}" value="${Math.round(Number(it.amount)||0)}" inputmode="decimal" style="text-align:right" onkeydown="if(event.key==='Enter')saveEditSalary('${id}')">
   </div>
-  <div class="frow c1" style="margin-bottom:7px">
+  <div class="frow c1" style="margin-bottom:8px">
     <input class="inp" type="text" id="esaln-${id}" value="${esc(it.note||'')}" placeholder="備註" onkeydown="if(event.key==='Enter')saveEditSalary('${id}')">
   </div>
   <div class="frow c2">
@@ -1597,7 +1558,7 @@ function editSalary(id){
   </div>`;
   const el=document.getElementById('sali-'+id);if(el)el.after(div);
 }
-function saveEditSalary(id){
+function base_saveEditSalary(id){
   const it=(D.salary||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const d=document.getElementById('esald-'+id);if(d&&d.value)it.date=d.value;
   const a=document.getElementById('esala-'+id);if(a){const v=parseFloat(a.value);if(v>0)it.amount=v;}
@@ -1609,8 +1570,8 @@ function saveEditSalary(id){
 
 <script>
 // ── 目標/存款 ──
-function saveGoal(val){const v=parseFloat(val);if(!v||v<=0)return;D.goal=v;save();updateOverview();showToast('目標已更新');}
-function saveSavings(val){const v=parseFloat(val);if(isNaN(v)||v<0)return;D.savings_amount=v;save();updateOverview();showToast('存款已更新');}
+function base_saveGoal(val){const v=parseFloat(val);if(!v||v<=0)return;D.goal=v;save();updateOverview();showToast('目標已更新');}
+function base_saveSavings(val){const v=parseFloat(val);if(isNaN(v)||v<0)return;D.savings_amount=v;save();updateOverview();showToast('存款已更新');}
 function toggleSavings(){
   savingsVisible=!savingsVisible;
   const svg=document.getElementById('eye-svg');
@@ -1624,7 +1585,7 @@ function toggleSavings(){
 }
 
 // ── 總覽 ──
-function updateOverview(skipChart=false){
+function legacyUpdateOverview(skipChart=false){
   const target=Number(D.goal)||8000000;
   const savings=Number(D.savings_amount)||0;
   const pct=Math.min(100,Math.round(savings/target*100));
@@ -1634,116 +1595,6 @@ function updateOverview(skipChart=false){
   const bar=document.getElementById('ov-bar');if(bar)bar.style.width=pct+'%';
   const hi=document.getElementById('ov-hint');if(hi)hi.textContent=diff>0?'還差 '+fmt(diff):'🎉 已達成目標！';
   renderMilestones(target,savings);
-  const m=ovMonth||curMonth();
-  const dailyItems=(D.daily&&D.daily[m])||[];
-  const dailyTotal=dailyItems.reduce((s,i)=>s+i.amount,0);
-  const isCurrentMonth=m===curMonth();
-  const fixedTotal=(D.fixed_extra||[]).filter(i=>!i.fromAnnual).reduce((s,i)=>s+i.amount,0);
-  const totalExp=fixedTotal+dailyTotal;
-  const ex=document.getElementById('ov-exp');if(ex)ex.textContent=fmt(totalExp);
-
-
-  const fi=document.getElementById('ov-fixed');if(fi)fi.textContent=fmt(fixedTotal);
-  const di=document.getElementById('ov-daily');if(di)di.textContent=fmt(dailyTotal);
-  // 兩人各自消費（日常開銷，一起拆半；固定支出一起也拆半）
-  let dOllie=0,dCody=0,dBoth=0;
-  dailyItems.forEach(it=>{
-    const amt=it.amount||0;
-    const w=it.addedBy||it.who||'';
-    if(w==='Ollie')dOllie+=amt;
-    else if(w==='Cody')dCody+=amt;
-    else dBoth+=amt;
-  });
-  let fOllie=0,fCody=0,fBoth=0;
-  (D.fixed_extra||[]).forEach(it=>{
-    const amt=it.amount||0;
-    if(it.who==='Ollie')fOllie+=amt;
-    else if(it.who==='Cody')fCody+=amt;
-    else fBoth+=amt;
-  });
-  const ollieTotal=dOllie+Math.round(dBoth/2)+fOllie+Math.round(fBoth/2);
-  const codyTotal=dCody+Math.round(dBoth/2)+fCody+Math.round(fBoth/2);
-  const ovOt=document.getElementById('ov-ollie-total');if(ovOt)ovOt.textContent=fmt(ollieTotal);
-  const ovCt=document.getElementById('ov-cody-total');if(ovCt)ovCt.textContent=fmt(codyTotal);
-  const cats={};dailyItems.forEach(i=>{cats[i.cat]=(cats[i.cat]||0)+i.amount;});
-  const sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]);
-  const cc=document.getElementById('ov-cat-card');const cl=document.getElementById('ov-cat-list');
-  if(sorted.length&&cc&&cl){
-    cc.style.display='block';
-    cl.innerHTML=sorted.map(([cat,amt])=>{
-      const p=dailyTotal>0?Math.round(amt/dailyTotal*100):0;
-      return `<div style="margin-bottom:9px">
-        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px">
-          <span class="badge ${CAT_CLS[cat]||'ba'}">${cat}</span>
-          <span style="font-weight:500">${fmt(amt)} <span style="color:var(--t3);font-weight:400">${p}%</span></span>
-        </div>
-        <div class="sbar"><div class="sfill" style="width:${p}%"></div></div>
-      </div>`;
-    }).join('');
-  } else if(cc)cc.style.display='none';
-  if(!skipChart)renderTrendChart();
-}
-
-function renderMilestones(target,savings=0){
-  const wrap=document.getElementById('milestone-wrap');if(!wrap)return;
-  const milestones=[
-    {amount:1000000,label:'100萬'},{amount:2000000,label:'裝潢款'},
-    {amount:4000000,label:'家具款'},{amount:6000000,label:'頭期款'},
-    {amount:8000000,label:'大狗窩'},
-  ];
-  const savPct=Math.min(100,savings/target*100);
-  const nextIdx=milestones.findIndex(m=>(m.amount/target*100)>savPct);
-  wrap.innerHTML=milestones.map((m,i)=>{
-    const rawPct=Math.round(m.amount/target*100);
-    const isLast=(i===milestones.length-1);
-    const pct=isLast?100:Math.min(98,rawPct);
-    const transform=isLast?'translateX(-100%)':pct<8?'translateX(-5%)':'translateX(-50%)';
-    const achieved=savPct>=(m.amount/target*100);const isNext=i===nextIdx;
-    const dotColor=achieved?'var(--mat)':isNext?'var(--acc)':'var(--border2)';
-    const dotAnim=isNext?'animation:breathe 1.8s infinite ease-in-out':'';
-    const label=achieved?'✓ '+m.label:m.label;
-    const labelColor=achieved?'var(--mat)':isNext?'var(--acc)':'var(--t3)';
-    const lw=achieved||isNext?'600':'400';
-    return `<div style="position:absolute;left:${pct}%;transform:${transform};text-align:center;top:0">
-      <div style="width:6px;height:6px;border-radius:50%;background:${dotColor};margin:2px auto;${dotAnim}"></div>
-      <div style="font-size:9px;color:${labelColor};white-space:nowrap;margin-top:2px;font-weight:${lw}">${label}</div>
-    </div>`;
-  }).join('');
-}
-
-function renderTrendChart(){
-  const canvas=document.getElementById('trend-chart');if(!canvas)return;
-  const now=new Date();const labels=[],datDaily=[],datFixed=[];
-  for(let i=5;i>=0;i--){
-    const d=new Date(now.getFullYear(),now.getMonth()-i,1);
-    const m=d.getFullYear()+'-'+(d.getMonth()+1).toString().padStart(2,'0');
-    const mo=d.getMonth()+1;
-    labels.push(d.getFullYear()%100+'/'+(mo<10?'0'+mo:mo));
-    const daily=(D.daily&&D.daily[m])||[];
-    const dt=daily.reduce((s,it)=>s+it.amount,0);
-    const isPast=m<=curMonth();
-    const ft=isPast?(D.fixed_extra||[]).reduce((s,it)=>s+it.amount,0):0;
-    datDaily.push(dt);datFixed.push(ft);
-  }
-  if(trendChart)trendChart.destroy();
-  trendChart=new Chart(canvas,{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'固定支出',data:datFixed,backgroundColor:'rgba(240,140,33,0.25)',borderColor:'rgba(240,140,33,0.5)',borderWidth:1,stack:'total'},
-      {label:'日常開銷',data:datDaily,backgroundColor:'rgba(240,140,33,0.7)',borderColor:'#F08C21',borderWidth:1,stack:'total'}
-    ]},
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{
-        legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#a89878',boxWidth:10,padding:8}},
-        tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmt(ctx.raw),footer:items=>'合計: '+fmt(items.reduce((s,i)=>s+i.raw,0))}}
-      },
-      scales:{
-        x:{grid:{display:false},ticks:{font:{size:11},color:'#a89878'}},
-        y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:11},color:'#a89878',callback:v=>'$'+v.toLocaleString()},stacked:true}
-      }
-    }
-  });
 }
 
 function exportData(){
@@ -1754,42 +1605,7 @@ function exportData(){
 }
 
 // ── 年度總結 ──
-function updateYearlySummary(){
-  const sel=document.getElementById('year-select');
-  const year=sel?parseInt(sel.value):new Date().getFullYear();
-  const now=new Date();
-  let totalAll=0;const months=[];
-  for(let mo=1;mo<=12;mo++){
-    const key=year+'-'+(mo<10?'0'+mo:''+mo);
-    const daily=(D.daily&&D.daily[key])||[];
-    const dt=daily.reduce((s,i)=>s+i.amount,0);
-    const ft=(D.fixed_extra||[]).reduce((s,i)=>s+i.amount,0);
-    const total=dt+ft;months.push({month:mo,key,total});totalAll+=total;
-  }
-  const passedMonths=year<now.getFullYear()?12:now.getMonth()+1;
-  const avg=passedMonths>0?Math.round(totalAll/passedMonths):0;
-  const worst=months.reduce((a,b)=>b.total>a.total?b:a,months[0]);
-  const ytEl=document.getElementById('yearly-total');if(ytEl)ytEl.textContent=fmt(totalAll);
-  const yaEl=document.getElementById('yearly-avg');if(yaEl)yaEl.textContent=fmt(avg);
-  const barsEl=document.getElementById('yearly-bars');
-  if(barsEl){
-    const max=Math.max(...months.map(m=>m.total),1);
-    const avgPct=Math.round(avg/max*100);
-    barsEl.innerHTML=months.map(m=>{
-      const pct=Math.round(m.total/max*100);
-      const isWorst=m.month===worst.month&&worst.total>0;
-      const isAboveAvg=m.total>avg;
-      return `<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-        <span style="font-size:10px;color:var(--t3);width:20px;flex-shrink:0">${m.month}月</span>
-        <div style="flex:1;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;position:relative">
-          <div style="height:100%;width:${pct}%;background:${isWorst?'var(--pink)':isAboveAvg?'var(--acc)':'var(--mat)'};border-radius:4px;transition:width 0.5s"></div>
-          <div style="position:absolute;top:0;left:${avgPct}%;width:2px;height:100%;background:var(--t3);opacity:0.6"></div>
-        </div>
-        <span style="font-size:10px;color:${isWorst?'var(--pink)':isAboveAvg?'var(--acc)':'var(--t3)'};width:70px;text-align:right;flex-shrink:0">${m.total>0?fmt(m.total):'－'}</span>
-      </div>`;
-    }).join('')+'<div style="font-size:10px;color:var(--t3);margin-top:4px;text-align:right">— 月均線</div>';
-  }
-}
+
 function initYearSelect(){
   const sel=document.getElementById('year-select');if(!sel)return;
   const now=new Date();const years=[];
@@ -1799,7 +1615,7 @@ function initYearSelect(){
 }
 
 // ── 待購清單 ──
-function addWishlist(){
+function base_addWishlist(){
   const name=document.getElementById('wl-name').value.trim();
   const price=parseFloat(document.getElementById('wl-price').value)||0;
   const note=document.getElementById('wl-note').value.trim();
@@ -1815,37 +1631,36 @@ function renderWishlist(){
   const sorted=[...items].sort((a,b)=>a.done===b.done?0:a.done?1:-1);
   list.innerHTML=sorted.length?sorted.map(it=>`
     <div class="wl-item" id="wli-${it.id}" style="${it.done?'opacity:0.5':''}">
-      <button class="wl-check${it.done?' done':''}" onclick="toggleWishlist('${it.id}')">${it.done?'✓':''}</button>
+      <button title="${it.done?'查看或補登已購紀錄':'確認購買並加入已購'}" aria-label="${it.done?'查看或補登已購紀錄':'確認購買並加入已購'}" class="wl-check${it.done?' done':''}" onclick="toggleWishlist('${it.id}')">${it.done?'✓':''}</button>
       <div style="flex:1;min-width:0;margin:0 8px">
         <div style="font-size:14px;font-weight:500;${it.done?'text-decoration:line-through;color:var(--t3)':''}">${esc(it.name)}</div>
-        ${it.note?`<div style="font-size:12px;color:var(--t3);margin-top:1px">${esc(it.note)}</div>`:''}
+        ${it.note?`<div style="font-size:12px;color:var(--t3);margin-top:4px">${esc(it.note)}</div>`:''}${it.done?`<div class="imeta">${wishAppliance(it)?'已建立購買紀錄':'舊已購標記 · 點勾選鈕補登'}</div>`:''}
       </div>
       <div style="text-align:right;flex-shrink:0">
-        ${it.price?`<div style="font-size:13px;font-weight:600;color:var(--sea)">${fmt(it.price)}</div>`:'<div style="font-size:12px;color:var(--t3)">未估價</div>'}
-        <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:3px">
-          <button class="del" onclick="editWishlist('${it.id}')" style="color:#c8b898">${PENCIL}</button>
-          <button class="del" onclick="delWishlist('${it.id}')">${TRASH}</button>
+        ${it.price?`<div style="font-size:14px;font-weight:600;color:var(--sea)">${fmt(it.price)}</div>`:'<div style="font-size:12px;color:var(--t3)">未估價</div>'}
+        <div style="display:flex;gap:4px;justify-content:flex-end;margin-top:4px">
+          <button class="del edit-action" aria-label="編輯" onclick="editWishlist('${it.id}')" style="color:#c8b898">${PENCIL}</button>
+          <button class="del delete-action" aria-label="刪除" onclick="delWishlist('${it.id}')">${TRASH}</button>
         </div>
       </div>
-    </div>`).join(''):'<div style="font-size:13px;color:var(--t3);padding:4px 0">還沒有待購項目</div>';
+    </div>`).join(''):'<div style="font-size:14px;color:var(--t3);padding:4px 0">還沒有待購項目</div>';
   const undoneTotal=items.filter(i=>!i.done).reduce((s,i)=>s+(i.price||0),0);
   const trow=document.getElementById('wl-trow');if(trow)trow.style.display=items.length?'flex':'none';
   const tot=document.getElementById('wl-total');if(tot)tot.textContent=fmt(undoneTotal);
   const clr=document.getElementById('wl-clear-btn');if(clr)clr.style.display=items.some(i=>i.done)?'inline-block':'none';
 }
 function clearDoneWishlist(){D.wishlist=(D.wishlist||[]).filter(i=>!i.done);save();renderWishlist();showToast('已清除已購項目');}
-function toggleWishlist(id){const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;it.done=!it.done;if(it.done)showToast('已標記購買！');save();renderWishlist();}
 function delWishlist(id){D.wishlist=(D.wishlist||[]).filter(i=>String(i.id)!==String(id));save();renderWishlist();}
 function editWishlist(id){
   const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const ex=document.getElementById('ewl-'+id);if(ex){ex.remove();return;}
   const div=document.createElement('div');div.id='ewl-'+id;
-  div.style.cssText='background:var(--bg2);border-radius:8px;padding:10px;margin:4px 0;border:1px solid var(--border)';
-  div.innerHTML=`<div class="frow c2" style="margin-bottom:7px">
+  div.style.cssText='background:var(--bg2);border-radius:8px;padding:8px;margin:4px 0;border:1px solid var(--border)';
+  div.innerHTML=`<div class="frow c2" style="margin-bottom:8px">
     <input class="inp" type="text" id="ewln-${id}" value="${esc(it.name)}" onkeydown="if(event.key==='Enter')saveEditWishlist('${id}')">
-    <input class="inp" type="number" id="ewlp-${id}" value="${it.price||''}" inputmode="decimal" placeholder="預估金額">
+    <input class="inp" type="number" id="ewlp-${id}" value="${Math.round(Number(it.price||'')||0)}" inputmode="decimal" placeholder="預估金額">
   </div>
-  <div class="frow c1" style="margin-bottom:7px">
+  <div class="frow c1" style="margin-bottom:8px">
     <input class="inp" type="text" id="ewlnt-${id}" value="${esc(it.note||'')}" placeholder="備註" onkeydown="if(event.key==='Enter')saveEditWishlist('${id}')">
   </div>
   <div class="frow c2">
@@ -1854,7 +1669,7 @@ function editWishlist(id){
   </div>`;
   const el=document.getElementById('wli-'+id);if(el)el.after(div);
 }
-function saveEditWishlist(id){
+function base_saveEditWishlist(id){
   const it=(D.wishlist||[]).find(i=>String(i.id)===String(id));if(!it)return;
   const n=document.getElementById('ewln-'+id);if(n&&n.value.trim())it.name=n.value.trim();
   const p=document.getElementById('ewlp-'+id);if(p)it.price=parseFloat(p.value)||0;
@@ -1884,7 +1699,7 @@ function getTitle(lv){return(TITLES.find(t=>lv>=t.min&&lv<=t.max)||TITLES[TITLES
 function expForNextLevel(lv){return Math.pow(lv+1,2)*5;}
 
 // FIX#14: recordedBy 優先，fallback 到 addedBy
-function calcRpg(who){
+function legacyCalcRpg(who){
   const name=who==='ollie'?'Ollie':'Cody';
   let exp=0,total=0,noted=0;
   Object.values(D.daily||{}).forEach(items=>{
@@ -1924,186 +1739,9 @@ function triggerLevelUp(who,lv){
   animate();
 }
 
-function renderRpg(){
-  const o=calcRpg('ollie');const c=calcRpg('cody');
-  const oLv=getLevel(o.exp);const cLv=getLevel(c.exp);
-  const oNext=expForNextLevel(oLv);const cNext=expForNextLevel(cLv);
-  const oPct=Math.min(100,Math.round((o.exp-(oLv-1)*(oLv-1)*5)/(oNext-Math.max(0,(oLv-1)*(oLv-1)*5))*100));
-  const cPct=Math.min(100,Math.round((c.exp-(cLv-1)*(cLv-1)*5)/(cNext-Math.max(0,(cLv-1)*(cLv-1)*5))*100));
-  const otEl=document.getElementById('ollie-title');if(otEl)otEl.textContent=`LV.${oLv} ${getTitle(oLv)}`;
-  const oeEl=document.getElementById('ollie-exp');if(oeEl)oeEl.textContent=o.exp;
-  const onEl=document.getElementById('ollie-next');if(onEl)onEl.textContent=oNext;
-  const obEl=document.getElementById('ollie-xpbar');if(obEl)obEl.style.width=oPct+'%';
-  const oiEl=document.getElementById('o-int');if(oiEl)oiEl.textContent=(o.int_score||0)+'%';
-  const oeEl2=document.getElementById('o-entries');if(oeEl2){oeEl2.textContent=o.total_entries||0;oeEl2.onclick=()=>showRpgEntries('Ollie');}
-  const ctEl=document.getElementById('cody-title');if(ctEl)ctEl.textContent=`LV.${cLv} ${getTitle(cLv)}`;
-  const ceEl=document.getElementById('cody-exp');if(ceEl)ceEl.textContent=c.exp;
-  const cnEl=document.getElementById('cody-next');if(cnEl)cnEl.textContent=cNext;
-  const cbEl=document.getElementById('cody-xpbar');if(cbEl)cbEl.style.width=cPct+'%';
-  const ciEl=document.getElementById('c-int');if(ciEl)ciEl.textContent=(c.int_score||0)+'%';
-  const ceEl2=document.getElementById('c-entries');if(ceEl2){ceEl2.textContent=c.total_entries||0;ceEl2.onclick=()=>showRpgEntries('Cody');}
-  const lvDiff=Math.abs(oLv-cLv);
-  if(lvDiff>5){
-    const leadB=oLv>cLv?document.getElementById('ollie-bubble'):document.getElementById('cody-bubble');
-    const behindB=oLv>cLv?document.getElementById('cody-bubble'):document.getElementById('ollie-bubble');
-    if(leadB){leadB.style.display='block';leadB.textContent=TAUNT_LEAD[Math.floor(Math.random()*TAUNT_LEAD.length)];}
-    if(behindB){behindB.style.display='block';behindB.textContent=TAUNT_BEHIND[Math.floor(Math.random()*TAUNT_BEHIND.length)];}
-  } else {
-    ['ollie-bubble','cody-bubble'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
-  }
-  const totalExp=o.exp+c.exp;
-  const housePct=Math.min(100,Math.round(totalExp/2000*100));
-  const hb=document.getElementById('house-bar');if(hb)hb.style.width=housePct+'%';
-  const hp=document.getElementById('house-pct');if(hp)hp.textContent=housePct+'%';
-  const te=document.getElementById('total-exp');if(te)te.textContent=totalExp;
-  const nextUnlock=HOUSE_UNLOCKS.find(u=>housePct<u.pct);
-  const sl=document.getElementById('house-stage-label');if(sl)sl.textContent=nextUnlock?`下一個：${nextUnlock.item} (${nextUnlock.pct}%)`:'🎉 全部解鎖！';
-  const hu=document.getElementById('house-unlocks');
-  if(hu)hu.innerHTML=HOUSE_UNLOCKS.map(u=>{
-    const unlocked=housePct>=u.pct;const isNext=!unlocked&&nextUnlock&&u.pct===nextUnlock.pct;
-    const parts=u.item.split(' ');const icon=parts[0];const label=parts.slice(1).join(' ');
-    return `<div class="milestone-card${unlocked?' unlocked':isNext?' next':''}">
-      <span class="m-icon">${unlocked?icon:'🔒'}</span>
-      <div class="m-label">${label}</div>
-      <div class="m-pct">${u.pct}%</div>
-    </div>`;
-  }).join('');
-  const maxE=Math.max(o.exp,c.exp,1);const maxT=Math.max(o.total_entries,c.total_entries,1);const maxI=Math.max(o.int_score,c.int_score,1);
-  const cb=document.getElementById('rpg-compare-body');
-  if(cb)cb.innerHTML=`
-    <div class="cmp-row">
-      <div class="cmp-label"><span style="color:var(--acc)">👽 Ollie &nbsp;EXP ${o.exp}</span><span style="color:var(--pink)">EXP ${c.exp} &nbsp;Cody 🐩</span></div>
-      <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--bg3)">
-        <div style="width:${Math.round(o.exp/maxE*50)}%;background:linear-gradient(to right,var(--acc2),var(--acc));border-radius:4px 0 0 4px;transition:width 0.8s"></div>
-        <div style="flex:1"></div>
-        <div style="width:${Math.round(c.exp/maxE*50)}%;background:linear-gradient(to left,#f0a0b8,var(--pink));border-radius:0 4px 4px 0;transition:width 0.8s"></div>
-      </div>
-    </div>
-    <div class="cmp-row">
-      <div class="cmp-label"><span style="color:var(--acc)">記帳 ${o.total_entries} 筆</span><span style="color:var(--pink)">記帳 ${c.total_entries} 筆</span></div>
-      <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--bg3)">
-        <div style="width:${Math.round(o.total_entries/maxT*50)}%;background:linear-gradient(to right,var(--acc2),var(--acc));border-radius:4px 0 0 4px;transition:width 0.8s"></div>
-        <div style="flex:1"></div>
-        <div style="width:${Math.round(c.total_entries/maxT*50)}%;background:linear-gradient(to left,#f0a0b8,var(--pink));border-radius:0 4px 4px 0;transition:width 0.8s"></div>
-      </div>
-    </div>
-    <div class="cmp-row" style="margin-bottom:0">
-      <div class="cmp-label"><span style="color:var(--acc)">備註率 ${o.int_score}%</span><span style="color:var(--pink)">備註率 ${c.int_score}%</span></div>
-      <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--bg3)">
-        <div style="width:${Math.round(o.int_score/Math.max(maxI,1)*50)}%;background:linear-gradient(to right,var(--acc2),var(--acc));border-radius:4px 0 0 4px;transition:width 0.8s"></div>
-        <div style="flex:1"></div>
-        <div style="width:${Math.round(c.int_score/Math.max(maxI,1)*50)}%;background:linear-gradient(to left,#f0a0b8,var(--pink));border-radius:0 4px 4px 0;transition:width 0.8s"></div>
-      </div>
-    </div>`;
-  const tg=document.getElementById('title-grid');
-  if(tg)tg.innerHTML=TITLES.map(t=>{
-    const oA=oLv>=t.min&&oLv<=t.max;const cA=cLv>=t.min&&cLv<=t.max;
-    const active=oA||cA;const who=oA&&cA?'👽🐩':oA?'👽':cA?'🐩':'';
-    return `<div class="title-item${active?' active':''}">
-      <div class="ti-lv">LV.${t.min}${t.max<999?'-'+t.max:'+'}${who?' &nbsp;'+who:''}</div>
-      <div class="ti-name">${t.name}</div>
-    </div>`;
-  }).join('');
-}
 
-function showRpgEntries(who){
-  const modal=document.getElementById('rpg-modal');const list=document.getElementById('rpg-modal-list');if(!modal||!list)return;
-  document.getElementById('rpg-modal-title').textContent=who+' 的記帳明細';
-  const entries=[];
-  Object.entries(D.daily||{}).forEach(function(pair){
-    const m=pair[0];const items=pair[1];
-    (items||[]).forEach(function(it){
-      const recorder=it.recordedBy||'';const spender=it.addedBy||it.who||'';
-      if(recorder===who||(recorder===''&&spender===who)){entries.push(Object.assign({},it,{month:m}));}
-    });
-  });
-  entries.sort(function(a,b){return b.date>a.date?1:-1;});
-  if(!entries.length){list.innerHTML='<div style="font-size:13px;color:var(--t3);padding:20px;text-align:center">尚無記帳紀錄</div>';}
-  else{
-    list.innerHTML=entries.map(function(it){
-      const baseExp=15;const noteExp=(it.note&&it.note.length>0)?10:0;const totalExp=baseExp+noteExp;
-      const eb=noteExp>0?'+'+baseExp+'基礎 +'+noteExp+'備註':'+'+baseExp+'基礎';
-      const catClass=CAT_CLS[it.cat]||'ba';
-      return '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bg3)">'+
-        '<div style="flex:1;min-width:0">'+
-        '<div style="font-size:14px;font-weight:500">'+esc(it.item||'－')+' <span class="badge '+catClass+'">'+esc(it.cat)+'</span></div>'+
-        '<div style="font-size:12px;color:var(--t3);margin-top:2px">'+esc(it.date)+(it.note?' · '+esc(it.note):'')+'</div>'+
-        '<div style="font-size:11px;color:var(--acc);margin-top:3px;font-weight:500">⚡ +'+totalExp+' EXP <span style="color:var(--t3);font-weight:400">('+eb+')</span></div>'+
-        '</div>'+
-        '<div style="font-size:14px;font-weight:600;color:var(--acc);flex-shrink:0;margin-left:10px">'+fmt(it.amount)+'</div>'+
-        '</div>';
-    }).join('');
-  }
-  modal.style.display='block';document.body.style.overflow='hidden';
-}
-function showOvDetail(who){
-  const modal=document.getElementById('ov-detail-modal');
-  const title=document.getElementById('ov-detail-title');
-  const list=document.getElementById('ov-detail-list');
-  const totalEl=document.getElementById('ov-detail-total');
-  if(!modal||!list)return;
-  const m=ovMonth||curMonth();
-  const color=who==='Ollie'?'var(--acc)':'var(--pink)';
-  const icon=who==='Ollie'?'👽':'🐩';
-  const [my,mm]=m.split('-').map(Number);
-  title.innerHTML=`<span style="color:${color}">${icon} ${who} · ${my}年${mm}月</span>`;
-  title.style.color=color;
 
-  // 日常開銷：自己的 + 一起的一半
-  const dailyItems=(D.daily&&D.daily[m])||[];
-  const myItems=dailyItems.filter(it=>(it.addedBy||it.who||'')=== who);
-  const bothItems=dailyItems.filter(it=>!['Ollie','Cody'].includes(it.addedBy||it.who||''));
-  // 固定支出：自己的 + 一起的一半
-  const myFixed=(D.fixed_extra||[]).filter(it=>it.who===who);
-  const bothFixed=(D.fixed_extra||[]).filter(it=>it.who!=='Ollie'&&it.who!=='Cody');
 
-  let detailHtml='';
-  let grandTotal=0;
-
-  // 固定支出區塊
-  const fixedTotal=myFixed.reduce((s,i)=>s+i.amount,0)+Math.round(bothFixed.reduce((s,i)=>s+i.amount,0)/2);
-  if(myFixed.length||bothFixed.length){
-    detailHtml+=`<div style="font-size:11px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:6px;margin-top:4px">固定支出</div>`;
-    myFixed.forEach(it=>{
-      detailHtml+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bg3);font-size:13px">
-        <span>${esc(it.name)}</span><span style="font-weight:600;color:${color}">${fmt(it.amount)}</span></div>`;
-      grandTotal+=it.amount;
-    });
-    bothFixed.forEach(it=>{
-      const half=Math.round(it.amount/2);
-      detailHtml+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bg3);font-size:13px">
-        <span>${esc(it.name)} <span style="font-size:10px;color:var(--t3)">(一起÷2)</span></span><span style="font-weight:600;color:${color}">${fmt(half)}</span></div>`;
-      grandTotal+=half;
-    });
-  }
-
-  // 日常開銷區塊
-  if(myItems.length||bothItems.length){
-    detailHtml+=`<div style="font-size:11px;font-weight:600;color:var(--t3);letter-spacing:0.08em;margin-bottom:6px;margin-top:12px">日常開銷</div>`;
-    const allDaily=[
-      ...myItems.map(it=>({...it,_half:false})),
-      ...bothItems.map(it=>({...it,_half:true}))
-    ].sort((a,b)=>b.date>a.date?1:-1);
-    allDaily.forEach(it=>{
-      const amt=it._half?Math.round(it.amount/2):it.amount;
-      detailHtml+=`<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--bg3)">
-        <div>
-          <div style="font-size:13px">${it.item?esc(it.item)+' ':''}<span class="badge ${CAT_CLS[it.cat]||'ba'}">${esc(it.cat)}</span>${it._half?'<span style="font-size:10px;color:var(--t3);margin-left:3px">(一起÷2)</span>':''}</div>
-          <div style="font-size:11px;color:var(--t3)">${it.date}${it.note?' · '+esc(it.note):''}</div>
-        </div>
-        <span style="font-weight:600;color:${color};flex-shrink:0;margin-left:8px">${fmt(amt)}</span>
-      </div>`;
-      grandTotal+=amt;
-    });
-  }
-
-  if(!detailHtml)html='<div style="font-size:13px;color:var(--t3);padding:20px;text-align:center">本月尚無支出</div>';
-  list.innerHTML=detailHtml;
-  totalEl.textContent=fmt(grandTotal);
-  totalEl.style.color=color;
-  modal.style.display='block';
-  document.body.style.overflow='hidden';
-}
 function closeOvDetail(){
   const modal=document.getElementById('ov-detail-modal');if(modal)modal.style.display='none';
   document.body.style.overflow='';
@@ -2128,6 +1766,232 @@ function renderAll(skipChart=false){
   // Only render chart separately when needed
   if(doChart)renderTrendChart();
 }
+</script>
+<script>
+// Targeted v2 features: date ranges, immutable payment snapshots, habit-based progression.
+var overviewRange=null;
+function asList(v){return Array.isArray(v)?v:Object.values(v||{});}
+function validDate(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return false;const d=new Date(v+'T12:00:00');return !isNaN(d)&&localDate(d)===v;}
+function localDate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function monthEnd(m){const [y,n]=m.split('-').map(Number);return localDate(new Date(y,n,0,12));}
+function allDaily(){return Object.entries(D.daily||{}).flatMap(([m,items])=>asList(items).map(it=>({...it,date:it.date||m+'-01'})));}
+function payments(){return asList(D.fixedPayments);}
+function getRange(){return overviewRange||{start:(ovMonth||curMonth())+'-01',end:monthEnd(ovMonth||curMonth())};}
+function inRange(it,r){return validDate(it.date)&&it.date>=r.start&&it.date<=r.end;}
+function amountSum(items){return items.reduce((s,it)=>s+(Number(it.amount)||0),0);}
+function put(id,text){const e=document.getElementById(id);if(e)e.textContent=text;}
+function applyRange(){if(!validateFields([['range-start','date'],['range-end','date']]))return;const start=document.getElementById('range-start').value,end=document.getElementById('range-end').value;if(!validDate(start)||!validDate(end)||start>end){fieldError('range-end','結束日不可早於開始日');return;}overviewRange={start,end};updateOverview();}
+function changeOvMonth(dir){const [y,m]=(ovMonth||curMonth()).split('-').map(Number);const d=new Date(y,m-1+dir,1);ovMonth=localDate(d).slice(0,7);if(ovMonth>curMonth())ovMonth=curMonth();overviewRange=null;updateMonthUI('ov',ovMonth);updateOverview();}
+function openFixedEdit(id,isAnnual){legacyOpenFixedEdit(id,isAnnual);}
+function renderFixed(){legacyRenderFixed();}
+function weekKey(date){const d=new Date(date+'T12:00:00');const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return localDate(d);}
+function ensureGame(){if(D.habitGame&&D.habitGame.version===2)return;const baseline={ollie:legacyCalcRpg('ollie').exp,cody:legacyCalcRpg('cody').exp};D.habitGame={version:2,started:today(),baseline,oldIds:allDaily().map(i=>String(i.id)),checkins:{},reviews:{},earnedDays:{}};}
+function gameDays(who){ensureGame();const g=D.habitGame,old=new Set(asList(g.oldIds)),days=new Set();allDaily().forEach(it=>{if(!old.has(String(it.id))&&(it.addedBy||it.who||'').toLowerCase()===who&&validDate(it.date)&&it.date>=g.started&&it.date<=today())days.add(it.date);});Object.keys({...((g.checkins||{})[who]||{}),...((g.earnedDays||{})[who]||{})}).filter(d=>validDate(d)&&d>=g.started&&d<=today()).forEach(d=>days.add(d));return days;}
+function accrueHabits(){ensureGame();const g=D.habitGame;if(!g.earnedDays)g.earnedDays={};['ollie','cody'].forEach(w=>{if(!g.earnedDays[w])g.earnedDays[w]={};gameDays(w).forEach(d=>g.earnedDays[w][d]=true);});}
+function calcRpg(who){ensureGame();const g=D.habitGame,days=gameDays(who),reviews=Object.keys((g.reviews||{})[who]||{}).length;return {exp:(Number(g.baseline[who])||0)+days.size*20+reviews*40,days:days.size,reviews,total_entries:allDaily().filter(i=>(i.addedBy||i.who||'').toLowerCase()===who).length,int_score:0};}
+function habitCheckin(who){if(!hasLoadedAccount){showToast('資料尚未載入，請稍後再試');return;}ensureGame();if(gameDays(who).has(today())){showToast('今天已完成，不會重複加分');return;}const before=calcRpg(who).exp;const g=D.habitGame;if(!g.checkins)g.checkins={};if(!g.checkins[who])g.checkins[who]={};g.checkins[who][today()]=true;save();renderRpg();checkAndTriggerLevelUp(who,before);showToast('今日帳目已確認 +20 EXP');}
+function weeklyReview(who){if(!hasLoadedAccount){showToast('資料尚未載入，請稍後再試');return;}ensureGame();const week=weekKey(today()),g=D.habitGame;if(g.reviews&&g.reviews[who]&&g.reviews[who][week])return;if(!confirm('確認已核對本週支出與固定費用？每人每週只獎勵一次。'))return;const before=calcRpg(who).exp;if(!g.reviews)g.reviews={};if(!g.reviews[who])g.reviews[who]={};g.reviews[who][week]=true;save();renderRpg();checkAndTriggerLevelUp(who,before);showToast('每週整理完成 +40 EXP');}
+function houseProgress(total){const completed=Math.floor(total/2000);return {completed,chapter:completed+1,progress:total%2000,pct:(total%2000)/20};}
+
+</script>
+<script>
+function gameState(){ensureGame();const g=D.habitGame,o=calcRpg('ollie'),c=calcRpg('cody');const reviews=g.reviews||{},shared=Object.keys(reviews.ollie||{}).filter(k=>(reviews.cody||{})[k]).length;const total=o.exp+c.exp+shared*60;return {g,o,c,shared,total,...houseProgress(total)};}
+function selectGamePerson(who){if(!['ollie','cody'].includes(who))return;gamePerson=who;renderRpg();talkGame(who);}
+function visitChapter(n){const st=gameState();gameViewing=Math.max(1,Math.min(st.chapter,Number(n)||st.chapter));renderRpg();gameFeedback(gameViewing<st.chapter?'重返第 '+gameViewing+' 章，看看一起完成的家。':'回到目前建設中的小屋。');}
+function setGameSky(sky){if(!['day','sunset','night'].includes(sky)||!hasLoadedAccount)return;ensureGame();D.habitGame.sky=sky;save();renderRpg();gameFeedback({day:'陽光灑進小屋，今天也慢慢來。',sunset:'把天空調成日落的顏色。',night:'燈亮了，今天辛苦了。'}[sky]);}
+function talkGame(who){const messages={ollie:['先把今天記好，其他慢慢來。','這個窗邊的位置，我先預訂了。','小額支出也值得被看見。'],cody:['今天的小屋，又多一點生活感了。','我們先把帳目整理好，再出門散步。','有你一起，蓋房子就不無聊。']};const name=who==='ollie'?'Ollie':'Cody';gameFeedback(name+'：'+messages[who][gameTalkIndex++%3]);const el=document.getElementById('scene-'+who);if(el){el.classList.remove('is-bouncing');void el.getBoundingClientRect();el.classList.add('is-bouncing');}}
+function inspectGamePart(part){const st=gameState(),archived=(gameViewing||st.chapter)<st.chapter;const value=archived?2000:st.progress;const parts={home:[500,'小屋骨架已就位，窗外就是我們的小花園。'],window:[1000,'暖暖的燈，留給每個認真生活的晚上。'],garden:[1500,'花園長好了，下一步就是讓這裡成為家。'],mail:[0,'本週任務：兩人完成帳目整理，就能得到共同 +60 EXP。']};const [need,text]=parts[part]||parts.home;gameFeedback(value>=need?text:'還差 '+(need-value)+' EXP 解鎖，完成下方任務就能繼續建設。');}
+function sceneSVG(progress,chapter,sky){const built=progress>=500,furnished=progress>=1000,garden=progress>=1500;const palettes={day:['#dcefe9','#f9efd4','#88af9d','#edb174'],sunset:['#eedde8','#ffe2c1','#9ba9b9','#c98f8e'],night:['#303953','#76718e','#697c91','#a48eae']};const [top,bottom,land,roof]=palettes[sky]||palettes.sunset;const dark=sky==='night';const interact=(part)=>`role="button" tabindex="0" aria-label="查看${part==='home'?'小屋':part==='window'?'窗戶':part==='garden'?'花園':'信箱'}" onclick="inspectGamePart('${part}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();inspectGamePart('${part}')}"`;
+return `<svg class="home-scene" viewBox="0 0 600 390" role="group" aria-label="第 ${chapter} 章互動小屋"><defs><linearGradient id="scene-sky" x2="0" y2="1"><stop stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient><linearGradient id="scene-land" x2="0" y2="1"><stop stop-color="${land}"/><stop offset="1" stop-color="${dark?'#485969':'#6d9787'}"/></linearGradient><filter id="scene-shadow"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#36364b" flood-opacity=".15"/></filter></defs>
+<rect width="600" height="390" rx="24" fill="url(#scene-sky)"/>
+${dark?'<g fill="#fff1ca" class="twinkle"><circle cx="90" cy="65" r="2"/><circle cx="180" cy="35" r="2"/><circle cx="345" cy="60" r="2"/><circle cx="495" cy="95" r="2"/><circle cx="420" cy="35" r="2"/></g>':''}
+<circle cx="470" cy="88" r="35" fill="${dark?'#fff1ca':'#fff1c4'}" opacity=".95"/>${dark?`<circle cx="483" cy="76" r="30" fill="${top}"/>`:''}
+<g fill="#fff" opacity="${dark?'.12':'.55'}" class="scene-cloud"><ellipse cx="135" cy="100" rx="55" ry="12"/><ellipse cx="120" cy="89" rx="25" ry="18"/><ellipse cx="151" cy="94" rx="29" ry="13"/></g>
+<path d="M0 245 Q90 160 195 233 T410 217 T600 226 V390 H0" fill="${land}" opacity=".26"/>
+<ellipse cx="300" cy="322" rx="236" ry="43" fill="#33334c" opacity=".09"/>
+<path d="M67 279 Q290 174 535 279 L535 300 Q305 405 67 300Z" fill="${dark?'#5c6980':'#729786'}"/>
+<ellipse cx="300" cy="279" rx="233" ry="70" fill="url(#scene-land)"/>
+<path d="M290 275 Q290 302 365 330" fill="none" stroke="${dark?'#aea9aa':'#e9cfaa'}" stroke-width="28"/>
+<g ${interact('home')} class="scene-hit"><title>點擊小屋查看建設進度</title>
+${built?`<g filter="url(#scene-shadow)"><path d="M200 166 L300 112 L400 166 V270 L300 313 L200 270Z" fill="#f8e9d1"/><path d="M300 202 L400 158 V270 L300 313Z" fill="#dfc8b3"/><path d="M185 168 L280 94 L416 152 L307 217Z" fill="${roof}"/><path d="M185 168 L307 217 L307 230 L185 181Z" fill="${dark?'#877088':'#b27476'}"/><path d="M307 217 L416 152 V164 L307 230Z" fill="#926b78"/><path d="M235 128 L357 180 M257 112 L382 166 M214 145 L332 195" stroke="#fff" stroke-opacity=".22" stroke-width="3"/><path d="M243 236 Q259 218 276 249 V297 L243 283Z" fill="#906c69"/><circle cx="268" cy="264" r="3" fill="#f8d68b"/><path d="M361 154 V110 L381 101 L397 109 V160Z" fill="#d2b3a2"/><path d="M381 101 V164 L397 160 V109Z" fill="#bfa18e"/></g>`:`<path d="M200 200 L300 146 L400 200 V270 L300 313 L200 270Z M200 200 L300 246 L400 200 M300 246 V313" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-width="2" stroke-dasharray="7 7"/><text x="300" y="246" text-anchor="middle" fill="${dark?'#fff1cf':'#365b50'}" font-size="14">小屋準備動工</text>`}</g>
+<g ${interact('window')} class="scene-hit">${built?`<path d="M321 235 L349 222 V253 L321 266Z" fill="${furnished?'#ffe19b':'#b6b9b5'}" stroke="#ab8a79" stroke-width="5"/><path d="M335 230 V260 M321 249 L349 236" stroke="#ab8a79" stroke-width="3"/>`:''}${furnished?'<ellipse cx="339" cy="279" rx="34" ry="10" fill="#ffe19b" opacity=".24"/>':''}</g>
+<g ${interact('garden')} class="scene-hit"><ellipse cx="442" cy="280" rx="37" ry="17" fill="${garden?'#597d71':'#759786'}"/>${garden?'<path d="M442 273 V218" stroke="#9b7967" stroke-width="9"/><circle cx="441" cy="204" r="34" fill="#bad0a0"/><circle cx="459" cy="215" r="25" fill="#95b895"/><circle cx="420" cy="215" r="24" fill="#a8c69a"/><g fill="#f9d0b0"><circle cx="427" cy="201" r="5"/><circle cx="458" cy="214" r="5"/><circle cx="442" cy="229" r="5"/></g>':'<path d="M427 275 L442 252 L457 275" fill="none" stroke="#cfdbbc" stroke-width="3" stroke-dasharray="4 4"/>'}</g>
+<g ${interact('mail')} class="scene-hit"><path d="M158 264 V299" stroke="#ac8575" stroke-width="7"/><rect x="140" y="244" width="35" height="24" rx="7" fill="#f4d7b4"/><path d="M145 251 L157 260 L170 251" fill="none" stroke="#bd8d7d" stroke-width="2"/></g>
+<g transform="translate(203 302)"><g id="scene-ollie" class="scene-character" role="button" tabindex="0" aria-label="和 Ollie 說話" onclick="selectGamePerson('ollie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectGamePerson('ollie')}"><ellipse cy="26" rx="20" ry="6" fill="#263b3b" opacity=".14"/><path d="M-14 7 Q0-5 14 7 L17 24 H-17Z" fill="#a48bbc"/><ellipse cy="-10" rx="22" ry="25" fill="#c4d9b3"/><ellipse cx="-9" cy="-12" rx="6" ry="9" transform="rotate(-22 -9 -12)" fill="#344e48"/><ellipse cx="9" cy="-12" rx="6" ry="9" transform="rotate(22 9 -12)" fill="#344e48"/><path d="M-4 3 Q0 7 4 3" fill="none" stroke="#6c8e77" stroke-width="2"/><circle cx="-16" cy="0" r="4" fill="#eab8aa"/><circle cx="16" cy="0" r="4" fill="#eab8aa"/></g></g>
+<g transform="translate(373 306)"><g id="scene-cody" class="scene-character" role="button" tabindex="0" aria-label="和 Cody 說話" onclick="selectGamePerson('cody')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectGamePerson('cody')}"><ellipse cy="23" rx="23" ry="6" fill="#263b3b" opacity=".14"/><ellipse cy="11" rx="16" ry="17" fill="#f9ead4"/><circle cy="-12" r="23" fill="#fff2df"/><ellipse cx="-22" cy="-8" rx="9" ry="20" fill="#d7baa1"/><ellipse cx="22" cy="-8" rx="9" ry="20" fill="#d7baa1"/><circle cx="-8" cy="-13" r="3" fill="#594940"/><circle cx="8" cy="-13" r="3" fill="#594940"/><ellipse cy="-4" rx="5" ry="4" fill="#594940"/><path d="M0 0 V4 Q-6 8-9 3 M0 4 Q6 8 9 3" fill="none" stroke="#80695c" stroke-width="1.5"/><path d="M-12 14 L0 19 L12 14" stroke="#c79399" stroke-width="7" fill="none"/></g></g>
+<g fill="#f4e3c6" opacity=".8"><circle cx="110" cy="290" r="3"/><circle cx="485" cy="302" r="3"/><circle cx="460" cy="315" r="2"/></g></svg>`;}
+function renderRpg(){const st=gameState(),g=st.g,active=gameViewing?Math.min(gameViewing,st.chapter):st.chapter,archived=active<st.chapter,progress=archived?2000:st.progress,sky=g.sky||'sunset';const names=['溫暖狗窩','花園小院','星光露臺','森林別院','雲端城堡'];const title=names[(active-1)%names.length];const milestones=[{at:500,name:'小屋',icon:'⌂'},{at:1000,name:'暖燈',icon:'✧'},{at:1500,name:'庭院',icon:'♧'},{at:2000,name:'落成',icon:'⚑'}];
+ document.getElementById('game-world').innerHTML=`<div class="game-heading"><div><div class="game-eyebrow">OUR LITTLE WORLD</div><h2>把日常，蓋成一個家。</h2></div><span class="game-stamp">第 ${String(active).padStart(2,'0')} 章</span></div><div class="game-scene-wrap">${sceneSVG(progress,active,sky)}<div id="scene-talk" class="scene-talk" role="status" aria-live="polite" hidden></div><div class="sky-picker" role="group" aria-label="場景光線">${[['day','☀','晴天'],['sunset','◒','日落'],['night','☾','夜晚']].map(([key,icon,label])=>`<button class="${sky===key?'selected':''}" onclick="setGameSky('${key}')" aria-label="${label}" aria-pressed="${sky===key}">${icon}</button>`).join('')}</div><div class="scene-caption">點點角色、小屋或信箱，看看今天的回應</div></div><div class="game-chapter"><div class="chapter-top"><div><small>${archived?'已完成收藏':'正在建設'}</small><h3>${title}</h3></div><strong>${Math.round(progress/20)}<small>%</small></strong></div><div class="game-track"><span style="width:${progress/20}%"></span></div><div class="milestone-road">${milestones.map(m=>`<button class="${progress>=m.at?'done':''}" onclick="inspectGamePart('${m.at===500?'home':m.at===1000?'window':m.at===1500?'garden':'mail'}')"><span>${progress>=m.at?'✓':m.icon}</span>${m.name}<small>${m.at} EXP</small></button>`).join('')}</div><div class="chapter-bottom"><span>${progress.toLocaleString()} / 2,000 EXP</span><span>已完成 ${st.completed} 章</span></div></div>`;
+ const p=st[gamePerson==='ollie'?'o':'c'],lv=getLevel(p.exp),next=expForNextLevel(lv),base=lv===1?0:lv*lv*5,levelPct=Math.max(0,Math.min(100,(p.exp-base)/(next-base)*100)),checked=gameDays(gamePerson).has(today()),reviewed=!!((g.reviews||{})[gamePerson]||{})[weekKey(today())],both=['ollie','cody'].filter(w=>!!((g.reviews||{})[w]||{})[weekKey(today())]).length;
+ document.getElementById('game-console').innerHTML=`<div class="game-panel"><div class="game-person-switch">${['ollie','cody'].map(w=>`<button onclick="selectGamePerson('${w}')" class="${w===gamePerson?'selected':''}" aria-pressed="${w===gamePerson}">${w==='ollie'?'👽 Ollie':'🐩 Cody'}<small>LV.${getLevel(st[w==='ollie'?'o':'c'].exp)}</small></button>`).join('')}</div><div class="game-level"><strong>${getTitle(lv)}</strong><span>${p.exp.toLocaleString()} EXP</span></div><div class="game-track thin"><span style="width:${levelPct}%"></span></div><div class="game-level-note">再 ${next-p.exp} EXP 升級 · 已養成 ${p.days} 天記帳習慣</div><div class="mission-title">今天的小任務 <span>一點點，也算前進。</span></div><button id="mission-daily" class="mission ${checked?'complete':''}" onclick="doGameTask('daily')" ${checked?'disabled':''}><span class="mission-icon">${checked?'✓':'☑'}</span><span><b>確認今天的帳目</b><small>${checked?'今天完成了，明天再一起繼續':'有記帳自動完成；零支出也能確認'}</small></span><strong>${checked?'完成':'+20'}<small>${checked?'':'EXP'}</small></strong></button><button id="mission-weekly" class="mission ${reviewed?'complete':''}" onclick="doGameTask('weekly')" ${reviewed?'disabled':''}><span class="mission-icon">${reviewed?'✓':'▤'}</span><span><b>每週帳目整理</b><small>${reviewed?'本週已核對，獎勵已入帳':'核對本週紀錄，讓收支更清楚'}</small></span><strong>${reviewed?'完成':'+40'}<small>${reviewed?'':'EXP'}</small></strong></button><div class="team-quest"><span>♡ 兩個人的默契任務</span><b>${both}/2</b><div>${both===2?'本週雙人整理完成，共同 +60 EXP 已入帳':'兩人都完成每週整理，共同小屋再加 60 EXP'}</div></div></div>`;
+ const first=Math.max(1,active-2),last=Math.min(st.chapter,first+4);document.getElementById('game-collection').innerHTML=`<div class="game-panel"><div class="mission-title">小屋旅行簿 <span>每一步，都留下來。</span></div><div class="chapter-nav"><button onclick="visitChapter(${active-1})" ${active<=1?'disabled':''} aria-label="上一章">‹</button><div class="chapter-list">${Array.from({length:last-first+1},(_,i)=>{const n=first+i;return `<button class="${n===active?'selected':''}" onclick="visitChapter(${n})"><span>${n<st.chapter?'⌂':'⚒'}</span><b>${String(n).padStart(2,'0')}</b><small>${n<st.chapter?'已收藏':'建設中'}</small></button>`;}).join('')}</div><button onclick="visitChapter(${active+1})" ${active>=st.chapter?'disabled':''} aria-label="下一章">›</button></div>${archived?'<button class="back-current" onclick="gameViewing=0;renderRpg()">回到正在建設的小屋 →</button>':''}<div class="game-level-note">累計 ${st.total.toLocaleString()} EXP · 舊成就已保留 · 章節持續解鎖</div></div>`;
+}
+
+</script>
+<script>
+// V4: explicitly approved account views and interface refinements.
+var gamePerson='ollie',gameViewing=0,gameFeedbackTimer=null,gameTalkIndex=0;
+function money(n){const v=Number(n);return '$'+Math.round(Number.isFinite(v)?v:0).toLocaleString('zh-TW');}
+function estimatedFixed(r,annual=false){const out=[];let m=r.start.slice(0,7),last=r.end.slice(0,7);for(let n=0;m<=last&&n<1200;n++){const end=monthEnd(m),from=r.start>m+'-01'?r.start:m+'-01',to=r.end<end?r.end:end,days=Number(to.slice(8))-Number(from.slice(8))+1,den=Number(end.slice(8));const src=asList(annual?D.annual_extra:D.fixed_extra).filter(i=>annual||!i.fromAnnual);src.forEach(it=>out.push({...it,amount:(Number(it.amount)||0)/(annual?12:1)*days/den,date:from,_kind:annual?'annual':'fixed'}));const [y,mo]=m.split('-').map(Number);m=localDate(new Date(y,mo,1,12)).slice(0,7);}return out;}
+function rangeData(r){return {daily:allDaily().filter(it=>inRange(it,r)).map(i=>({...i,_kind:'daily'})),appliance:asList(D.appliances).filter(it=>inRange(it,r)).map(i=>({...i,_kind:'appliance'})),fixed:estimatedFixed(r),annual:estimatedFixed(r,true)};}
+function expenses(data){return ['daily','appliance','fixed','annual'].flatMap(k=>data[k]||[]);}
+function personAmount(it,who){const owner=it._kind==='appliance'?(it.who||''):(it.addedBy||it.who||'');const amount=Number(it.amount)||0;if(it._kind==='appliance'&&!['Cody','Ollie'].includes(owner))return who==='未指定'?amount:0;if(who==='未指定')return 0;return ['Ollie','Cody'].includes(owner)?(owner===who?amount:0):amount/2;}
+function quickRange(mode){const end=today();let start=curMonth()+'-01';if(mode==='year')start=end.slice(0,4)+'-01-01';if(mode==='all'){const dates=[...allDaily(),...asList(D.appliances)].map(i=>i.date).filter(validDate).sort();start=dates[0]||start;overviewRange={start,end:dates.length&&dates[dates.length-1]>end?dates[dates.length-1]:end};}else overviewRange={start,end};updateOverview();}
+function updateOverview(skipChart=false){legacyUpdateOverview(true);const r=getRange(),data=rangeData(r),all=expenses(data);document.getElementById('range-start').value=r.start;document.getElementById('range-end').value=r.end;put('range-caption',r.start+' ～ '+r.end+'（含首尾日期）；固定月費及年度攤提依涵蓋天數估算。');put('ov-month-lbl',overviewRange?'自訂區間':(ovMonth||curMonth()));document.getElementById('ov-month-nav').hidden=!!overviewRange;put('ov-exp-lbl','區間總開銷');put('ov-exp',money(amountSum(all)));['daily','appliance','fixed','annual'].forEach(k=>put('ov-'+k,money(amountSum(data[k]))));[['Ollie','ollie'],['Cody','cody'],['未指定','unassigned']].forEach(([w,k])=>put('ov-'+k+'-total',money(all.reduce((sum,it)=>sum+personAmount(it,w),0))));const cats={};data.daily.forEach(it=>cats[it.cat||'其他']=(cats[it.cat||'其他']||0)+(Number(it.amount)||0));const card=document.getElementById('ov-cat-card');card.style.display=Object.keys(cats).length?'block':'none';document.getElementById('ov-cat-list').innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([name,amount])=>`<div class="row"><span>${esc(name)}</span><span>${money(amount)}</span></div>`).join('');if(!skipChart)renderTrendChart();updateYearlySummary();}
+function showOvDetail(who){const r=getRange();const kinds={daily:'日常',appliance:'家電',fixed:'固定月費估算',annual:'年度攤提'};const items=expenses(rangeData(r)).filter(it=>personAmount(it,who)>0).sort((a,b)=>b.date.localeCompare(a.date));put('ov-detail-title',who+' · '+r.start+' ～ '+r.end);document.getElementById('ov-detail-list').innerHTML=items.map(it=>`<div class="row"><span>${esc(it.item||it.name||it.cat||'開銷')}<small class="detail-meta">${esc(it.date)} · ${kinds[it._kind]}${it._kind!=='appliance'&&!['Ollie','Cody'].includes(it.addedBy||it.who)?' · 共同各半':''}</small></span><span>${money(personAmount(it,who))}</span></div>`).join('')||'<div>此區間尚無支出</div>';put('ov-detail-total',money(items.reduce((sum,it)=>sum+personAmount(it,who),0)));document.getElementById('ov-detail-modal').style.display='block';document.body.style.overflow='hidden';}
+function monthlyData(r){const map={};let m=r.start.slice(0,7),last=r.end.slice(0,7);for(let n=0;m<=last&&n<1200;n++){map[m]={month:m,daily:0,appliance:0,fixed:0,annual:0,cody:0,ollie:0,unassigned:0,total:0};const [y,mo]=m.split('-').map(Number);m=localDate(new Date(y,mo,1,12)).slice(0,7);}expenses(rangeData(r)).forEach(it=>{const row=map[it.date.slice(0,7)];if(!row)return;row[it._kind]+=Number(it.amount)||0;row.total+=Number(it.amount)||0;row.cody+=personAmount(it,'Cody');row.ollie+=personAmount(it,'Ollie');row.unassigned+=personAmount(it,'未指定');});return Object.values(map).sort((a,b)=>a.month.localeCompare(b.month));}
+function renderTrendChart(){const canvas=document.getElementById('trend-chart');if(!canvas||typeof Chart==='undefined')return;const rows=monthlyData(getRange());if(trendChart)trendChart.destroy();trendChart=new Chart(canvas,{type:'bar',data:{labels:rows.map(r=>r.month),datasets:[['daily','日常開銷','#f08c21'],['appliance','家電購買','#6698cc'],['fixed','固定月費估算','#9aaf8d'],['annual','年度費用攤提','#b494ba']].map(([key,label,color])=>({label,data:rows.map(r=>r[key]),backgroundColor:color,stack:'total'}))},options:{responsive:true,maintainAspectRatio:false,scales:{x:{stacked:true},y:{stacked:true,ticks:{precision:0,callback:v=>money(v)}}},plugins:{legend:{position:'bottom',labels:{font:{size:12}}},tooltip:{callbacks:{label:ctx=>ctx.dataset.label+'：'+money(ctx.raw),footer:items=>'合計：'+money(items.reduce((s,it)=>s+Number(it.raw||0),0))}}}}});}
+function updateYearlySummary(){const sel=document.getElementById('year-select');if(!sel||!sel.value)return;const year=Number(sel.value),current=Number(today().slice(0,4)),end=year===current?today():year+'-12-31',rows=monthlyData({start:year+'-01-01',end}),sum=key=>rows.reduce((s,r)=>s+r[key],0),total=sum('total');put('yearly-total',money(total));put('yearly-cody',money(sum('cody')));put('yearly-ollie',money(sum('ollie')));put('yearly-unassigned',money(sum('unassigned')));put('yearly-avg',money(total/(year===current?Number(today().slice(5,7)):12)));put('yearly-note',(year===current?'統計至 '+end+'；月均按已過月份（含本月）計算。':'統計全年；月均按 12 個月計算。')+'包含四類開銷；固定月費、年度費用均以目前設定金額估算歷史。');const max=Math.max(1,...rows.map(r=>r.total));document.getElementById('yearly-bars').innerHTML=rows.map(r=>`<div class="yearly-month"><div class="row"><span>${Number(r.month.slice(5))}月</span><span>${money(r.total)}</span></div><div class="sbar"><div class="sfill" style="width:${r.total/max*100}%"></div></div><div class="yearly-owners"><span>Cody ${money(r.cody)}</span><span>Ollie ${money(r.ollie)}</span>${r.unassigned?`<span>未指定 ${money(r.unassigned)}</span>`:''}</div></div>`).join('');}
+function renderMilestones(target,savings=0){const el=document.getElementById('milestone-wrap');if(!el)return;const ratios=[.2,.4,.6,.8,1];el.classList.add('goal-milestones');el.innerHTML=ratios.map(r=>{const amount=Math.round(target*r),done=savings>=amount;return `<div class="goal-step ${done?'done':''}"><span>${done?'✓':Math.round(r*100)+'%'}</span><small>${money(amount)}</small></div>`;}).join('');}
+function applianceOwnerLabel(it){return ['Cody','Ollie'].includes(it.who)?esc(it.who):'未指定歸屬';}
+function ownerOptions(who){return '<option value="">請選擇</option>'+['Cody','Ollie'].map(w=>`<option value="${w}"${who===w?' selected':''}>${w}</option>`).join('');}
+function addAppliance(){if(!validateFields([['ap-name','required'],['ap-amount','money'],['ap-date','date'],['ap-note','text'],['ap-who','owner']]))return;D.appliances=asList(D.appliances);D.appliances.push({name:fieldValue('ap-name').trim(),amount:Number(fieldValue('ap-amount')),date:fieldValue('ap-date'),note:fieldValue('ap-note'),who:fieldValue('ap-who'),id:uid()});['ap-name','ap-amount','ap-note','ap-who'].forEach(id=>document.getElementById(id).value='');save();renderAppliances();updateOverview();showToast('已新增');}
+function editAppliance(id){const it=asList(D.appliances).find(i=>String(i.id)===String(id));if(!it)return;const old=document.getElementById('eap-'+id);if(old){old.remove();return;}const box=document.createElement('div');box.id='eap-'+id;box.className='inline-edit';box.innerHTML=`<div class="frow c2"><input class="inp" id="eap-n-${id}" value="${esc(it.name)}" placeholder="品項名稱"><input class="inp" type="number" id="eap-a-${id}" value="${Math.round(Number(it.amount)||0)}" inputmode="numeric"></div><div class="frow c2"><input class="inp" type="date" id="eap-d-${id}" value="${esc(it.date||'')}"><input class="inp" id="eap-nt-${id}" value="${esc(it.note||'')}" placeholder="購買地點／備註"></div><label class="field">誰的費用<select class="inp" id="eap-w-${id}">${ownerOptions(it.who)}</select></label><div class="frow c2"><button class="btn primary" data-id="${esc(id)}" onclick="saveEditAppliance(this.dataset.id)">儲存</button><button class="btn" data-id="${esc(id)}" onclick="document.getElementById('eap-'+this.dataset.id).remove()">取消</button></div>`;document.getElementById('api-'+id)?.after(box);decorateFields(box);}
+function saveEditAppliance(id){if(!validateFields([['eap-n-'+id,'required'],['eap-a-'+id,'money'],['eap-d-'+id,'date'],['eap-nt-'+id,'text'],['eap-w-'+id,'owner']]))return;const it=asList(D.appliances).find(i=>String(i.id)===String(id));if(!it)return;Object.assign(it,{name:fieldValue('eap-n-'+id).trim(),amount:Number(fieldValue('eap-a-'+id)),date:fieldValue('eap-d-'+id),note:fieldValue('eap-nt-'+id),who:fieldValue('eap-w-'+id)});document.getElementById('eap-'+id)?.remove();save();renderAppliances();updateOverview();showToast('已修改');}
+function wishAppliance(it){return asList(D.appliances).find(a=>String(a.sourceWishlistId||'')===String(it.id)||it.applianceId&&String(a.id)===String(it.applianceId));}
+function toggleWishlist(id){const it=asList(D.wishlist).find(i=>String(i.id)===String(id));if(!it)return;const linked=wishAppliance(it);if(linked){document.getElementById('api-'+linked.id)?.scrollIntoView({behavior:'smooth',block:'center'});showToast('這筆已建立購買紀錄');return;}document.getElementById('purchase-wish-id').value=id;put('purchase-name',it.name);document.getElementById('purchase-amount').value=it.price?Math.round(Number(it.price)):'';document.getElementById('purchase-date').value=today();document.getElementById('purchase-who').value='';clearFieldErrors(document.getElementById('purchase-modal'));document.getElementById('purchase-modal').hidden=false;document.body.style.overflow='hidden';document.getElementById('purchase-amount').focus();}
+function closePurchase(){const modal=document.getElementById('purchase-modal');if(modal)modal.hidden=true;document.body.style.overflow='';}
+function confirmPurchase(){if(!validateFields([['purchase-amount','money'],['purchase-date','date'],['purchase-who','owner']]))return;const id=fieldValue('purchase-wish-id'),it=asList(D.wishlist).find(i=>String(i.id)===id);if(!it){showToast('待購項目已不存在，請重新選擇');closePurchase();return;}const old=wishAppliance(it);if(old){showToast('這筆已加入已購清單，不會重複新增');closePurchase();return;}const ap={id:'wish-'+id,sourceWishlistId:id,name:it.name,note:it.note||'',amount:Number(fieldValue('purchase-amount')),date:fieldValue('purchase-date'),who:fieldValue('purchase-who')};D.appliances=asList(D.appliances);D.appliances.push(ap);it.done=true;it.applianceId=ap.id;it.purchasedDate=ap.date;closePurchase();save();renderWishlist();renderAppliances();updateOverview();showToast('已加入已購清單與總覽');document.getElementById('api-'+ap.id)?.scrollIntoView({behavior:'smooth',block:'center'});}
+function renderFeedback(){const items=asList(D.feedback).slice().reverse(),pending=items.filter(i=>!i.done),done=items.filter(i=>i.done),el=document.getElementById('fb-list');if(!el)return;const wasOpen=!!document.getElementById('feedback-done')?.open;const row=it=>`<div class="item"><button class="feedback-toggle" data-id="${esc(it.id)}" onclick="toggleDone(this.dataset.id)" aria-label="${it.done?'改為待處理':'標記已完成'}">${it.done?'✓':'○'}</button><div class="il"><div class="iname">${esc(it.text)}</div><div class="imeta">${esc(it.time)}${it.done?' · 已完成 '+esc(it.doneAt):''}</div></div><button class="del delete-action" data-id="${esc(it.id)}" onclick="delFeedback(this.dataset.id)" aria-label="刪除意見">${TRASH}</button></div>`;el.innerHTML=`<div class="stitle">待處理（${pending.length}）</div>${pending.map(row).join('')||'<div class="summary-note">目前沒有待處理意見</div>'}<details id="feedback-done"${wasOpen?' open':''}><summary>已完成（${done.length}）</summary>${done.map(row).join('')||'<div class="summary-note">尚無已完成意見</div>'}</details>`;}
+function findCostcoDaily(it){const all=allDaily();const linked=all.filter(d=>String(d.sourceCostcoId||'')===String(it.id)||it.dailyId&&String(d.id)===String(it.dailyId));if(linked.length===1)return linked[0];if(linked.length>1)return null;if(!it.synced)return null;const matches=all.filter(d=>d.item==='Costco - '+it.name&&d.date===it.date&&Number(d.amount)===Number(it.price));return matches.length===1?matches[0]:null;}
+function costcoStatusButton(it){if(!it.synced)return `<button class="btn sm" data-id="${esc(it.id)}" onclick="syncCostcoToDaily(this.dataset.id)">加入日常</button>`;return `<button class="costco-status" data-id="${esc(it.id)}" onclick="showCostcoDaily(this.dataset.id)">${findCostcoDaily(it)?'✓ 已加入 · 查看日常':'✓ 已加入 · 核對紀錄'}</button>`;}
+function showCostcoDaily(id){const it=asList(D.costco).find(i=>String(i.id)===String(id));if(!it)return;const linked=findCostcoDaily(it);if(!linked){showToast('舊紀錄無法唯一對應，請到日常開銷核對日期與金額');return;}dMonth=linked.date.slice(0,7);document.getElementById('d-search').value='';clearCatFilter();updateMonthUI('d',dMonth);go('daily',document.querySelector('.nav button'));renderDaily(false,linked.id);setTimeout(()=>document.getElementById('di-'+linked.id)?.scrollIntoView({behavior:'smooth',block:'center'}),0);}
+function confirmCSSync(){const items=asList(D.costco).filter(i=>i.date===csSyncDate&&!i.synced);if(!items.length){showToast('沒有尚未加入的項目');closeCSModal();return;}const m=csSyncDate.slice(0,7);if(!D.daily[m])D.daily[m]=[];items.forEach(it=>{const id=uid();D.daily[m].push({cat:'日用品',amount:Number(it.price),item:'Costco - '+it.name,note:'',who:csSyncWho||'一起',addedBy:csSyncWho||'一起',date:it.date,id,sourceCostcoId:String(it.id)});it.synced=true;it.dailyId=id;});dMonth=m;updateMonthUI('d',dMonth);updateMonthUI('ov',ovMonth);save();renderCostco();renderDaily();updateOverview();renderRpg();closeCSModal();showToast('已加入日常開銷 '+items.length+' 筆');}
+function syncCostcoToDaily(id){const it=asList(D.costco).find(i=>String(i.id)===String(id));if(!it)return;if(it.synced){showCostcoDaily(id);return;}go('daily',document.querySelector('.nav button'));document.getElementById('d-amount').value=Math.round(Number(it.price));document.getElementById('d-item').value='Costco - '+it.name;document.getElementById('d-date').value=it.date;quickCat('日用品');window._pendingSyncCostcoId=String(it.id);selectedWho='';['wb-ollie','wb-cody'].forEach(id=>document.getElementById(id).classList.remove('on'));document.getElementById('d-note').value='';let notice=document.getElementById('costco-draft');if(!notice){notice=document.createElement('div');notice.id='costco-draft';notice.className='draft-notice';document.getElementById('d-amount').closest('.sinput').prepend(notice);}notice.innerHTML='來自 Costco，確認後才會加入日常。<button class="btn sm" onclick="cancelCostcoDraft()">取消帶入</button>';showToast('請選擇誰花的，確認後新增');}
+function clearCostcoDraftNotice(){document.getElementById('costco-draft')?.remove();}
+function cancelCostcoDraft(){window._pendingSyncCostcoId=null;clearCostcoDraftNotice();document.getElementById('d-amount').value='';document.getElementById('d-item').value='';}
+function relocateDaily(id){let oldMonth,record;for(const [m,items] of Object.entries(D.daily||{})){const found=asList(items).find(i=>String(i.id)===String(id));if(found){oldMonth=m;record=found;break;}}if(!record||!validDate(record.date))return;const dest=record.date.slice(0,7);if(dest!==oldMonth){D.daily[oldMonth]=asList(D.daily[oldMonth]).filter(i=>String(i.id)!==String(id));if(!D.daily[oldMonth].length)delete D.daily[oldMonth];if(!D.daily[dest])D.daily[dest]=[];D.daily[dest].push(record);dMonth=dest;updateMonthUI('d',dest);}}
+function fieldValue(id){return document.getElementById(id)?.value||'';}
+function fieldError(id,message){const input=document.getElementById(id);if(!input)return;let e=document.getElementById(id+'-error');if(!e){e=document.createElement('div');e.id=id+'-error';e.className='field-error';e.setAttribute('role','alert');input.insertAdjacentElement('afterend',e);}e.textContent=message;input.setAttribute('aria-invalid',message?'true':'false');input.setAttribute('aria-describedby',e.id);}
+function clearFieldErrors(root=document){root.querySelectorAll('.field-error').forEach(e=>e.textContent='');root.querySelectorAll('[aria-invalid]').forEach(e=>e.removeAttribute('aria-invalid'));}
+function validateFields(rules){let first=null;for(const [id,type] of rules){const el=document.getElementById(id);if(!el)continue;const v=el.value.trim();let error='';if(type==='required'&&!v)error='請填寫此欄位';else if(['money','budget','zero'].includes(type)){const n=Number(v);if((!v&&type!=='budget')||!Number.isFinite(n)||Math.abs(n)>Number.MAX_SAFE_INTEGER)error='請填寫有效金額';else if(n<0||(type==='money'&&Math.round(n)<=0))error=type==='money'?'金額須大於 0 元':'金額不可小於 0';else if(v)el.value=String(Math.round(n));}else if(type==='date'&&!validDate(v))error='請選擇有效日期';else if(type==='owner'&&!['Cody','Ollie'].includes(v))error='請選擇這筆費用屬於誰';if((type==='required'||type==='text')&&v.length>1000)error='文字請控制在 1,000 字內';fieldError(id,error);if(error&&!first)first=el;}if(first)first.focus();return !first;}
+function decorateFields(root=document){root.querySelectorAll('input.inp,select.inp,textarea.inp').forEach(el=>{if(!el.id||el.dataset.fieldReady||el.type==='hidden'||el.id.includes('search'))return;el.dataset.fieldReady='1';let label=el.type==='date'?'日期':el.type==='number'?'金額':/who|^eap-w-/.test(el.id)?'費用歸屬':/note|eap-nt|ec-note|esaln|ewlnt/.test(el.id)?'備註':/name|item|eap-n|ecc-n|ewln/.test(el.id)?'品項':el.id==='fb-text'?'意見內容':null;if(!label)return;if(el.id==='ov-goal')label='目標金額';if(el.id==='ov-savings')label='目前存款';if(el.id==='wl-price'||el.id.startsWith('ewlp-'))label='預算（選填）';if(el.type==='number'){el.step='1';el.inputMode='numeric';}if(!el.labels?.length){const wrap=document.createElement('div');wrap.className='field-wrap';const lbl=document.createElement('label');lbl.htmlFor=el.id;lbl.className='field-label';lbl.textContent=label;el.parentNode.insertBefore(wrap,el);wrap.appendChild(lbl);wrap.appendChild(el);}el.addEventListener('input',()=>{const err=document.getElementById(el.id+'-error');if(err)err.textContent='';el.removeAttribute('aria-invalid');});});}
+function addDaily(){if(!validateFields([['d-amount','money'],['d-item','text'],['d-date','date'],['d-note','text']]))return;if(!['Cody','Ollie'].includes(selectedWho)){fieldError('daily-who-group','請選擇誰花的');document.getElementById('wb-ollie').focus();return;}const pending=window._pendingSyncCostcoId;if(pending&&asList(D.costco).some(i=>String(i.id)===String(pending)&&i.synced)){cancelCostcoDraft();showToast('此項目已加入日常，未重複新增');return;}base_addDaily();}
+function saveEditDaily(id){if(validateFields([['ec-item-'+id,'text'],['ec-amt-'+id,'money'],['ec-date-'+id,'date'],['ec-note-'+id,'text']]))base_saveEditDaily(id);}
+function addFixedItem(){if(validateFields([['fx-name','required'],['fx-amount','money']]))base_addFixedItem();}
+function saveFixedEdit(){if(validateFields([['fe-name','required'],['fe-amount','money']]))base_saveFixedEdit();}
+function addCostcoItem(){if(validateFields([['cc-name','required'],['cc-price','money'],['cc-date','date']]))base_addCostcoItem();}
+function saveEditCostco(id){if(validateFields([['ecc-n-'+id,'required'],['ecc-p-'+id,'money'],['ecc-d-'+id,'date']]))base_saveEditCostco(id);}
+function addSalary(){if(validateFields([['sal-amount','money'],['sal-date','date'],['sal-note','text']]))base_addSalary();}
+function saveEditSalary(id){if(validateFields([['esala-'+id,'money'],['esald-'+id,'date'],['esaln-'+id,'text']]))base_saveEditSalary(id);}
+function addWishlist(){if(validateFields([['wl-name','required'],['wl-price','budget'],['wl-note','text']]))base_addWishlist();}
+function saveEditWishlist(id){if(validateFields([['ewln-'+id,'required'],['ewlp-'+id,'budget'],['ewlnt-'+id,'text']]))base_saveEditWishlist(id);}
+function saveGoal(val){if(validateFields([['ov-goal','money']]))base_saveGoal(fieldValue('ov-goal'));}
+function saveSavings(val){if(validateFields([['ov-savings','zero']]))base_saveSavings(fieldValue('ov-savings'));}
+function addFeedback(){if(validateFields([['fb-text','required']]))base_addFeedback();}
+function gameFeedback(message,celebrate=false){const e=document.getElementById('scene-talk')||document.getElementById('game-feedback');if(!e)return;e.textContent=message;e.hidden=false;e.classList.add('visible');e.dataset.person=message.startsWith('Cody')?'cody':message.startsWith('Ollie')?'ollie':gamePerson;clearTimeout(gameFeedbackTimer);gameFeedbackTimer=setTimeout(()=>{e.hidden=true;e.classList.remove('visible');},5000);}
+function doGameTask(kind){const before=gameState(),exp=calcRpg(gamePerson).exp;if(kind==='daily')habitCheckin(gamePerson);else weeklyReview(gamePerson);const after=gameState(),gain=calcRpg(gamePerson).exp-exp;if(gain<=0)return;gameViewing=0;renderRpg();const task=document.getElementById('mission-'+kind);if(task){const reward=document.createElement('div');reward.className='mission-reward';reward.setAttribute('role','status');reward.textContent='✓ 完成！ +'+gain+' EXP'+(after.shared>before.shared?' · 雙人任務再 +60 EXP':'')+(after.chapter>before.chapter?' · 新章節解鎖，小屋已收入收藏':'');task.insertAdjacentElement('afterend',reward);}gameFeedback((gamePerson==='ollie'?'Ollie':'Cody')+'：我們又前進了一點！');}
+decorateFields();
+new MutationObserver(records=>{for(const r of records)for(const node of r.addedNodes)if(node.nodeType===1&&!node.classList.contains('field-wrap')&&!node.classList.contains('field-label')&&!node.classList.contains('field-error'))decorateFields(node);}).observe(document.body,{childList:true,subtree:true});
+
+</script>
+<script>
+// Mobile batch entry and a single overview range control.
+if(typeof Chart!=='undefined'&&Chart.defaults)Chart.defaults.font.family=getComputedStyle(document.body).fontFamily;
+var overviewMode='month',overviewYear=Number(today().slice(0,4));
+var batchBusy=false,lastBatchRecord=null,batchReceiptTimer=null;
+const overviewRenderBeforeMobile=updateOverview;
+function getRange(){
+ if(overviewRange)return overviewRange;
+ const m=ovMonth||curMonth();return {start:m+'-01',end:m===curMonth()?today():monthEnd(m)};
+}
+function syncOverviewRange(){
+ if(overviewMode==='year'){const y=String(overviewYear);overviewRange={start:y+'-01-01',end:y===today().slice(0,4)?today():y+'-12-31'};}
+ else if(overviewMode==='month')overviewRange=null;
+}
+function setOverviewMode(mode){
+ if(!['month','year','custom'].includes(mode))return;
+ const previous=getRange();overviewMode=mode;
+ if(mode==='custom')overviewRange={...previous};
+ syncOverviewRange();updateOverview();
+}
+function selectOverviewYear(value){const n=Number(value);if(!Number.isInteger(n)||n<1900||n>Number(today().slice(0,4)))return;overviewYear=n;overviewMode='year';syncOverviewRange();updateOverview();}
+function changeOvMonth(dir){const [y,m]=(ovMonth||curMonth()).split('-').map(Number);ovMonth=localDate(new Date(y,m-1+dir,1,12)).slice(0,7);if(ovMonth>curMonth())ovMonth=curMonth();overviewMode='month';overviewRange=null;updateOverview();}
+function applyRange(){
+ if(!validateFields([['range-start','date'],['range-end','date']]))return;
+ const start=fieldValue('range-start'),end=fieldValue('range-end');
+ if(start>end){fieldError('range-end','結束日不可早於開始日');return;}
+ if(end>today()){fieldError('range-end','請選擇今天或之前的日期');return;}
+ if(Number(end.slice(0,4))-Number(start.slice(0,4))>=100){fieldError('range-end','請選擇小於 100 年的區間');return;}
+ overviewMode='custom';overviewRange={start,end};updateOverview();
+}
+function quickRange(mode){if(mode==='month'){ovMonth=curMonth();setOverviewMode('month');}else if(mode==='year'){overviewYear=Number(today().slice(0,4));setOverviewMode('year');}}
+updateOverview=function(skipChart=false){
+ const y=document.getElementById('year-select');if(y)y.value=String(overviewYear);
+ overviewRenderBeforeMobile(skipChart);
+ const r=getRange();
+ ['month','year','custom'].forEach(mode=>{const b=document.getElementById('ov-mode-'+mode);if(b){b.classList.toggle('selected',mode===overviewMode);b.setAttribute('aria-pressed',String(mode===overviewMode));}});
+ const show=(id,on)=>{const e=document.getElementById(id);if(e)e.hidden=!on;};
+ show('ov-month-nav',overviewMode==='month');show('ov-year-nav',overviewMode==='year');show('ov-custom',overviewMode==='custom');show('year-summary',overviewMode==='year');
+ updateMonthUI('ov',ovMonth||curMonth());
+ put('ov-exp-lbl',overviewMode==='month'?((ovMonth||curMonth())===curMonth()?'本月至今開銷':'本月開銷'):overviewMode==='year'?'年度開銷':'區間開銷');
+ put('range-caption',r.start+' ～ '+r.end+'（含首尾日期）');
+ const next=document.getElementById('ov-next-btn');if(next)next.disabled=(ovMonth||curMonth())>=curMonth();
+ ['range-start','range-end'].forEach(id=>{const el=document.getElementById(id);if(el)el.max=today();});
+}
+function nextDailyField(){if(validateFields([['d-amount','money']])){document.getElementById('d-item').focus({preventScroll:true});keepEntryVisible();}}
+function dailyEntryKey(event,field){if(event.key!=='Enter'||event.isComposing||event.keyCode===229)return;event.preventDefault();if(field==='amount')nextDailyField();else addDaily();}
+function addDaily(finish=false){
+ if(batchBusy)return false;
+ if(!hasLoadedAccount){showToast('帳本尚未載入，請稍後再試');return false;}
+ if(!validateFields([['d-amount','money'],['d-item','text'],['d-date','date'],['d-note','text']]))return false;
+ if(!['Cody','Ollie'].includes(selectedWho)){fieldError('daily-who-group','請選擇誰花的');document.getElementById('wb-ollie').focus();return false;}
+ const pending=window._pendingSyncCostcoId;
+ if(pending&&asList(D.costco).some(i=>String(i.id)===String(pending)&&i.synced)){cancelCostcoDraft();showToast('這筆已加入日常，未重複新增');return false;}
+ batchBusy=true;
+ const record={id:uid(),amount:Number(fieldValue('d-amount')),item:fieldValue('d-item').trim(),note:fieldValue('d-note').trim(),date:fieldValue('d-date'),who:selectedWho,addedBy:selectedWho,cat:fieldValue('d-cat')||'其他',...(pending?{sourceCostcoId:String(pending)}:{})};
+ const month=record.date.slice(0,7);if(!D.daily)D.daily={};if(!D.daily[month])D.daily[month]=[];
+ ensureGame();D.daily[month].push(record);
+ if(pending){const it=asList(D.costco).find(i=>String(i.id)===String(pending));if(it){it.synced=true;it.dailyId=record.id;}window._pendingSyncCostcoId=null;clearCostcoDraftNotice();}
+ ['d-amount','d-item','d-note'].forEach(id=>document.getElementById(id).value='');
+ quickCat('其他',true);dMonth=month;updateMonthUI('d',dMonth);
+ lastBatchRecord={id:record.id,month,sourceCostcoId:pending||null};
+ save();renderDaily(false,record.id);updateOverview();renderRpg();
+ put('batch-receipt-text','已新增：'+(record.item||record.cat)+' '+money(record.amount)+' · '+record.who+' · '+record.date);
+ const receipt=document.getElementById('batch-receipt');if(receipt)receipt.hidden=false;
+ const undo=document.getElementById('batch-undo');if(undo)undo.hidden=false;
+ clearTimeout(batchReceiptTimer);batchReceiptTimer=setTimeout(()=>{lastBatchRecord=null;if(undo)undo.hidden=true;},8000);
+ setTimeout(()=>{batchBusy=false;},400);
+ if(finish)resetBatch();else document.getElementById('d-amount').focus({preventScroll:true});
+ return true;
+}
+function undoBatchEntry(){
+ const record=lastBatchRecord;if(!record)return;lastBatchRecord=null;clearTimeout(batchReceiptTimer);
+ D.daily[record.month]=asList(D.daily[record.month]).filter(i=>String(i.id)!==String(record.id));
+ if(!D.daily[record.month].length)delete D.daily[record.month];
+ if(record.sourceCostcoId){const it=asList(D.costco).find(i=>String(i.id)===String(record.sourceCostcoId));if(it&&String(it.dailyId)===String(record.id)){it.synced=false;delete it.dailyId;renderCostco();}}
+ save();renderDaily();updateOverview();renderRpg();put('batch-receipt-text','已復原這筆新增');const b=document.getElementById('batch-undo');if(b)b.hidden=true;
+}
+function finishBatch(){
+ if(batchBusy)return;
+ if(['d-amount','d-item','d-note'].some(id=>fieldValue(id).trim())||window._pendingSyncCostcoId){addDaily(true);return;}
+ resetBatch();showToast('補帳完成');
+}
+function resetBatch(){
+ document.activeElement?.blur();document.getElementById('d-date').value=today();setWho('');quickCat('其他',true);
+ clearFieldErrors(document.getElementById('daily-entry'));document.getElementById('daily-entry').classList.remove('keyboard-open');
+ const more=document.getElementById('daily-more');if(more)more.open=false;
+ updateEntryViewport();
+}
+function keepEntryVisible(){
+ const el=document.activeElement;if(!el?.closest?.('#daily-entry')||!el.matches('input,textarea,select'))return;
+ const v=window.visualViewport,top=v?v.offsetTop:0,bottom=top+(v?v.height:innerHeight)-80,r=el.getBoundingClientRect();
+ if(r.bottom>bottom||r.top<top+8)el.scrollIntoView({block:'center',behavior:'auto'});
+}
+function updateEntryViewport(){
+ const form=document.getElementById('daily-entry'),bar=document.getElementById('entry-actions');if(!form||!bar)return;
+ const v=window.visualViewport;const active=form.contains(document.activeElement);
+ const editing=!!(active&&v&&innerHeight-v.height>100&&document.getElementById('tab-daily').classList.contains('on'));
+ form.classList.toggle('keyboard-open',editing);
+ if(editing){const r=form.getBoundingClientRect();bar.style.left=Math.max(8,r.left)+'px';bar.style.width=Math.min(r.width,innerWidth-16)+'px';bar.style.top=(v.offsetTop+v.height-bar.offsetHeight-8)+'px';}else{bar.style.left='';bar.style.width='';bar.style.top='';}
+ const next=document.getElementById('entry-next');if(next&&document.activeElement?.matches?.('input,textarea,select'))next.hidden=document.activeElement.id!=='d-amount';
+}
+if(window.visualViewport){window.visualViewport.addEventListener('resize',()=>{updateEntryViewport();keepEntryVisible();});window.visualViewport.addEventListener('scroll',updateEntryViewport);}
+window.addEventListener('resize',updateEntryViewport);
+document.addEventListener('focusin',()=>{updateEntryViewport();requestAnimationFrame(keepEntryVisible);});
+document.addEventListener('focusout',()=>setTimeout(updateEntryViewport,0));
+const goBeforeMobile=go;go=function(id,btn){document.activeElement?.blur();goBeforeMobile(id,btn);updateEntryViewport();};
+
 </script>
 </body>
 </html>
